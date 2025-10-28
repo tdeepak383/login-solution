@@ -11,6 +11,7 @@ export default {
         ibrand: ['Ibrand', 'sans-serif'],
         kangge: ['Kangge', 'sans-serif'],
         glyke: ['Glyke', 'sans-serif'],
+        haniva: ['Haniva', 'sans-serif'],
       },
       keyframes: {
         'pulse-dot': {

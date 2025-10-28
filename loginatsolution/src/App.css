@@ -1,15 +1,24 @@
 .gradient {
   background: linear-gradient(90deg,var(--pink) 0%, var(--blue) 100%);
 }
+.hover-gradient {
+  background: linear-gradient(90deg,var(--blue) 0%, var(--pink) 100%);
+}
 
 
 .slick-prev, .slick-next{
   display: none !important;
 }
 
-body {
+/* body {
   font-family: 'Glyke', sans-serif;
   font-size: 24px;
+  line-height: 22px;
+  letter-spacing: 1px;
+} */
+
+body {
+  font-family: 'Haniva', sans-serif;  
 }
 
 @font-face {
@@ -36,6 +45,13 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Haniva';
+  src: url('./assets/fonts/Haniva-VF.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .margin-top-hero{
   position: relative;

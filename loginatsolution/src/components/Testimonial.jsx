@@ -95,7 +95,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <section className="min-h-screen w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center px-5 py-10">
+    <section className="min-h-screen max-sm:hidden lg:block w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center px-5 py-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8 text-center">
           <h3 className="uppercase text-gray-500 tracking-wider">Testimonials</h3>
@@ -106,7 +106,7 @@ export default function TestimonialSlider() {
           <Slider {...settings}>
             {testimonials.map((t, idx) => (
               <div key={idx} className="px-3">
-                <article className="bg-white rounded-2xl p-6 shadow-sm h-[350px] flex flex-col">
+                <article className="bg-white rounded-3xl p-6 shadow-sm h-[350px] flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={t.avatar}

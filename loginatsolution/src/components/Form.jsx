@@ -35,10 +35,10 @@ const RequirementForm = () => {
         </h2>
 
         {/* 2-column grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700  ">
+            <label className="block text-sm py-1 font-medium text-gray-700  ">
               Name<span className="text-red-500">*</span>
             </label>
             <input
@@ -48,13 +48,13 @@ const RequirementForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700  ">
+            <label className="block text-sm py-1 font-medium text-gray-700  ">
               E-mail Address<span className="text-red-500">*</span>
             </label>
             <input
@@ -64,13 +64,13 @@ const RequirementForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
             />
           </div>
 
           {/* Contact */}
           <div>
-            <label className="block text-sm font-medium text-gray-700  ">
+            <label className="block text-sm py-1 font-medium text-gray-700  ">
               Contact Number<span className="text-red-500">*</span>
             </label>
             <input
@@ -80,13 +80,13 @@ const RequirementForm = () => {
               value={formData.contact}
               onChange={handleChange}
               required
-              className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full  text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
             />
           </div>
 
           {/* Duration */}
           <div>
-            <label className="block text-sm font-medium text-gray-700  ">
+            <label className="block text-sm py-1 font-medium text-gray-700  ">
               Project Duration<span className="text-red-500">*</span>
             </label>
             <select
@@ -94,7 +94,7 @@ const RequirementForm = () => {
               value={formData.duration}
               onChange={handleChange}
               required
-              className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full  text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
             >
               <option value="">Select Duration</option>
               <option value="1-3 months">1–3 Months</option>
@@ -106,7 +106,7 @@ const RequirementForm = () => {
 
         {/* Company */}
         <div>
-          <label className="block text-sm font-medium text-gray-700  ">
+          <label className="block text-sm py-1 font-medium text-gray-700  ">
             Website/ Company<span className="text-red-500">*</span>
           </label>
           <input
@@ -116,13 +116,13 @@ const RequirementForm = () => {
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+            className="w-full  text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
           />
         </div>
 
         {/* Work Requirement */}
         <div>
-          <label className="block text-sm font-medium text-gray-700  ">
+          <label className="block text-sm py-1 font-medium text-gray-700  ">
             Work Requirement<span className="text-red-500">*</span>
           </label>
           <textarea
@@ -132,12 +132,12 @@ const RequirementForm = () => {
             onChange={handleChange}
             rows="4"
             required
-            className="w-full text-xl border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+            className="w-full  text-sm py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
           ></textarea>
         </div>
 
         {/* Consent */}
-        <div className="flex items-start space-x-2 text-sm text-gray-600">
+        <div className="flex items-start space-x-2 text-sm py-1 text-gray-600">
           <input
             type="checkbox"
             name="consent"
@@ -159,7 +159,7 @@ const RequirementForm = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full text-xl md:w-auto px-8 py-3 gradient text-white font-medium rounded-full shadow-md hover:opacity-90 transition"
+            className="w-full  text-sm py-1 md:w-auto px-8 py-3 gradient text-white font-medium rounded-full shadow-md hover:opacity-90 transition"
           >
             Submit Your Requirement
           </button>

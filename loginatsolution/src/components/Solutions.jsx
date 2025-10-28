@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import Solution from '../assets/innovative-thumb.gif'
+import { Link } from "react-router-dom";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
     return (
@@ -106,8 +107,8 @@ const Solutions = () => {
 
     return (
         <>
-            <section className="min-h-screen w-full z-50 relative flex flex-col items-center justify-center py-10 bg-black">
-                <div className="max-w-6xl mx-auto w-full mt-10 p-6 bg-[#f1eff0] shadow-lg rounded-2xl">
+            <section className="min-h-screen w-full z-50 relative flex flex-col gap-8 items-center justify-center py-10 px-5 bg-white">
+                <div className="max-w-6xl mx-auto w-full mt-10 p-6 bg-[#f1eff0] shadow-lg rounded-3xl">
 
                     <div className="grid grid-cols-3 gap-2">
                         <div>
@@ -129,8 +130,17 @@ const Solutions = () => {
                             ))}
                         </div>
                     </div>
+                    
                 </div>
-            </section>
+                <div>
+                        <Link
+                            to="/contact"
+                            className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
+                            >
+                            Find your solution
+                            </Link>
+                    </div>
+            </section>           
         </>
     );
 };
