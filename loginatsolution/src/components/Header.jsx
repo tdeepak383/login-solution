@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { IoSearch } from "react-icons/io5";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,22 +24,22 @@ function Header() {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-8 font-medium text-gray-700">
-            <li><a href="/" className="hover:text-[var(--purple)] transition">Capabilities</a></li>
-            <li><a href="/about" className="hover:text-[var(--purple)] transition">Services</a></li>
-            <li><a href="/services" className="hover:text-[var(--purple)] transition">About</a></li>
-            <li><a href="/blog" className="hover:text-[var(--purple)] transition">Blog</a></li>
-            <li><a href="/contact" className="hover:text-[var(--purple)] transition">Contact Us</a></li>
-            <li><a href="/join" className="hover:text-[var(--purple)] transition">Join Us</a></li>
+            <li><Link to="/capabilities" className="hover:text-[var(--purple)] transition">Capabilities</Link></li>
+            <li><Link to="/about" className="hover:text-[var(--purple)] transition">Services</Link></li>
+            <li><Link to="/services" className="hover:text-[var(--purple)] transition">About</Link></li>
+            <li><Link to="/blogs" className="hover:text-[var(--purple)] transition">Blog</Link></li>
+            <li><Link to="/contact-us" className="hover:text-[var(--purple)] transition">Contact Us</Link></li>
+            <li><Link to="/join-us" className="hover:text-[var(--purple)] transition">Join Us</Link></li>
           </ul>
 
           {/* Right Icons */}
-          <div className="flex items-center gap-4">
-            <IoSearch className="text-2xl text-gray-700 cursor-pointer hover:text-[var(--purple)] transition" />
+          <div className="md:hidden flex items-center gap-4">
+            {/* <IoSearch className="text-2xl text-gray-700 cursor-pointer hover:text-[var(--purple)] transition" /> */}
 
             {/* Mobile Toggle */}
             <button
               onClick={toggleMenu}
-              className="md:hidden text-3xl text-gray-700 focus:outline-none"
+              className=" text-3xl text-gray-700 focus:outline-none"
               aria-label="Toggle menu"
             >
               {menuOpen ? <HiX /> : <HiMenu />}
@@ -50,12 +51,12 @@ function Header() {
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 shadow-lg rounded-b-lg">
             <ul className="flex flex-col py-4 space-y-2 text-center font-medium text-gray-700">
-              <li><a href="/" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Capabilities</a></li>
-              <li><a href="/about" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Services</a></li>
-              <li><a href="/services" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>About</a></li>
-              <li><a href="/blog" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Blog</a></li>
-              <li><a href="/contact" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Contact Us</a></li>
-              <li><a href="/join" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Join Us</a></li>
+              <li><Link to="/capabilities" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Capabilities</Link></li>
+              <li><Link to="/about" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Services</Link></li>
+              <li><Link to="/services" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>About</Link></li>
+              <li><Link to="/blog" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Blog</Link></li>
+              <li><Link to="/contact" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+              <li><Link to="/join" className="block hover:text-[var(--purple)] transition" onClick={() => setMenuOpen(false)}>Join Us</Link></li>
             </ul>
           </div>
         )}

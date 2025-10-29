@@ -7,29 +7,21 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 /* Sample testimonials — replace images with real avatars or SVGs */
 const testimonials = [
   {
-    name: "Aisha Khan",
-    role: "Product Manager, FinTech",
+    name: "Bernd Hildebrandt",
+    role: "Marketing Services and Program Management in Customer Experience Marketing, Nokia",
     avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
     quote:
-      "The team delivered an outstanding UI — pixel-perfect to the Figma design and lightning-fast. Communication was excellent throughout.",
-    rating: 5,
-  },
-  {
-    name: "Ravi Patel",
-    role: "CTO, E-Commerce",
-    avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-    quote:
-      "They turned our complex requirements into a beautiful, maintainable front-end. The sprint deliveries were always on time.",
-    rating: 5,
-  },
-  {
-    name: "Sofia Martinez",
-    role: "Founder, SaaS Startup",
-    avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-    quote:
-      "Highly recommended — deep frontend expertise and great UX sense. Our conversions improved after the redesign.",
+      "During 2013-2015 I did work with Atul on NSN/Nokia rebranding. The activity included Intranet related tasks and was marketing and related business groups areas related. In this project we did work well together and managed to finalize project steps in time. Atul has been a great team partner, always supportive and helpful.",
     rating: 4,
   },
+  {
+    name: "Pamela Casale",
+    role: "CEO ASAP Marketing, LLC, Board Member RESILIANT SDP, Partner SkipIntro",
+    avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
+    quote:
+      "Atul and his team at LogInAt Solutions are simply amazing!! They are ingenious and capable- even in the most challenging technical situations. They are dedicated to quality and timely delivery. We engaged them on a design project and didn’t know that a few days later we would need a full stack developer. They didn’t waste any time in staffing and organizing a solution to our problem. In 30 years of marketing I have never worked with a more creative, service driven company. Thanks to this team for all you do!!",
+    rating: 5,
+  }
 ];
 
 /* Custom arrow components */
@@ -77,7 +69,7 @@ export default function TestimonialSlider() {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4500,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -95,27 +87,27 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <section className="min-h-screen max-sm:hidden lg:block w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center px-5 py-10">
+    <section className="py-20 max-sm:hidden lg:block w-full z-50 bg-white relative flex flex-col items-center justify-center text-center px-5">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8 text-center">
-          <h3 className="uppercase text-gray-500 tracking-wider">Testimonials</h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">What our clients say</h2>
+          <h3 className="text-gray-500 tracking-wider">Testimonials</h3>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800">What our clients say</h2>
         </div>
 
         <div className="relative">
           <Slider {...settings}>
             {testimonials.map((t, idx) => (
               <div key={idx} className="px-3">
-                <article className="bg-white rounded-3xl p-6 shadow-sm h-[350px] flex flex-col">
+                <article className="bg-[var(--purple)] rounded-3xl p-6 shadow-sm h-[400px] flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={t.avatar}
                       alt={`${t.name} avatar`}
-                      className="w-14 h-14 rounded-full object-cover border border-gray-100"
+                      className="w-14 h-14 rounded-full object-cover"
                     />
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-800">{t.name}</h4>
-                      <p className="  text-gray-500">{t.role}</p>
+                    <div className="text-left">
+                      <h4 className="text-lg font-semibold text-white">{t.name}</h4>
+                      <p className="text-white">{t.role}</p>
                       <div className="flex items-center mt-2">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <span key={i} className="mr-1">
@@ -126,17 +118,7 @@ export default function TestimonialSlider() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600   leading-relaxed mb-4 flex-1">“{t.quote}”</p>
-
-                  <div className="mt-3">
-                    <a
-                      href="#"
-                      className="text-[var(--pink)]   font-medium hover:underline"
-                      aria-label={`Read case study for ${t.name}`}
-                    >
-                      Read case study →
-                    </a>
-                  </div>
+                  <p className="text-white   leading-relaxed mb-4 flex-1">“{t.quote}”</p>
                 </article>
               </div>
             ))}

@@ -5,13 +5,22 @@ import App from './App.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-
+import Contact from './pages/Contact.jsx'
+import Join from './pages/Join.jsx'
+import Blog from './pages/Blog.jsx'
+import Service from './pages/Service.jsx'
+import Capabilities from './pages/Capabilities.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
+      <Route path='contact-us' element={<Contact />} />
+      <Route path='join-us' element={<Join />} />
+      <Route path='blogs' element={<Blog />} />
+      <Route path='services' element={<Service />} />
+      <Route path='capabilities' element={<Capabilities />} />
     </Route>
   ),
   {

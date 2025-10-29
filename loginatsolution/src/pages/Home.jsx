@@ -13,7 +13,7 @@ function Home() {
       <HeroSection />
       <AfterHero />
       <VerticalTabs />      
-      <Solutions />      
+      <Solutions />
       <CallToAction />
       <LogoCarousel />
       <TestimonialSlider />

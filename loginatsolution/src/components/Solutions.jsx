@@ -1,149 +1,183 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IoIosArrowDown } from "react-icons/io";
-import Solution from '../assets/innovative-thumb.gif'
+import { useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { GoArrowDown } from "react-icons/go";
 import { Link } from "react-router-dom";
+import branding from "../assets/branding.svg";
+import designing from "../assets/designing.svg";
+import techSolution from "../assets/tech-solution.svg";
+import digitalStrategy from "../assets/digital-strategy.svg";
 
-const AccordionItem = ({ title, content, isOpen, onClick }) => {
-    return (
-        <div className="border-b border-gray-300">
-            <button
-                onClick={onClick}
-                className="w-full flex justify-between items-center py-4 text-left"
+const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 },
+    },
+  };
+
+  const pointVariants = {
+    hidden: { opacity: 0, y: -15 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  };
+
+  return (
+    <div className="border-b border-gray-300">
+      <button
+        onClick={onClick}
+        className="w-full flex justify-between items-center py-4 text-left"
+      >
+        <span className="font-semibold text-3xl text-gray-800">{title}</span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <GoArrowDown className="text-[var(--pink)] text-xl" />
+        </motion.span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              className="pb-4 text-gray-600 mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
             >
-                <span className="font-semibold text-gray-800">{title}</span>
-                <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+              {content.map((point, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={pointVariants}
+                  className="bg-gray-100 p-2 rounded-full text-center"
                 >
-                    <IoIosArrowDown className="text-[var(--pink)] text-xl" />
-                </motion.span>
-            </button>
+                  {point.points}
+                </motion.div>
+              ))}
+            </motion.div>
 
-            <AnimatePresence initial={false}>
-                {isOpen && (
-                    <motion.div
-                        key="content"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                    >
-                        <p className="pb-4 text-gray-600">{content}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
+            <img src={image} alt={title} className="w-1/2 mx-auto" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 const Solutions = () => {
-    const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const sectionRef = useRef(null);
 
-    const data = [
-        {
-            title: "Branding",
-            content: [
-                { points: "Naming" },
-                { points: "Messaging & Positioning" },
-                { points: "Social media posts" },
-                { points: "Posters for office Branding" },
-                { points: "Logo Designing" },
-                { points: "Website Development" },
-                { points: "Brand Guidelines" },
-                { points: "Iconography" },
-                { points: "Illustration" },
-                { points: "Animation" },
-            ],
-        },
-        {
-            title: "Design",
-            content: [
+  // fade overlay when scrolling
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "start end"],
+  });
 
-                { points: "UI/UX Design" },
-                { points: "Website Design" },
-                { points: "Website Development" },
-                { points: "Mobile App Design" },
-                { points: "Packaging Design" },
-                { points: "Graphic Design" },
-                { points: "Emailers Design" },
-                { points: "Magazine Design" },
-            ]
-        },
-        {
-            title: "Tech Solutions",
-            content: [
-                { points: "Stunning Website, Applications" },
-                { points: "or Software" },
-                { points: "Fully-functional customized" },
-                { points: "E-commerce Solutions" },
-                { points: "Full-stack Android / iOS App Development" },
-                { points: "Customized ERP Solutions" },
-                { points: "Advanced HRMS to manage employee" },
-                { points: "Managing AWS servers" },
-                { points: "Website Maintenance & Support" },
-                { points: "Web Development solutions" },
-            ]
-        },
-        {
-            title: "Digital Strategy",
-            content: [
-                { points: "Consumer Research" },
-                { points: "Competitive Analysis" },
-                { points: "UX Audit" },
-                { points: "Product Strategy" },
-                { points: "Brand Strategy" },
-                { points: "Marketing Strategy" },
-            ]
-        },
-        {
-            title: "BPO Solutions",
-            content: [
-                { points: "We strongly believe that creativity lies even in communicating with your end client to map there need and with your service kitty. We have been working as a partner to provide an end-to-end solution by setting up team to communicate with your end-customers on your behalf so that you focus on your business growth predominantly. Post sales communication for designing catalogues for a leading B2B Portal Dedicated design team for designing web ad banners for a leading B2B portal" }
-            ]
-        }
-    ];
+  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-    return (
-        <>
-            <section className="min-h-screen w-full z-50 relative flex flex-col gap-8 items-center justify-center py-10 px-5 bg-white">
-                <div className="max-w-6xl mx-auto w-full mt-10 p-6 bg-[#f1eff0] shadow-lg rounded-3xl">
+  const data = [
+    {
+      title: "Branding",
+      image: branding,
+      content: [
+        { points: "Naming" },
+        { points: "Messaging & Positioning" },
+        { points: "Social media posts" },
+        { points: "Posters for office Branding" },
+        { points: "Logo Designing" },
+        { points: "Website Development" },
+        { points: "Brand Guidelines" },
+        { points: "Iconography" },
+        { points: "Illustration" },
+        { points: "Animation" },
+      ],
+    },
+    {
+      title: "Design",
+      image: designing,
+      content: [
+        { points: "UI/UX Design" },
+        { points: "Website Design" },
+        { points: "Website Development" },
+        { points: "Mobile App Design" },
+        { points: "Packaging Design" },
+        { points: "Graphic Design" },
+        { points: "Emailers Design" },
+        { points: "Magazine Design" },
+      ],
+    },
+    {
+      title: "Tech Solutions",
+      image: techSolution,
+      content: [
+        { points: "Stunning Website, Applications" },
+        { points: "or Software" },
+        { points: "Fully-functional customized" },
+        { points: "E-commerce Solutions" },
+        { points: "Full-stack Android / iOS App Development" },
+        { points: "Customized ERP Solutions" },
+        { points: "Advanced HRMS to manage employee" },
+        { points: "Managing AWS servers" },
+        { points: "Website Maintenance & Support" },
+        { points: "Web Development solutions" },
+      ],
+    },
+    {
+      title: "Digital Strategy",
+      image: digitalStrategy,
+      content: [
+        { points: "Consumer Research" },
+        { points: "Competitive Analysis" },
+        { points: "UX Audit" },
+        { points: "Product Strategy" },
+        { points: "Brand Strategy" },
+        { points: "Marketing Strategy" },
+      ],
+    },
+  ];
 
-                    <div className="grid grid-cols-3 gap-2">
-                        <div>
-                            <img src={Solution} alt="" className="w-60" />
-                        </div>
-                        <div className="col-span-2">
-                            {data.map((item, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    title={item.title}
-                                    content={item.content.map((point, idx) => (
-                                        <li key={idx} className="list-disc ml-5">{point.points}</li>
-                                    ))}
-                                    isOpen={activeIndex === index}
-                                    onClick={() =>
-                                        setActiveIndex(activeIndex === index ? null : index)
-                                    }
-                                />
-                            ))}
-                        </div>
-                    </div>
-                    
-                </div>
-                <div>
-                        <Link
-                            to="/contact"
-                            className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
-                            >
-                            Find your solution
-                            </Link>
-                    </div>
-            </section>           
-        </>
-    );
+  return (
+    <section
+      ref={sectionRef}
+      className="sticky top-0 w-full z-50 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
+    >
+      {/* Fade overlay */}
+      <motion.div
+        style={{ opacity: overlayOpacity }}
+        className="absolute inset-0 bg-black/40 pointer-events-none"
+      ></motion.div>
+
+      <div className="max-w-6xl mx-auto w-full mt-10 p-6 relative z-10">
+        {data.map((item, index) => (
+          <AccordionItem
+            key={index}
+            title={item.title}
+            image={item.image}
+            content={item.content}
+            isOpen={activeIndex === index}
+            onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10">
+        <Link
+          to="/contact"
+          className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
+        >
+          Find your solution
+        </Link>
+      </div>
+    </section>
+  );
 };
 
-
-export default Solutions
+export default Solutions;

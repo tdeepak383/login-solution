@@ -28,7 +28,7 @@ const videoSlide = [
 ]
 
 
-function HeroSection({Arrowlink}) {
+function HeroSection() {
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -98,10 +98,10 @@ function HeroSection({Arrowlink}) {
         }`}
       ></div>
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-28">
-            <h1 className="lg:text-7xl md:text-4xl text-2xl font-bold tracking-wider">
-              Adding <span className="text-[var(--purple)] italic">spotlight</span> to your Brand</h1>
-            <p className="lg:text-3xl md:text-xl text-lg my-6 tracking-wider">Hire your virtual marketing team </p>
-            <p className='lg:text-3xl md:text-xl text-lg mb-8'>Empower your team with highly trained global professionals <br />who’ve worked with the world’s top enterprises and fastest-growing startups</p>
+            <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">
+              Adding <span className="text-[var(--purple)]">spotlight</span> to your Brand</h1>
+            {/* <p className="lg:text-3xl md:text-xl text-lg mt-10">Hire your Virtual Marketing Team </p> */}
+            <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>Access top global experts and scale faster with a Virtual Marketing Team trusted by leading startups and enterprises.</h2>
             <Link to="/contact" className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`}>Connect with Us</Link>
         </div>
         <div className="slider-container">

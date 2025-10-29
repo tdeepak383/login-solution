@@ -77,15 +77,15 @@ var settings = {
 
   return (
      <>
-        <section className='min-h-screen w-full z-50 bg-white relative flex flex-col items-center justify-center text-center py-10'>
+        <section className='py-20 w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center'>
             <div className='w-full'>
                 <h2 className='text-2xl md:text-5xl text-black font-bold mb-5 max-w-5xl mx-auto'>Explore our comprehensive tool capabilities</h2>
                 <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto'>We leverage a diverse set of tools and technologies to deliver top-notch solutions tailored to your business needs. Our expertise spans across various domains, ensuring that we can provide the right fit for your projects.</p>
                 
                 <Slider {...settings}>
                 {logos.map((logo, index) => (
-                    <div key={index}>
-                        <div className='content-center bg-[var(--purple)] w-40 md:w-24 h-40 md:h-24 lg:w-44 lg:h-44 p-4 border border-gray-200 rounded-lg'>
+                    <div key={index} className='px-2 mt-10'>
+                        <div className={`content-center bg-white p-4 border border-gray-200 rounded-lg`}>
                             <img src={logo} alt={`Technology Logo ${index + 1}`} className='mx-auto object-contain' />
                         </div>
                     </div>

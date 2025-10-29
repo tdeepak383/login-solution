@@ -1,73 +1,96 @@
 import React from "react";
+import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import {
   FaInstagram,
-  FaLinkedinIn,  
+  FaLinkedinIn,
   FaYoutube,
   FaFacebookF,
 } from "react-icons/fa6";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
 function Footer() {
   return (
     <footer className="w-full z-50 relative flex flex-col items-center bg-black justify-center text-center px-5 py-10">
-      <div className="max-w-6xl w-full bg-white rounded-3xl shadow-sm border border-gray-200 p-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <motion.div
+        className="max-w-6xl w-full bg-white rounded-3xl shadow-sm border border-gray-200 p-10"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-5 gap-10"
+          variants={staggerContainer}
+        >
           {/* Left - Logo and description */}
-          <div className="md:col-span-2 space-y-6">
+          <motion.div className="md:col-span-2 space-y-6" variants={fadeUp}>
             <div className="flex items-center space-x-3">
-              {/* <div className="bg-black text-white font-bold px-2 py-1 rounded-md text-xl">
-                Login
-              </div>
-              <h2 className="  font-semibold text-gray-900">@Solution</h2> */}
-              <img src={logo} alt="logo" className="w-28"/>
+              <img src={logo} alt="logo" className="w-32" />
             </div>
             <p className="text-gray-500 leading-relaxed max-w-md text-left">
-             We're a diverse team of visionary developers and creative designers, driven by curiosity and a shared passion for problem-solving and collaboration.
+              We're a diverse team of visionary developers and creative designers,
+              driven by curiosity and a shared passion for problem-solving and
+              collaboration.
             </p>
-            <div className="flex space-x-5 text-[var(--pink)] text-xl">
-              <FaFacebookF className="hover:text-black cursor-pointer" />
-              <FaInstagram className="hover:text-black cursor-pointer" />
-              <FaLinkedinIn className="hover:text-black cursor-pointer" />
-              <FaYoutube className="hover:text-black cursor-pointer" />
+            <div className="flex space-x-5 text-black text-xl">
+              <FaFacebookF className="hover:text-[var(--purple)] cursor-pointer" />
+              <FaInstagram className="hover:text-[var(--purple)] cursor-pointer" />
+              <FaLinkedinIn className="hover:text-[var(--purple)] cursor-pointer" />
+              <FaYoutube className="hover:text-[var(--purple)] cursor-pointer" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Product */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Product</h3>
-            <ul className="space-y-3 text-gray-500  ">
-              <li className="hover:text-black cursor-pointer">Features</li>
-              <li className="hover:text-black cursor-pointer">Pricing</li>
-              <li className="hover:text-black cursor-pointer">Integrations</li>
-              <li className="hover:text-black cursor-pointer">Changelog</li>
+          <motion.div variants={fadeUp}>
+            <h3 className="font-semibold text-xl text-gray-900 mb-4">Product</h3>
+            <ul className="space-y-3 text-gray-500">
+              <li className="hover:text-black cursor-pointer hover:underline">Features</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Pricing</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Integrations</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Changelog</li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Resources */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Resources</h3>
-            <ul className="space-y-3 text-gray-500  ">
-              <li className="hover:text-black cursor-pointer">Documentation</li>
-              <li className="hover:text-black cursor-pointer">Tutorials</li>
-              <li className="hover:text-black cursor-pointer">Blog</li>
-              <li className="hover:text-black cursor-pointer">Support</li>
+          <motion.div variants={fadeUp}>
+            <h3 className="font-semibold text-xl text-gray-900 mb-4">Resources</h3>
+            <ul className="space-y-3 text-gray-500">
+              <li className="hover:text-black cursor-pointer hover:underline">Documentation</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Tutorials</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Blog</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Support</li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Company */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
-            <ul className="space-y-3 text-gray-500  ">
-              <li className="hover:text-black cursor-pointer">About</li>
-              <li className="hover:text-black cursor-pointer">Careers</li>
-              <li className="hover:text-black cursor-pointer">Contact</li>
-              <li className="hover:text-black cursor-pointer">Partners</li>
+          <motion.div variants={fadeUp}>
+            <h3 className="font-semibold text-xl text-gray-900 mb-4">Company</h3>
+            <ul className="space-y-3 text-gray-500">
+              <li className="hover:text-black cursor-pointer hover:underline">About</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Careers</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Contact</li>
+              <li className="hover:text-black cursor-pointer hover:underline">Partners</li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400  ">
+        <motion.div
+          className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400"
+          variants={fadeUp}
+        >
           <p>© 2025 LoginatSolution. All rights reserved.</p>
           <div className="flex space-x-6 mt-3 md:mt-0">
             <a href="#" className="hover:text-black">
@@ -80,8 +103,8 @@ function Footer() {
               Cookies Settings
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }
