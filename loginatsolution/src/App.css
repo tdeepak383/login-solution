@@ -62,3 +62,7 @@ body {
   z-index: 50;
   background-color: white;
 }
+
+.right-slide-z-index{
+  z-index: 1000px;
+}

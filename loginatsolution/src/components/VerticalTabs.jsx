@@ -119,6 +119,7 @@ const VerticalTabs = () => {
       variants={containerVariants}
       className="min-h-screen relative flex flex-col gap-8 items-center justify-center bg-gradient-to-b from-gray-100 via-white to-gray-100 px-5 py-10"
     >
+      <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto'>Embed trained professionals and stay focused on accelerating your growth</h2>
       <div className="flex flex-col md:h-full lg:h-[680px] md:flex-row w-full shadow-lg max-w-6xl mx-auto mt-10 p-5 bg-white rounded-3xl">
         {/* Left Side Tabs */}
         <div className="flex md:flex-col flex-row md:w-1/4 w-full bg-gray-50 rounded-l-xl p-2">
@@ -189,7 +190,7 @@ const VerticalTabs = () => {
         transition={{ delay: 0.3 }}
       >
         <Link
-          to="/contact"
+          to="/join-us"
           className="bg-gradient-to-r from-[var(--pink)] to-[var(--blue)] bg-[length:200%_200%] hover:bg-[length:200%_200%] hover:bg-gradient-to-l transition-all duration-700 text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block shadow-md"
         >
           Start Hiring

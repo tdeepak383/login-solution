@@ -13,6 +13,7 @@ import video8 from '../assets/art-8.mp4'
 import video9 from '../assets/art-9.mp4'
 import { BsArrowDown } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import PopUp from './PopUp';
 
 
 const videoSlide = [
@@ -31,6 +32,7 @@ const videoSlide = [
 function HeroSection() {
 
   const [scrolled, setScrolled] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,10 +101,10 @@ function HeroSection() {
       ></div>
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-28">
             <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">
-              Adding <span className="text-[var(--purple)]">spotlight</span> to your Brand</h1>
+              Scale Without  <span className="text-[var(--purple)]">Boundaries </span>— Your Virtual Marketing Team Awaits</h1>
             {/* <p className="lg:text-3xl md:text-xl text-lg mt-10">Hire your Virtual Marketing Team </p> */}
             <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>Access top global experts and scale faster with a Virtual Marketing Team trusted by leading startups and enterprises.</h2>
-            <Link to="/contact" className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`}>Connect with Us</Link>
+            <button className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`} onClick={() => setIsPopupOpen(true)}>Connect with Us</button>
         </div>
         <div className="slider-container">
         <Slider {...settings}>
@@ -120,6 +122,7 @@ function HeroSection() {
       >
         <BsArrowDown  className="w-10 h-10 animate-bounce" />
       </button>
+      <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   )
 }

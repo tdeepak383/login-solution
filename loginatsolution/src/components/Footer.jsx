@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaFacebookF,
 } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -31,24 +32,20 @@ function Footer() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-5 gap-10"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-10"
           variants={staggerContainer}
         >
           {/* Left - Logo and description */}
-          <motion.div className="md:col-span-2 space-y-6" variants={fadeUp}>
+          <motion.div className="flex flex-col justify-between" variants={fadeUp}>
             <div className="flex items-center space-x-3">
-              <img src={logo} alt="logo" className="w-32" />
+              <img src={logo} alt="logo" className="w-60" />
             </div>
-            <p className="text-gray-500 leading-relaxed max-w-md text-left">
-              We're a diverse team of visionary developers and creative designers,
-              driven by curiosity and a shared passion for problem-solving and
-              collaboration.
-            </p>
+            
             <div className="flex space-x-5 text-black text-xl">
-              <FaFacebookF className="hover:text-[var(--purple)] cursor-pointer" />
-              <FaInstagram className="hover:text-[var(--purple)] cursor-pointer" />
-              <FaLinkedinIn className="hover:text-[var(--purple)] cursor-pointer" />
-              <FaYoutube className="hover:text-[var(--purple)] cursor-pointer" />
+              <a href="https://www.facebook.com/LoginAtSolutions"><FaFacebookF className="hover:text-[var(--purple)] cursor-pointer" /></a>
+              {/* <a href=""><FaInstagram className="hover:text-[var(--purple)] cursor-pointer" /></a> */}
+              <a href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/"><FaLinkedinIn className="hover:text-[var(--purple)] cursor-pointer" /></a>
+              {/* <a href=""><FaYoutube className="hover:text-[var(--purple)] cursor-pointer" /></a> */}
             </div>
           </motion.div>
 
@@ -91,17 +88,17 @@ function Footer() {
           className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400"
           variants={fadeUp}
         >
-          <p>© 2025 LoginatSolution. All rights reserved.</p>
+          <p>© 2025 <a href="https://loginatsolution.com/" className="underline text-[var(--pink)]">LoginAtSolutions Pvt Ltd</a>. All rights reserved.</p>
           <div className="flex space-x-6 mt-3 md:mt-0">
-            <a href="#" className="hover:text-black">
+            <Link to="#" className="hover:text-black">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-black">
+            </Link>
+            <Link to="#" className="hover:text-black">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-black">
+            </Link>
+            <Link to="/cookies-policy" className="hover:text-black">
               Cookies Settings
-            </a>
+            </Link>
           </div>
         </motion.div>
       </motion.div>

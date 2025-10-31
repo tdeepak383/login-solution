@@ -28,7 +28,7 @@ const RequirementForm = () => {
     <div className="">
       <form
         onSubmit={handleSubmit}
-        className="w-full bg-white shadow-xl text-left rounded-3xl p-8 space-y-2"
+        className="w-full text-left p-8 space-y-8"
       >
         <h2 className="text-xl font-semibold text-center text-gray-800">
           Share Your Requirement

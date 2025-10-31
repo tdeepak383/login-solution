@@ -63,7 +63,7 @@ const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
               ))}
             </motion.div>
 
-            <img src={image} alt={title} className="w-1/2 mx-auto" />
+            {/* <img src={image} alt={title} className="w-1/2 mx-auto" /> */}
           </motion.div>
         )}
       </AnimatePresence>
@@ -142,6 +142,18 @@ const Solutions = () => {
         { points: "Marketing Strategy" },
       ],
     },
+    {
+      title: "Back Office Operations",
+      image: digitalStrategy,
+      content: [
+        { points: "Data entry and data processing" },
+        { points: "Catalogue and content management" },
+        { points: "Finance and accounting support" },
+        { points: "HR and payroll operations" },
+        { points: "Compliance and documentation" },
+        { points: "Reporting and analytics support" },
+      ],
+    },
   ];
 
   return (
@@ -156,6 +168,8 @@ const Solutions = () => {
       ></motion.div>
 
       <div className="max-w-6xl mx-auto w-full mt-10 p-6 relative z-10">
+      <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto mb-20'>We can also take full ownership and deliver your project end to end</h2>
+
         {data.map((item, index) => (
           <AccordionItem
             key={index}
@@ -170,7 +184,7 @@ const Solutions = () => {
 
       <div className="relative z-10">
         <Link
-          to="/contact"
+          to="/contact-us"
           className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
         >
           Find your solution

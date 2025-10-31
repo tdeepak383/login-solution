@@ -2,39 +2,43 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Logo1 from '../assets/logo/tech-1.png'
-import Logo2 from '../assets/logo/tech-2.png'
-import Logo3 from '../assets/logo/tech-3.png'
-import Logo4 from '../assets/logo/tech-4.png'
-import Logo5 from '../assets/logo/tech-5.png'
-import Logo6 from '../assets/logo/tech-6.png'
-import Logo7 from '../assets/logo/tech-7.png'
-import Logo8 from '../assets/logo/tech-8.png'
-import Logo9 from '../assets/logo/tech-9.png'
-import Logo10 from '../assets/logo/tech-10.png'
-import Logo11 from '../assets/logo/tech-11.png'
-import Logo12 from '../assets/logo/tech-12.png'
-import Logo13 from '../assets/logo/tech-13.png'
-import Logo14 from '../assets/logo/tech-14.png'
+import Logo01 from '../assets/client-logo/01.png'
+import Logo02 from '../assets/client-logo/02.png'
+import Logo03 from '../assets/client-logo/03.png'
+import Logo04 from '../assets/client-logo/04.png'
+import Logo05 from '../assets/client-logo/05.png'
+import Logo06 from '../assets/client-logo/06.png'
+import Logo07 from '../assets/client-logo/07.png'
+import Logo08 from '../assets/client-logo/08.png'
+import Logo09 from '../assets/client-logo/09.png'
+import Logo10 from '../assets/client-logo/10.png'
+import Logo11 from '../assets/client-logo/11.png'
+import Logo12 from '../assets/client-logo/12.png'
+import Logo13 from '../assets/client-logo/13.png'
+import Logo14 from '../assets/client-logo/14.png'
+import Logo15 from '../assets/client-logo/15.png'
+import Logo16 from '../assets/client-logo/16.png'
 
 
 const logos = [
-    Logo1,
-    Logo2,
-    Logo3,
-    Logo4,
-    Logo5,
-    Logo6,
-    Logo7,
-    Logo8,
-    Logo9,
+    Logo01,
+    Logo02,
+    Logo03,
+    Logo04,
+    Logo05,
+    Logo06,
+    Logo07,
+    Logo08,
+    Logo09,
     Logo10,
     Logo11,
     Logo12,
     Logo13,
-    Logo14
+    Logo14,
+    Logo15,
+    Logo16
 ]
-function LogoCarousel() {
+function ClientsLogo() {
 
 var settings = {
     dots: false,
@@ -77,11 +81,9 @@ var settings = {
 
   return (
      <>
-        <section className='py-20 w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center'>
+        <section className='pb-20 w-full z-50 relative bg-white flex flex-col items-center justify-center text-center'>
             <div className='w-full'>
-                <h2 className='text-2xl md:text-5xl text-black font-bold mb-5 max-w-5xl mx-auto'>Our technical depth</h2>
-                <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto'>We provide talent who specializes in specific tools and technologies to deliver high-quality solutions tailored to your business needs. Each professional brings focused expertise, ensuring the right skills are matched to your project requirements.</p>
-                
+                {/* <h2 className='text-2xl md:text-5xl text-black font-bold mb-5 max-w-5xl mx-auto'>Our Clients</h2>*/}
                 <Slider {...settings}>
                 {logos.map((logo, index) => (
                     <div key={index} className='px-2 mt-10'>
@@ -97,4 +99,4 @@ var settings = {
   )
 }
 
-export default LogoCarousel
+export default ClientsLogo

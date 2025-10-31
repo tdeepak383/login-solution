@@ -10,6 +10,9 @@ import Join from './pages/Join.jsx'
 import Blog from './pages/Blog.jsx'
 import Service from './pages/Service.jsx'
 import Capabilities from './pages/Capabilities.jsx'
+import TheImportanceofBranding from './pages/blogs/TheImportanceofBranding.jsx'
+import CookiesPolicy from './pages/CookiesPolicy.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +24,12 @@ const router = createBrowserRouter(
       <Route path='blogs' element={<Blog />} />
       <Route path='services' element={<Service />} />
       <Route path='capabilities' element={<Capabilities />} />
+      <Route path='cookies-policy' element={<CookiesPolicy />} />
+
+
+
+      {/* Blogs Links start here */}
+      <Route path='blogs/the-importance-of-branding' element={<TheImportanceofBranding />} />
     </Route>
   ),
   {

@@ -35,7 +35,7 @@ const CurrentOpenings = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl font-bold text-[var(--accent-primary)] mb-3"
+          className="text-3xl lg:text-5xl font-bold text-[var(--accent-primary)] mb-3"
         >
           Current Openings
         </motion.h2>
@@ -44,7 +44,7 @@ const CurrentOpenings = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
         {openings.map((job, index) => (
           <motion.div
             key={index}

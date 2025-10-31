@@ -1,0 +1,59 @@
+<div id="popup-overlay" onclick="closePopup()"></div>
+
+<div id="custom-popup">
+    [contact-form-7 id="3876f6a" title="Contact us"]
+</div>
+
+<style>
+#custom-popup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 99999 !important;
+}
+
+#custom-popup.active {
+  display: block;
+}
+
+#popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 99998 !important;
+}
+
+#popup-overlay.active {
+  display: block;
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const card = document.querySelector('.trigger-card');
+  const popup = document.getElementById('custom-popup');
+  const overlay = document.getElementById('popup-overlay');
+
+  if (card) {
+    card.addEventListener('click', function () {
+      popup.classList.add('active');
+      overlay.classList.add('active');
+    });
+  }
+
+  // Close popup
+  window.closePopup = function () {
+    popup.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+});
+</script>
