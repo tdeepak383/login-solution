@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const VerticalTabs = () => {
+const JobFunctionTabs = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
 
@@ -197,4 +197,4 @@ const VerticalTabs = () => {
   );
 };
 
-export default VerticalTabs;
+export default JobFunctionTabs;
