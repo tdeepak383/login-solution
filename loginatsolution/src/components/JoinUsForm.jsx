@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 function JoinUsForm() {
+
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -21,26 +25,13 @@ function JoinUsForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ Create a FormData object to send files
-    const sendData = new FormData();
-    sendData.append("fullName", formData.fullName);
-    sendData.append("email", formData.email);
-    sendData.append("phone", formData.phone);
-    sendData.append("position", formData.position);
-    sendData.append("experience", formData.experience);
-    sendData.append("message", formData.message);
-    sendData.append("resume", formData.resume);
+    await addDoc(collection(db, "leads"), formData);
+    alert("Lead added successfully!");
 
-    console.log("Form Data Submitted:");
-    for (let pair of sendData.entries()) {
-      console.log(pair[0] + ": " + pair[1]);
-    }
-
-    alert("Application submitted successfully!");
-  };
+  }
 
   return (
     <form
@@ -154,7 +145,7 @@ function JoinUsForm() {
 
       <button
         type="submit"
-        className="w-full bg-[var(--accent-primary)] text-white py-3 rounded-md text-lg font-semibold hover:opacity-90 transition"
+        className="w-full gradient text-white py-3 rounded-md text-lg hover:opacity-90 transition"
       >
         Submit Application
       </button>

@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 import {
   FaLinkedinIn,
   FaYoutube,
-  FaFacebookF,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -22,7 +21,7 @@ const staggerContainer = {
 
 function Footer() {
   return (
-    <footer className="w-full z-40 relative flex flex-col items-center border-t border-white bg-gray-200 justify-center text-center px-5 pt-10 pb-5">
+    <footer className="w-full z-40 relative flex flex-col items-center bg-gray-200 justify-center text-center px-5 pt-10 pb-5">
       <motion.div
         className="max-w-6xl w-full"
         variants={staggerContainer}

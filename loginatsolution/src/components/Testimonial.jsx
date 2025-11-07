@@ -28,7 +28,7 @@ const PrevArrow = ({ className, style, onClick }) => (
     aria-label="Previous testimonials"
     type="button"
     onClick={onClick}
-    className="hidden md:flex items-center justify-center absolute -left-6 top-1/2 transform -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100"
+    className="hidden md:flex items-center justify-center absolute -left-28 top-1/2 transform -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-white shadow-md border border-gray-100"
   >
     <IoChevronBack className="text-gray-700 text-xl" />
   </button>
@@ -39,7 +39,7 @@ const NextArrow = ({ className, style, onClick }) => (
     aria-label="Next testimonials"
     type="button"
     onClick={onClick}
-    className="hidden md:flex items-center justify-center absolute -right-6 top-1/2 transform -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100"
+    className="hidden md:flex items-center justify-center absolute -right-28 top-1/2 transform -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-white shadow-md border border-gray-100"
   >
     <IoChevronForward className="text-gray-700 text-xl" />
   </button>

@@ -1,0 +1,41 @@
+type User @table {
+  username: String!
+  email: String!
+  displayName: String!
+  createdAt: Timestamp!
+  department: String
+  role: String
+}
+
+type ServiceRequest @table {
+  title: String!
+  description: String!
+  status: String!
+  createdAt: Timestamp!
+  reporter: User
+  assignee: User
+  priority: String
+  category: String
+  resolutionNotes: String
+}
+
+type ServiceType @table {
+  name: String!
+  createdAt: Timestamp!
+  description: String
+}
+
+type Comment @table {
+  content: String!
+  createdAt: Timestamp!
+  serviceRequest: ServiceRequest
+  user: User
+}
+
+type Attachment @table {
+  fileName: String!
+  fileUrl: String!
+  createdAt: Timestamp!
+  serviceRequest: ServiceRequest
+  mimeType: String
+}
