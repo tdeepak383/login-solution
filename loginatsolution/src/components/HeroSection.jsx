@@ -3,17 +3,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import video1 from '../assets/art-1.mp4'
-import video2 from '../assets/art-2.mp4'
-import video3 from '../assets/art-3.mp4'
-import video4 from '../assets/art-4.mp4'
-import video5 from '../assets/art-5.mp4'
-import video6 from '../assets/art-6.mp4'
-import video7 from '../assets/art-7.mp4'
-import video8 from '../assets/art-8.mp4'
-import video9 from '../assets/art-9.mp4'
+import video2 from '../assets/art-2.mov'
+import video3 from '../assets/art-3.mov'
+import video4 from '../assets/art-4.mov'
+import video5 from '../assets/art-5.mov'
+import video6 from '../assets/art-6.mov'
+import video7 from '../assets/art-7.mov'
+import video8 from '../assets/art-8.mov'
+import video9 from '../assets/art-9.mov'
 import { BsArrowDown } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import PopUp from './PopUp';
 
 
 const videoSlide = [
@@ -29,10 +28,9 @@ const videoSlide = [
 ]
 
 
-function HeroSection() {
+function HeroSection({onClick}) {
 
   const [scrolled, setScrolled] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,10 +99,10 @@ function HeroSection() {
       ></div>
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-28">
             <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">
-              Scale Without  <span className="text-[var(--purple)]">Boundaries </span>— Your Virtual Marketing Team Awaits</h1>
+              Scale Without  <span className="text-[var(--purple)]">Boundaries </span></h1>
             {/* <p className="lg:text-3xl md:text-xl text-lg mt-10">Hire your Virtual Marketing Team </p> */}
             <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>Access top global experts and scale faster with a Virtual Marketing Team trusted by leading startups and enterprises.</h2>
-            <button className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`} onClick={() => setIsPopupOpen(true)}>Connect with Us</button>
+            <button className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`} onClick={onClick}>Connect with Us</button>
         </div>
         <div className="slider-container">
         <Slider {...settings}>
@@ -122,7 +120,6 @@ function HeroSection() {
       >
         <BsArrowDown  className="w-10 h-10 animate-bounce" />
       </button>
-      <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   )
 }

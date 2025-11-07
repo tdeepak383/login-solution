@@ -26,7 +26,7 @@ const ContactUsForm = () => {
         onSubmit={handleSubmit}
         className="lg:p-8 w-full"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 inline-block px-4 py-2 rounded">
+        <h2 className="text-xl md:text-3xl font-semibold text-center mb-8 inline-block px-4 py-2 rounded">
           Book a 25-minute intro call
         </h2>
 

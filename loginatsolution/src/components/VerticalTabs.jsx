@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
+
 const VerticalTabs = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
@@ -23,7 +24,7 @@ const VerticalTabs = () => {
 
   const tabs = [
     { id: "tab1", label: "Innovative Designers" },
-    { id: "tab2", label: "Front-end / Full Stack Developers" },
+    { id: "tab2", label: "Full Stack Developers" },
     { id: "tab3", label: "Customer Servicing" },
   ];
 
@@ -116,19 +117,19 @@ const VerticalTabs = () => {
       variants={containerVariants}
       className="min-h-screen relative flex flex-col gap-8 items-center justify-center bg-gradient-to-b from-gray-100 via-white to-gray-100 px-5 py-10"
     >
-      <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto'>Embed trained professionals and stay focused on accelerating your growth</h2>
-      <div className="flex flex-col md:h-full lg:h-[680px] md:flex-row w-full shadow-lg max-w-6xl mx-auto mt-10 p-5 bg-white rounded-3xl">
+      <h2 className='text-2xl md:text-5xl text-black text-center max-w-6xl mx-auto'>Embed trained professionals and stay focused on accelerating your growth</h2>
+      <div className="flex flex-col md:h-full lg:h-[780px] md:flex-row w-full shadow-lg max-w-6xl mx-auto mt-10 p-5 bg-white rounded-3xl">
         {/* Left Side Tabs */}
-        <div className="flex md:flex-col flex-row md:w-1/4 w-full bg-gray-50 rounded-l-xl p-2">
+        <div className="flex md:flex-col flex-row md:w-1/4 w-full bg-gray-50 rounded-l-xl py-5 px-3">
           {tabs.map((tab) => (
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full text-left px-5 py-3 text-sm md:text-2xl rounded-lg transition-all duration-300 ${
+              className={`w-full text-left px-4 py-3 mb-5 bg-gray-200  text-sm md:text-xl rounded-lg ${
                 activeTab === tab.id
-                  ? "bg-gray-200 border-l-4 border-l-[var(--pink)] text-gray-900"
+                  ? "bg-gray-200 text-white gradient"
                   : "hover:bg-gray-100 text-gray-600"
               }`}
             >
@@ -156,22 +157,22 @@ const VerticalTabs = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-2 md:grid-cols-3 gap-4 md:pl-6"
+                className="grid grid-cols-2 md:grid-cols-3 gap-4"
               >
                 {tabsContent[activeTab].map((item, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="bg-gray-800 text-gray-100 border p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                    className="border text-left p-5 rounded-xl bg-white transition-all duration-300"
                   >
                     {item.point}
-                    {/* {item.image && (
+                    {item.image && (
                       <img
                         src={item.image}
                         alt=""
-                        className="w-20 mt-2 ml-auto opacity-90"
+                        className="w-20 invert mt-2 ml-auto opacity-90"
                       />
-                    )} */}
+                    )}
                   </motion.div>
                 ))}
               </motion.div>

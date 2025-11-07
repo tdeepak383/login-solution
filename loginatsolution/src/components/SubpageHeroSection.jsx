@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function SubpageHeroSection({title, subtitle,buttontext, children}) {
+function SubpageHeroSection({title, subtitle,buttontext, children, onClick}) {
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,9 +30,9 @@ function SubpageHeroSection({title, subtitle,buttontext, children}) {
         }`}
       ></div>
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-28">
-            <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">{title}</h1>
+            <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold">{title}</h1>
             <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>{subtitle}</h2>
-            <Link to="/contact" className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`}>{buttontext}</Link>
+            <button onClick={onClick} className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-10 md:px-16 md:text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`}>{buttontext}</button>
             <p className='mt-10 text-xl'>{children}</p>
         </div>
     </div>

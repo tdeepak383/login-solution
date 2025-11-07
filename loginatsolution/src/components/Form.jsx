@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const RequirementForm = () => {
+const RequirementForm = ({color}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +25,7 @@ const RequirementForm = () => {
   };
 
   return (
-    <div className="">
+    <div className={`bg-${color} rounded-3xl`}>
       <form
         onSubmit={handleSubmit}
         className="w-full text-left p-8 space-y-8"
@@ -35,12 +35,10 @@ const RequirementForm = () => {
         </h2>
 
         {/* 2-column grid */}
-        <div className="grid md:grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 gap-6">
           {/* Name */}
           <div>
-            <label className="block text-xs py-1 font-medium text-gray-700  ">
-              Name<span className="text-red-500">*</span>
-            </label>
+            
             <input
               type="text"
               name="name"
@@ -48,15 +46,13 @@ const RequirementForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-xs py-1 font-medium text-gray-700  ">
-              E-mail Address<span className="text-red-500">*</span>
-            </label>
+           
             <input
               type="email"
               name="email"
@@ -64,15 +60,13 @@ const RequirementForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
             />
           </div>
 
           {/* Contact */}
           <div>
-            <label className="block text-xs py-1 font-medium text-gray-700  ">
-              Contact Number<span className="text-red-500">*</span>
-            </label>
+            
             <input
               type="text"
               name="contact"
@@ -80,52 +74,45 @@ const RequirementForm = () => {
               value={formData.contact}
               onChange={handleChange}
               required
-              className="w-full  text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
             />
           </div>
 
           {/* Duration */}
           <div>
-            <label className="block text-xs py-1 font-medium text-gray-700  ">
-              Project Duration<span className="text-red-500">*</span>
-            </label>
+           
             <select
               name="duration"
               value={formData.duration}
               onChange={handleChange}
               required
-              className="w-full  text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+              className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
             >
               <option value="">Select Duration</option>
-              <option value="1-3 months">1–3 Months</option>
-              <option value="3-6 months">3–6 Months</option>
+              <option value="1-3 months">1-3 Months</option>
+              <option value="3-6 months">3-6 Months</option>
               <option value="6+ months">6+ Months</option>
             </select>
           </div>
         </div>
 
         {/* Company */}
-        <div>
-          <label className="block text-xs py-1 font-medium text-gray-700  ">
-            Website/ Company<span className="text-red-500">*</span>
-          </label>
+        <div>         
           <input
             type="text"
             name="company"
-            placeholder="Website/ Company"
+            placeholder="Website / Company"
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full  text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
+            className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
           />
         </div>
 
         {/* Work Requirement */}
         <div>
-          <label className="block text-xs py-1 font-medium text-gray-700  ">
-            Work Requirement<span className="text-red-500">*</span>
-          </label>
-          <input
+         
+          <textarea
             name="requirement"
             placeholder="Add Your Requirement"
             value={formData.requirement}
@@ -133,8 +120,8 @@ const RequirementForm = () => {
             rows="4"
             type="text"
             required
-            className="w-full  text-xs py-1 border border-gray-300 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-[var(--pink)]"
-          ></input>
+            className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
+          ></textarea>
         </div>
 
         {/* Consent */}

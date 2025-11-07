@@ -6,14 +6,9 @@ import data from '../data/blog.json'
 function Blog() {
   return (
     <>
-      <SubpageHeroSection
-      title={"Latest Insights"}
-      subtitle={"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
-      buttontext={"Connect with Us"}
-      children={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus provident numquam eligendi in cumque illum quibusdam consequuntur perspiciatis? Minus, tenetur vero. Delectus, dolor animi? Magni id soluta maiores debitis mollitia!"}
-      />
-      <section className='margin-top-Subhero  bg-gradient-to-b from-white to-gray-100'>
+      <section className=''>
         <div className='max-w-6xl mx-auto py-10 px-6'>
+          <h1 className="lg:text-5xl text-center md:text-4xl text-2xl font-bold mb-20">Latest Insights</h1>
           {
             data.map((blog, index) => (
               <BlogCard 

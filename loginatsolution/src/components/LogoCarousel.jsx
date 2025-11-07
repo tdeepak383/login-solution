@@ -16,6 +16,16 @@ import Logo11 from '../assets/logo/tech-11.png'
 import Logo12 from '../assets/logo/tech-12.png'
 import Logo13 from '../assets/logo/tech-13.png'
 import Logo14 from '../assets/logo/tech-14.png'
+import Logo15 from '../assets/logo/tech-15.png'
+import Logo16 from '../assets/logo/tech-16.png'
+import Logo17 from '../assets/logo/tech-17.png'
+import Logo18 from '../assets/logo/tech-18.png'
+import Logo19 from '../assets/logo/tech-19.png'
+import Logo20 from '../assets/logo/tech-20.png'
+import Logo21 from '../assets/logo/tech-21.png'
+import Logo22 from '../assets/logo/tech-22.png'
+import Logo23 from '../assets/logo/tech-23.png'
+import Logo24 from '../assets/logo/tech-24.png'
 
 
 const logos = [
@@ -32,9 +42,20 @@ const logos = [
     Logo11,
     Logo12,
     Logo13,
-    Logo14
+    Logo14,
+    Logo15,
+    Logo16,
+    Logo17,
+    Logo18,
+    Logo19,
+    Logo20,
+    Logo21,
+    Logo22,
+    Logo23,
+    Logo24
+
 ]
-function LogoCarousel() {
+function LogoCarousel({bgColor, cardColor}) {
 
 var settings = {
     dots: false,
@@ -50,7 +71,7 @@ var settings = {
         breakpoint: 1024,
         settings: {
           slidesToShow: 7,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         }
@@ -59,7 +80,7 @@ var settings = {
         breakpoint: 600,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2
         }
       },
@@ -77,15 +98,15 @@ var settings = {
 
   return (
      <>
-        <section className='py-20 w-full z-50 bg-gray-200 relative flex flex-col items-center justify-center text-center'>
+        <section className={`py-20 w-full z-50 bg-${bgColor} relative flex flex-col items-center justify-center text-center`}>
             <div className='w-full'>
-                <h2 className='text-2xl md:text-5xl text-black font-bold mb-5 max-w-5xl mx-auto'>Our technical depth</h2>
+                <h2 className='text-2xl md:text-5xl text-black mb-5 max-w-5xl mx-auto'>Our technical depth</h2>
                 <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto'>We provide talent who specializes in specific tools and technologies to deliver high-quality solutions tailored to your business needs. Each professional brings focused expertise, ensuring the right skills are matched to your project requirements.</p>
                 
                 <Slider {...settings}>
                 {logos.map((logo, index) => (
                     <div key={index} className='px-2 mt-10'>
-                        <div className={`content-center bg-white p-4 border border-gray-200 rounded-lg`}>
+                        <div className={`content-center bg-${cardColor} p-4 border border-gray-200 rounded-lg`}>
                             <img src={logo} alt={`Technology Logo ${index + 1}`} className='mx-auto object-contain' />
                         </div>
                     </div>

@@ -66,3 +66,16 @@ body {
 .right-slide-z-index{
   z-index: 1000px;
 }
+
+.custom-line-height{
+  line-height: 55px;
+}
+
+/* hide horizontal scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

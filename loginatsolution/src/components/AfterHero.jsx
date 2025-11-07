@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import PopUp from "./PopUp";
 
-function AfterHero() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
+function AfterHero({onClick}) {
 
   
   const fadeUp = {
@@ -25,7 +22,7 @@ function AfterHero() {
        
         <div className="max-w-6xl mx-auto py-20 space-y-16">
           <motion.h3
-            className="text-3xl md:text-5xl mb-16 para-line-height"
+            className="text-3xl md:text-4xl mb-16 para-line-height"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -35,7 +32,7 @@ function AfterHero() {
           </motion.h3>
             
           <motion.h3
-            className="text-3xl md:text-5xl mb-16 para-line-height"
+            className="text-3xl md:text-4xl mb-16 para-line-height"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -52,14 +49,14 @@ function AfterHero() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <button
-              onClick={() => setIsPopupOpen(true)}
+              onClick={onClick}
               className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
             >
               Connect with Us
             </button>
           </motion.div>
         </div>
-        <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+        
       </section>
     </>
   );

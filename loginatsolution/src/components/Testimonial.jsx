@@ -4,27 +4,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
-/* Sample testimonials — replace images with real avatars or SVGs */
+
 const testimonials = [
   {
     name: "Bernd Hildebrandt",
     role: "Marketing Services and Program Management in Customer Experience Marketing, Nokia",
     avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-    quote:
-      "During 2013-2015 I did work with Atul on NSN/Nokia rebranding. The activity included Intranet related tasks and was marketing and related business groups areas related. In this project we did work well together and managed to finalize project steps in time. Atul has been a great team partner, always supportive and helpful.",
+    quote: "During 2013-2015 I did work with Atul on NSN/Nokia rebranding. The activity included Intranet related tasks and was marketing and related business groups areas related. In this project we did work well together and managed to finalize project steps in time. Atul has been a great team partner, always supportive and helpful.",
     rating: 4,
   },
   {
     name: "Pamela Casale",
     role: "CEO ASAP Marketing, LLC, Board Member RESILIANT SDP, Partner SkipIntro",
     avatar: "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-    quote:
-      "Atul and his team at LogInAt Solutions are simply amazing!! They are ingenious and capable- even in the most challenging technical situations. They are dedicated to quality and timely delivery. We engaged them on a design project and didn’t know that a few days later we would need a full stack developer. They didn’t waste any time in staffing and organizing a solution to our problem. In 30 years of marketing I have never worked with a more creative, service driven company. Thanks to this team for all you do!!",
+    quote: "Atul and his team at LogInAt Solutions are simply amazing!! They are ingenious and capable- even in the most challenging technical situations. They are dedicated to quality and timely delivery. We engaged them on a design project and didn’t know that a few days later we would need a full stack developer. They didn’t waste any time in staffing and organizing a solution to our problem. In 30 years of marketing I have never worked with a more creative, service driven company. Thanks to this team for all you do!!",
     rating: 5,
   }
 ];
 
-/* Custom arrow components */
+
 const PrevArrow = ({ className, style, onClick }) => (
   <button
     aria-label="Previous testimonials"
@@ -66,39 +64,43 @@ export default function TestimonialSlider() {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    accessibility: true,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 1 },
       },
       {
         breakpoint: 768,
         settings: { slidesToShow: 1 },
       },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 1 },
+      },
     ],
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    accessibility: true,
-    adaptiveHeight: true,
   };
 
   return (
-    <section className="py-20 max-sm:hidden lg:block w-full z-50 bg-white relative flex flex-col items-center justify-center text-center px-5">
+    <section className="max-sm:hidden md:block py-20 w-full z-50 bg-white relative flex flex-col items-center justify-center text-center px-5">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8 text-center">
           <h3 className="text-gray-500 tracking-wider">Testimonials</h3>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800">What our clients say</h2>
+          <h2 className="text-3xl md:text-5xl text-gray-800">What our clients say</h2>
         </div>
-
-        <div className="relative">
+      </div>
+        <div className="relative lg:w-1/2 mx-auto">
           <Slider {...settings}>
             {testimonials.map((t, idx) => (
               <div key={idx} className="px-3">
-                <article className="bg-[var(--purple)] rounded-3xl p-6 shadow-sm h-[400px] flex flex-col">
+                <article className="bg-white border rounded-3xl p-6 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={t.avatar}
@@ -106,8 +108,8 @@ export default function TestimonialSlider() {
                       className="w-14 h-14 rounded-full object-cover"
                     />
                     <div className="text-left">
-                      <h4 className="text-lg font-semibold text-white">{t.name}</h4>
-                      <p className="text-white">{t.role}</p>
+                      <h4 className="text-lg font-semibold ">{t.name}</h4>
+                      <p className="">{t.role}</p>
                       <div className="flex items-center mt-2">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <span key={i} className="mr-1">
@@ -117,14 +119,13 @@ export default function TestimonialSlider() {
                       </div>
                     </div>
                   </div>
-
-                  <p className="text-white   leading-relaxed mb-4 flex-1">“{t.quote}”</p>
+                  <p className="text-left leading-relaxed mb-4 flex-1">“{t.quote}”</p>
                 </article>
               </div>
             ))}
           </Slider>
         </div>
-      </div>
+      
     </section>
   );
 }

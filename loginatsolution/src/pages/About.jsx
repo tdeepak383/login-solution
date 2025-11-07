@@ -21,13 +21,13 @@ function About() {
       <section className='margin-top-Subhero'>
         <div className='max-w-6xl text-center mx-auto py-10 px-6 '>
           <p className='text-xl'>Our Promise</p>
-          <h2 className='md:text-5xl sm:text-3xl text-2xl font-bold mb-10'>We work as Partners, not supplier</h2>
+          <h2 className='md:text-5xl sm:text-3xl text-2xl mb-10'>We work as Partners, not supplier</h2>
           <p className='text-xl'>We connect with you as a partner, not a supplier, because we believe that true success is built on collaboration and trust. Our approach is centered around working alongside you, understanding your goals, and crafting solutions that align perfectly with your vision.</p>
         </div>
         <ClientsLogo/>
         <div className='bg-gray-50'>         
         <div className="max-w-6xl mx-auto py-20 px-6">
-          <h3 className="md:text-5xl sm:text-3xl text-2xl font-bold mb-10 text-center">
+          <h3 className="md:text-5xl sm:text-3xl text-2xl mb-10 text-center">
             About the Co-founders
           </h3>
 
@@ -130,9 +130,10 @@ function About() {
           </div>
         </div>
         </div>
-        <CallToAction/>
-        <LogoCarousel/>
+        
       </section>
+        <CallToAction/>
+        <LogoCarousel bgColor={"white"} cardColor={"gray-200"}/>
     </>
   )
 }

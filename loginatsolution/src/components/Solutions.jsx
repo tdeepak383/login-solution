@@ -2,10 +2,7 @@ import { useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { GoArrowDown } from "react-icons/go";
 import { Link } from "react-router-dom";
-import branding from "../assets/branding.svg";
-import designing from "../assets/designing.svg";
-import techSolution from "../assets/tech-solution.svg";
-import digitalStrategy from "../assets/digital-strategy.svg";
+import data from '../data/service.json'
 
 const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
   const containerVariants = {
@@ -27,7 +24,7 @@ const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
         onClick={onClick}
         className="w-full flex justify-between items-center py-4 text-left"
       >
-        <span className="font-semibold text-3xl text-gray-800">{title}</span>
+        <span className="font-semibold text-3xl text-[var(--pink)]">{title}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -50,20 +47,18 @@ const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
               variants={containerVariants}
               initial="hidden"
               animate="show"
-              className="pb-4 text-gray-600 mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+              className="pb-4 text-gray-600 flex flex-wrap gap-4"
             >
               {content.map((point, idx) => (
                 <motion.div
                   key={idx}
                   variants={pointVariants}
-                  className="bg-gray-100 p-2 rounded-full text-center"
+                  className="bg-gray-100 px-5 py-3 rounded-full text-center"
                 >
                   {point.points}
                 </motion.div>
               ))}
             </motion.div>
-
-            {/* <img src={image} alt={title} className="w-1/2 mx-auto" /> */}
           </motion.div>
         )}
       </AnimatePresence>
@@ -83,83 +78,10 @@ const Solutions = () => {
 
   const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  const data = [
-    {
-      title: "Branding",
-      image: branding,
-      content: [
-        { points: "Naming" },
-        { points: "Messaging & Positioning" },
-        { points: "Social media posts" },
-        { points: "Posters for office Branding" },
-        { points: "Logo Designing" },
-        { points: "Website Development" },
-        { points: "Brand Guidelines" },
-        { points: "Iconography" },
-        { points: "Illustration" },
-        { points: "Animation" },
-      ],
-    },
-    {
-      title: "Design",
-      image: designing,
-      content: [
-        { points: "UI/UX Design" },
-        { points: "Website Design" },
-        { points: "Website Development" },
-        { points: "Mobile App Design" },
-        { points: "Packaging Design" },
-        { points: "Graphic Design" },
-        { points: "Emailers Design" },
-        { points: "Magazine Design" },
-      ],
-    },
-    {
-      title: "Tech Solutions",
-      image: techSolution,
-      content: [
-        { points: "Stunning Website, Applications" },
-        { points: "or Software" },
-        { points: "Fully-functional customized" },
-        { points: "E-commerce Solutions" },
-        { points: "Full-stack Android / iOS App Development" },
-        { points: "Customized ERP Solutions" },
-        { points: "Advanced HRMS to manage employee" },
-        { points: "Managing AWS servers" },
-        { points: "Website Maintenance & Support" },
-        { points: "Web Development solutions" },
-      ],
-    },
-    {
-      title: "Digital Strategy",
-      image: digitalStrategy,
-      content: [
-        { points: "Consumer Research" },
-        { points: "Competitive Analysis" },
-        { points: "UX Audit" },
-        { points: "Product Strategy" },
-        { points: "Brand Strategy" },
-        { points: "Marketing Strategy" },
-      ],
-    },
-    {
-      title: "Back Office Operations",
-      image: digitalStrategy,
-      content: [
-        { points: "Data entry and data processing" },
-        { points: "Catalogue and content management" },
-        { points: "Finance and accounting support" },
-        { points: "HR and payroll operations" },
-        { points: "Compliance and documentation" },
-        { points: "Reporting and analytics support" },
-      ],
-    },
-  ];
-
   return (
     <section
       ref={sectionRef}
-      className="sticky top-0 w-full z-50 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
+      className="sticky top-0 w-full z-30 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
     >
       {/* Fade overlay */}
       <motion.div
@@ -167,19 +89,26 @@ const Solutions = () => {
         className="absolute inset-0 bg-black/40 pointer-events-none"
       ></motion.div>
 
-      <div className="max-w-6xl mx-auto w-full mt-10 p-6 relative z-10">
-      <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto mb-20'>We can also take full ownership and deliver your project end to end</h2>
+      <div className="max-w-6xl mx-auto w-full p-6 relative z-10">
+        <div className="flex md:flex-row flex-col gap-8">
+          <div className="md:w-1/3">
+            <h2 className='text-2xl md:text-4xl text-black max-w-6xl mx-auto custom-line-height'>We can also take full ownership and deliver your project end-to-end</h2>
+            <hr className="border-b border-4 w-1/3 mt-5 border-[var(--pink)]"/>
+          </div>
 
-        {data.map((item, index) => (
-          <AccordionItem
-            key={index}
-            title={item.title}
-            image={item.image}
-            content={item.content}
-            isOpen={activeIndex === index}
-            onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-          />
-        ))}
+           <div className="md:w-3/4">
+             {data.map((item, index) => (
+              <AccordionItem
+                key={index}
+                title={item.title}
+                image={item.image}
+                content={item.content}
+                isOpen={activeIndex === index}
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+              />
+            ))}
+           </div>
+        </div>
       </div>
 
       <div className="relative z-10">

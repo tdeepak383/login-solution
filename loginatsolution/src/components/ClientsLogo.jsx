@@ -40,12 +40,14 @@ const logos = [
 ]
 function ClientsLogo() {
 
-var settings = {
+var settings1 = {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 3000,
+    speed: 5000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: true,
     slidesToShow: 7,
     centerMode: true,
     slidesToScroll: 1,
@@ -76,6 +78,45 @@ var settings = {
       }
     ]
   };
+var settings2 = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 500,
+    cssEase: "linear",
+    pauseOnHover: true,
+    slidesToShow: 7,
+    centerMode: true,
+    slidesToScroll: 1,
+    rtl: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
 
 
@@ -84,9 +125,18 @@ var settings = {
         <section className='pb-20 w-full z-50 relative bg-white flex flex-col items-center justify-center text-center'>
             <div className='w-full'>
                 {/* <h2 className='text-2xl md:text-5xl text-black font-bold mb-5 max-w-5xl mx-auto'>Our Clients</h2>*/}
-                <Slider {...settings}>
-                {logos.map((logo, index) => (
-                    <div key={index} className='px-2 mt-10'>
+                <Slider {...settings1}>
+                {logos.slice(0,8).map((logo, index) => (
+                    <div key={index} className='p-2 mt-10'>
+                        <div className={`content-center bg-white p-4 border border-gray-200 rounded-lg`}>
+                            <img src={logo} alt={`Technology Logo ${index + 1}`} className='mx-auto object-contain' />
+                        </div>
+                    </div>
+                ))}
+                </Slider>               
+                <Slider {...settings2}>
+                {logos.slice(8,16).map((logo, index) => (
+                    <div key={index} className='p-2'>
                         <div className={`content-center bg-white p-4 border border-gray-200 rounded-lg`}>
                             <img src={logo} alt={`Technology Logo ${index + 1}`} className='mx-auto object-contain' />
                         </div>

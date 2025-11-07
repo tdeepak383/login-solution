@@ -4,6 +4,10 @@ import RequirementForm from './Form';
 import { FaPhoneVolume } from "react-icons/fa";
 import { RiNewspaperLine } from "react-icons/ri";
 import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import curvedline from '../assets/curved-line-icon.png'
+import call from '../assets/call.svg'
+import connect from '../assets/connect.svg'
+import list from '../assets/list.svg'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,7 +32,7 @@ function CallToAction() {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left Column */}
             <motion.div
               className='lg:col-span-2 text-white'
@@ -42,55 +46,48 @@ function CallToAction() {
               </motion.h2>
 
               <motion.h4
-                className='lg:text-4xl md:text-3xl text-2xl text-left mt-5'
+                className='lg:text-4xl md:text-3xl text-xl text-left mt-5'
                 variants={fadeUp}
               >
                 We take care of hiring, training, and everything in between.
               </motion.h4>
 
               <motion.div
-                className='grid grid-cols-1 md:grid-cols-3 gap-5 mt-10'
+                className='mt-10 relative'
                 variants={staggerContainer}
               >
-                {[
-                  {
-                    icon: <FaPhoneVolume className='mx-auto text-3xl group-hover:-rotate-45 transition-all duration-500 delay-100' />,
-                    text: 'Call us for a discussion'
-                  },
-                  {
-                    icon: <RiNewspaperLine className='mx-auto text-3xl group-hover:-rotate-45 transition-all duration-500 delay-100' />,
-                    text: 'We arrange Interviews with shortlisted candidates'
-                  },
-                  {
-                    icon: <MdOutlineConnectWithoutContact className='mx-auto text-3xl group-hover:-rotate-45 transition-all duration-500 delay-100' />,
-                    text: 'Connect with the solver for regular deliveries'
-                  },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    className='bg-white/10 rounded-xl p-5 group hover:bg-white/20 transition-all duration-500 delay-100'
-                  >
-                    {item.icon}
-                    <p className='text-xl px-5'>{item.text}</p>
-                  </motion.div>
-                ))}
+                <img src={curvedline} alt="" className='w-3/4 ml-10' />
+                <div className='absolute left-0 top-0'>
+                  <div className='bg-white text-black p-3 rounded-full'>
+                    <img src={call} className='w-10' />
+                  </div>                  
+                </div>
+                <div className='absolute left-0 top-20'>
+                  <p className='text-xs md:text-xl text-left'>Call us for <br /> a discussion</p>
+                </div>
+                <div className='absolute md:left-72 left-40 top-20 md:top-52'>
+                  <div className='bg-white text-black p-3 rounded-full'>
+                    <img src={list} className='w-10' />
+                  </div>                  
+                </div>
+                <div className='absolute left-36 md:left-64 top-0 md:top-20'>
+                  <p className='text-xs md:text-xl text-center'>We arrange <br />Interviews <br /> with shortlisted <br />candidates</p>
+                </div>
+                <div className='absolute left-3/4 top-0 md:top-20'>
+                  <div className='bg-white text-black p-3 rounded-full'>
+                    <img src={connect} className='w-10' />
+                  </div>                  
+                </div>
+                <div className='absolute left-2/3 top-20 md:top-48'>
+                  <p className='text-xs md:text-xl text-right'>Connect with the <br /> solver for regular <br /> deliveries</p>
+                </div>
               </motion.div>
 
-              <motion.div
-                className='mt-10 relative w-3/4 mx-auto'
-                variants={fadeUp}
-              >
-                <hr />
-                <div className='absolute bg-white w-2 rounded-full h-2 -top-1 left-0'></div>
-                <div className='absolute bg-white w-2 rounded-full h-2 -top-1 left-1/2'></div>
-                <div className='absolute bg-white w-2 rounded-full h-2 -top-1 right-0'></div>
-              </motion.div>
             </motion.div>
 
             {/* Right Column (Form) */}
             <motion.div variants={fadeUp}>
-              <RequirementForm />
+              <RequirementForm color={"white"}/>
             </motion.div>
           </div>
         </motion.div>
