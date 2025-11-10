@@ -12,7 +12,6 @@ import video7 from '../assets/art-7.mov'
 import video8 from '../assets/art-8.mov'
 import video9 from '../assets/art-9.mov'
 import { BsArrowDown } from "react-icons/bs";
-import { Link } from 'react-router-dom';
 
 
 const videoSlide = [

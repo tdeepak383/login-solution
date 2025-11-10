@@ -81,7 +81,7 @@ const Solutions = () => {
   return (
     <section
       ref={sectionRef}
-      className="sticky top-0 w-full z-30 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
+      className="sticky top-0 w-full z-0 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
     >
       {/* Fade overlay */}
       <motion.div
