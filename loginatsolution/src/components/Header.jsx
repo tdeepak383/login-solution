@@ -18,7 +18,7 @@ function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="logo">
-            <a href="/clientdemo/loginatsol">
+            <a href="/">
               <img src={logo} alt="Logo" className="w-40 md:w-48" />
             </a>
           </div>

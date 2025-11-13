@@ -5,25 +5,39 @@ import { FaArrowRight } from "react-icons/fa";
 
 const openings = [
   {
-    title: "UI/UX Designer",
+    title: "Telecalling Executive / Telemarketing Executive",
     location: "Noida",
-    type: "Full-Time",
+    type: "1 - 3 Years",
     description:
-      "Create intuitive and engaging user experiences for web and mobile platforms.",
+      "Experience in Telecalling / Telemarketing with excellent communication skills.",
   },
   {
-    title: "React Developer",
+    title: "Sales Executive",
     location: "Noida / Remote",
-    type: "Contract",
+    type: "1 - 4 Years",
     description:
-      "Build scalable front-end applications with React.js and Tailwind CSS.",
+      "Experience in B2B Sales with a proven track record of achieving sales targets.",
   },
   {
-    title: "Marketing Strategist",
+    title: "SEO - CW",
     location: "Noida",
-    type: "Full-Time",
+    type: "2 - 5 Years",
     description:
-      "Develop and execute digital marketing campaigns to drive brand growth.",
+      "Experience in SEO with knowledge of on-page and off-page optimization techniques.",
+  },
+  {
+    title: "HTML Designer",
+    location: "Noida",
+    type: "2 - 3 Years",
+    description:
+      "Experience in HTML designing with proficiency in HTML5, CSS3, and responsive design.",
+  },
+  {
+    title: "Php Developer",
+    location: "Noida",
+    type: "2 - 5 Years",
+    description:
+      "Experience in PHP development with knowledge of frameworks like Laravel or CodeIgniter.",
   },
 ];
 

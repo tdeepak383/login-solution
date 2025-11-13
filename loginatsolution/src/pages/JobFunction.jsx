@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SubpageHeroSection from '../components/subpageHeroSection'
 import JobFunctionTabs from '../components/JobFunctionTabs'
+import PopUp from '../components/PopUp';
 
 
 function JobFunction() {
+
+
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
   return (
     <>
     <SubpageHeroSection
+      onClick={() => setIsPopupOpen(true)}
       title={"Job Functions"}
       subtitle={""}
       buttontext={"Schedule a Consultation"}
@@ -17,6 +24,7 @@ function JobFunction() {
             <JobFunctionTabs/>
         </div>
     </section>
+     <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   )
 }

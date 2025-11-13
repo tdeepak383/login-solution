@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import data from "../data/service.json";
+import PortfolioGrid from "../components/PortfolioGrid";
 
 function Service() {
   const scrollContainerRef = useRef(null);
@@ -83,16 +84,16 @@ function Service() {
   }, [activeTab]);
 
   return (
-    <section className="w-full z-50 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden min-w-full snap-start flex-shrink-0">
+    <section className="w-full z-50 flex flex-col gap-0 items-center justify-center py-14 pb-20 px-5 bg-white overflow-hidden min-w-full snap-start flex-shrink-0">
       <motion.div className="absolute inset-0 pointer-events-none" />
-      <div className="max-w-6xl mx-auto w-full p-6 relative z-10">
+      <div className="max-w-6xl mx-auto w-full md:p-6 relative z-10">
         <h2 className="lg:text-5xl text-center md:text-4xl text-2xl font-bold">
           We can also take full ownership and deliver your project end to end
         </h2>
 
         {/* --- Tabs --- */}
         <div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10 p-3 bg-gray-200 rounded-lg md:rounded-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10 p-3 bg-gray-200 rounded-lg md:rounded-3xl lg:rounded-full max-w-6xl mx-auto">
             {data.map((item) => (
               <button
                 key={item.id}
@@ -112,21 +113,21 @@ function Service() {
         {/* --- Scrollable content --- */}
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory mt-10 border rounded-3xl scrollbar-hide"
+          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory mt-5 scrollbar-hide"
         >
           {data.map((item, i) => (
             <div
               id={item.id}
               key={i}
-              className="min-w-full snap-start px-6"
+              className="min-w-full snap-start md:px-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 {item.content.map((service, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between bg-white rounded-lg p-4 group hover:shadow-md transition-all"
+                    className="flex items-center justify-between bg-white rounded-lg p-3 group hover:shadow-md transition-all"
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="grid grid-cols-4 gap-4">
                       <div className="p-3 border rounded-lg">
                         <img
                           src={`/clientdemo/loginatsol/${service.image}`}
@@ -134,9 +135,11 @@ function Service() {
                           className="w-12 h-12 object-contain"
                         />
                       </div>
-                      <h4 className="text-lg font-medium group-hover:text-[var(--pink)]">
+                      <div className="col-span-3 content-center">
+                        <h4 className="text-lg font-medium group-hover:text-[var(--pink)]">
                         {service.points}
                       </h4>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -150,10 +153,16 @@ function Service() {
       <div className="relative z-10">
         <Link
           to="/contact-us"
-          className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
+          className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block"
         >
           Find your solution
         </Link>
+      </div>
+      <div className="py-20 max-w-6xl mx-auto">
+        <h2 className="lg:text-5xl text-center md:text-4xl text-2xl font-bold">
+          Portfolio
+        </h2>
+        <PortfolioGrid />
       </div>
     </section>
   );

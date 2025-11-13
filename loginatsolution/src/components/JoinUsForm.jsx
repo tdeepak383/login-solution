@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
 
 function JoinUsForm() {
 
@@ -27,9 +25,6 @@ function JoinUsForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await addDoc(collection(db, "leads"), formData);
-    alert("Lead added successfully!");
 
   }
 

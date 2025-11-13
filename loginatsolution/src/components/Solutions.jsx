@@ -24,7 +24,7 @@ const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
         onClick={onClick}
         className="w-full flex justify-between items-center py-4 text-left"
       >
-        <span className="font-semibold text-3xl text-[var(--pink)]">{title}</span>
+        <span className="font-semibold md:text-3xl text-[var(--pink)]">{title}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -53,7 +53,7 @@ const AccordionItem = ({ title, content, isOpen, onClick, image }) => {
                 <motion.div
                   key={idx}
                   variants={pointVariants}
-                  className="bg-gray-100 px-5 py-3 rounded-full text-center"
+                  className="bg-gray-100 px-5 py-3 rounded-full text-left"
                 >
                   {point.points}
                 </motion.div>
@@ -81,22 +81,23 @@ const Solutions = () => {
   return (
     <section
       ref={sectionRef}
-      className="sticky top-0 w-full z-0 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
+      className="lg:sticky relative md:top-0 w-full md:z-0 flex flex-col gap-8 items-center justify-center py-20 px-5 bg-white overflow-hidden"
     >
       {/* Fade overlay */}
       <motion.div
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-0 bg-black/40 pointer-events-none"
+        className="max-sm:hidden absolute inset-0 bg-black/40 pointer-events-none"
       ></motion.div>
 
-      <div className="max-w-6xl mx-auto w-full p-6 relative z-10">
-        <div className="flex md:flex-row flex-col gap-8">
-          <div className="md:w-1/3">
-            <h2 className='text-2xl md:text-4xl text-black max-w-6xl mx-auto custom-line-height'>We can also take full ownership and deliver your project end-to-end</h2>
+
+        <div className="max-w-6xl mx-auto w-full p-6 relative z-10">
+        <div className="flex lg:flex-row flex-col gap-8">
+          <div className="lg:w-1/3">
+            <h2 className='text-xl md:text-4xl text-black max-w-6xl mx-auto custom-line-height'>We can also take full ownership and deliver your project end-to-end</h2>
             <hr className="border-b border-4 w-1/3 mt-5 border-[var(--pink)]"/>
           </div>
 
-           <div className="md:w-3/4">
+           <div className="lg:w-3/4">
              {data.map((item, index) => (
               <AccordionItem
                 key={index}
@@ -111,10 +112,10 @@ const Solutions = () => {
         </div>
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex justify-center mt-12">
         <Link
           to="/contact-us"
-          className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block"
+          className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block"
         >
           Find your solution
         </Link>

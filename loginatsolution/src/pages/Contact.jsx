@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-import ContactUsForm from '../components/ContactUsForm';
+// import ContactUsForm from '../components/ContactUsForm';
 import { IoMdCall } from "react-icons/io";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import contactus from '../assets/contact-us.jpg';
-
-
+import sector63 from '../assets/sector-63.png';
+import RequirementForm from '../components/Form'
 
 function Contact() {
 
@@ -17,7 +17,7 @@ function Contact() {
 
   return (
     <>
-      <div className='grid md:grid-cols-2'>
+      <div className='grid lg:grid-cols-2'>
       
         <div className="p-5 md:p-20 bg-gray-50">
             <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold">Contact us</h1>
@@ -27,8 +27,8 @@ function Contact() {
               <FaEnvelopeOpen className='text-2xl text-[var(--blue)]'/>
               <div >                
                 <h4 className='text-2xl font-bold'>Write to us:</h4>
-                <p className='text-xl'>sales@loginatsolution.com</p>
-                <p className='text-xl'>hr@loginatsolution.com</p>
+                <p className='md:text-xl'>sales@loginatsolution.com</p>
+                <p className='md:text-xl'>hr@loginatsolution.com</p>
               </div>
             </div>
             {/* <div className='mt-10 md:mt-20 flex gap-4 items-start'>
@@ -41,16 +41,16 @@ function Contact() {
             </div> */}
         </div>
         <div className='p-5 md:p-20 bg-[#ebede7]'>
-          <ContactUsForm/>
+          <RequirementForm FormTitle={"Book an intro call"} color={""}/>
         </div>
 
     </div>
-    <div className='grid md:grid-cols-2'>
+    <div className='grid lg:grid-cols-2'>
        <div className="p-5 md:p-20">
             <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">Our Offices</h1>
             <p className='mt-10 font-semibold text-xl'>Feel free to drop in for a conversation or a cup of coffee.</p>
            
-            <div className='mt-10 flex gap-4 items-center'>
+            <div className='mt-10 flex flex-col md:flex-row gap-4 items-center'>
                 
                   <button onClick={() => handleButton("noida")} 
                      className={`py-4 px-4 md:px-8 rounded-full font-bold text-xs md:text-xl transition-all ${
@@ -98,7 +98,7 @@ function Contact() {
           )}
         </div>
         <div className='p-5 md:p-20 bg-gray-50'>
-              <img src={contactus} alt="" className='rounded-xl'/>
+              {activeMap === "noida" ? <img src={sector63} alt="Sector 63 Office" className='w-full lg:w-3/4 rounded-xl'/> : <img src={contactus} alt="Kaushambi Office" className='w-full lg:w-3/4 rounded-xl'/>}
         </div>
     </div>
     </>

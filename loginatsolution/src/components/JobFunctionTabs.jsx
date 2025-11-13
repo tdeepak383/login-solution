@@ -38,10 +38,277 @@ import imageCat303 from '../assets/services-logo/cat-3/3.svg'
 import imageCat304 from '../assets/services-logo/cat-3/4.svg'
 import imageCat305 from '../assets/services-logo/cat-3/5.svg'
 import imageCat306 from '../assets/services-logo/cat-3/6.svg'
+import imageCat307 from '../assets/services-logo/cat-3/7.svg'
+import imageCat308 from '../assets/services-logo/cat-3/8.svg'
+import imageCat309 from '../assets/services-logo/cat-3/9.svg'
+import imageCat310 from '../assets/services-logo/cat-3/10.svg'
+import imageCat311 from '../assets/services-logo/cat-3/11.svg'
+import imageCat312 from '../assets/services-logo/cat-3/12.svg'
+
+
+const tabs = [
+  { id: "tab2", label: "Innovative Designers" },
+  { id: "tab3", label: "Full Stack Developers" },
+  { id: "tab4", label: "Customer Servicing" },
+];
+
+
+const tabsContent = {
+
+  tab2: [
+    {
+      point: "Brand Experience Designer",
+      image: imageCat01,
+      category: "Innovative Designers",
+      labels: ["Photoshop", "Illustrator"]
+    },
+    {
+      point: "Web/Graphic Designer",
+      image: imageCat02,
+      category: "Innovative Designers",
+      labels: ["Photoshop", "Illustrator", "Figma"]
+
+    },
+    { 
+      point: "UI/UX Designer", 
+      image: imageCat03, 
+      category: "Innovative Designers",
+      labels: ["Figma", "Adobe XD", "Sketch"]
+    },
+    { 
+      point: "PowerPoint Designer", 
+      image: imageCat04, 
+      category: "Innovative Designers",
+      labels: ["PowerPoint", "Keynote"]
+    },
+    { 
+      point: "Whitepaper/ Datasheet Designer", 
+      image: imageCat05, 
+      category: "Innovative Designers",
+      labels: ["InDesign", "Illustrator", "Photoshop", "MS Word"]
+    },
+    { 
+      point: "Email and Newsletter Designer", 
+      image: imageCat06, 
+      category: "Innovative Designers",
+      labels: ["Illustrator", "Photoshop"]
+    },
+    { 
+      point: "Social Media Post Designer", 
+      image: imageCat07, 
+      category: "Innovative Designers",
+      labels: ["Canva", "Photoshop", "Illustrator"]
+    },
+    { 
+      point: "Event Collateral Designer", 
+      image: imageCat08, 
+      category: "Innovative Designers",
+      labels: ["Illustrator", "Photoshop"]
+    },
+    { 
+      point: "Postcards and Poster Designer", 
+      image: imageCat09, 
+      category: "Innovative Designers",
+      labels: ["Illustrator", "Photoshop"] 
+    },
+    { 
+      point: "Brochures and Leaflet Designer", 
+      image: imageCat10, 
+      category: "Innovative Designers",
+      labels: ["InDesign", "Illustrator", "Photoshop"] 
+    },
+    { 
+      point: "Office Branding Designer", 
+      image: imageCat11, 
+      category: "Innovative Designers",
+      labels: ["Illustrator", "Photoshop"] 
+    },
+    { 
+      point: "Audio Visuals Experts", 
+      image: imageCat12, 
+      category: "Innovative Designers",
+      labels: ["After Effects", "Premiere Pro"]
+    },
+    { 
+      point: "Video Editors", 
+      image: imageCat13, 
+      category: "Innovative Designers",
+      labels: ["Final Cut Pro", "Premiere Pro", "After Effects"]
+    },
+    { 
+      point: "Animated PPT Designer", 
+      image: imageCat14, 
+      category: "Innovative Designers" ,
+      labels: ["PowerPoint", "After Effects", "Adobe Express"]
+    },
+  ],
+  tab3: [
+    {
+      point: "Front-End Developers: Angular, React, and Vue.js",
+      image: imageCat201,
+      category: "Full Stack Developers",
+      labels: ["Angular", "React", "Vue.js", "JavaScript"]
+    },
+    {
+      point: "Crownpeak and HCL DX Developer",
+      image: imageCat202,
+      category: "Full Stack Developers",
+      labels: ["Crown Peak", "HCL DX"]
+    },
+    {
+      point: "CSS frameworks experts: Tailwind CSS and Bootstrap",
+      image: imageCat203,
+      category: "Full Stack Developers",
+      labels: ["Tailwind", "Bootstrap", "CSS"]
+    },
+    {
+      point: "Single Page Application (SPA) Developer",
+      image: imageCat204,
+      category: "Full Stack Developers",
+      labels: ["SPA", "JavaScript", "React", "Angular"]
+    },
+
+    {
+      point: "Sketch, Figma, and Adobe XD Designers",
+      image: imageCat205,
+      category: "Full Stack Developers",
+      labels: ["Figma", "Sketch", "Adobe XD"]
+    },
+    {
+      point: "Fluid and Interactive Front-End Design Experts: React and JavaScript",
+      image: imageCat206,
+      category: "Full Stack Developers",
+      labels: ["React", "JavaScript", "HTML", "CSS"]
+    },
+    {
+      point: "Prototyping & Wireframing Experts: (Figma, InVision, and Axure)",
+      image: imageCat207,
+      category: "Full Stack Developers",
+      labels: ["Figma", "InVision", "Axure"]
+    },
+    {
+      point: "Website Maintenance & Update Services",
+      image: imageCat208,
+      category: "Full Stack Developers",
+      labels: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      point: "ECommerce Developer: Shopify, Magento, and WooCommerce",
+      image: imageCat209,
+      category: "Full Stack Developers",
+      labels: ["Shopify", "Magento", "WooCommerce"]
+    },
+    {
+      point: "Web Developer: WordPress, Drupal, PHP, and .NET",
+      image: imageCat210,
+      category: "Full Stack Developers",
+      labels: ["WordPress", "Drupal", "PHP", ".NET"]
+    },
+    {
+      point: "Wireframes and Prototype designer: Figma or Adobe XD",
+      image: imageCat211,
+      category: "Full Stack Developers",
+      labels: ["Figma", "Adobe XD"]
+    },
+  ],
+  tab4: [
+    {
+      point: "Customer Support/ Helpdesk Services",
+      image: imageCat301,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Order Taking & Processing",
+      image: imageCat302,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Technical Support (L1, L2, L3)",
+      image: imageCat303,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Billing & Payment Support",
+      image: imageCat304,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Reservation & Booking Services",
+      image: imageCat305,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Product Information & Inquiry Handling",
+      image: imageCat306,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Complaint Resolution/ Grievance Handling",
+      image: imageCat307,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Customer Retention Programs",
+      image: imageCat308,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Virtual Receptionist/ Switchboard Services",
+      image: imageCat309,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Chat process experts",
+      image: imageCat310,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Email process experts",
+      image: imageCat311,
+      category: "Customer Servicing",
+      labels: []
+    },
+    {
+      point:
+        "Product Management to Payments, Shipping, and Returns",
+      image: imageCat312,
+      category: "Customer Servicing",
+      labels: []
+    },
+  ],
+};
+
+const allTabsContent = [
+  ...tabsContent.tab2,
+  ...tabsContent.tab3,
+  ...tabsContent.tab4,
+];
+
+tabsContent.tab1 = [...allTabsContent];
 
 const JobFunctionTabs = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState("tab2");
 
 
   useEffect(() => {
@@ -59,235 +326,6 @@ const JobFunctionTabs = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const tabs = [
-    // { id: "tab1", label: "All Categories" },
-    { id: "tab2", label: "Innovative Designers" },
-    { id: "tab3", label: "Full Stack Developers" },
-    { id: "tab4", label: "Customer Servicing" },
-  ];
-
-  const tabsContent = {
-    tab1: [
-     { point: "Logo & Brand Guidelines Designer", image: imageCat01, category: "Innovative Designers" },
-      { point: "Web / Graphic Designer", image: imageCat02, category: "Innovative Designers" },
-      { point: "UI / UX Design", image: imageCat03, category: "Innovative Designers" },
-      { point: "Power point designer", image: imageCat04, category: "Innovative Designers" },
-      { point: "Whitepaper / datasheet designers", image: imageCat05, category: "Innovative Designers" },
-      { point: "Email and Newsletter Designer", image: imageCat06, category: "Innovative Designers" },
-      { point: "Social media post designer", image: imageCat07, category: "Innovative Designers" },
-      { point: "Event Collateral Designers", image: imageCat08, category: "Innovative Designers" },
-      { point: "Postcards and poster Designers", image: imageCat09, category: "Innovative Designers" },
-      { point: "Brochures and leaflet designer", image: imageCat10, category: "Innovative Designers" },
-      { point: "Office Branding designer", image: imageCat11, category: "Innovative Designers" },
-      { point: "Audio Visuals experts", image: imageCat12, category: "Innovative Designers" },
-      { point: "Video editors", image: imageCat13, category: "Innovative Designers" },
-      { point: "Animated PPT designer", image: imageCat14, category: "Innovative Designers" },
-       {
-        point: "Expert Front-end Angular, React, and Vue.js Developers",
-        image: imageCat201,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Expert Crown Peak & HCL DX Developers",
-        image: imageCat202,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "CSS frameworks experts such as Tailwind and Bootstrap",
-        image: imageCat203,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "High-Performance SPA Development",
-        image: imageCat204,
-        category: "Full Stack Developers"
-      },
-
-      {
-        point: "Sketch, Figma, and Adobe XD designer to fully functional front-end solutions",
-        image: imageCat205,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Fluid and Interactive Front-end Design experts with knowledge of React and JavaScript",
-        image: imageCat206,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Figma, InVision, and Axure Prototyping & Wireframing experts",
-        image: imageCat207,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Website Maintenance & Updates",
-        image: imageCat208,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Shopify, Magento, and WooCommerce developers for eCommerce solutions",
-        image: imageCat209,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "WordPress, Drupal, PHP, and .NET Website Developers",
-        image: imageCat210,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "UI/UX Designers for creating wireframes and interactive prototypes using Figma or Adobe XD",
-        image: imageCat211,
-        category: "Full Stack Developers"
-      },
-       {
-        point:
-          "B2B e-Commerce Support to help your end customer in designing online sales catalogue by listing products",
-        image: imageCat301,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire a skilled voice team for L1-L3 support, telemarketing, sales, promotions, and verification services",
-        image: imageCat302,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Chat Process: Hire dedicated chat team delivers instant responses to live chat, assisting customers, answering questions, and enhancing engagement",
-        image: imageCat303,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire Email Process experts in India to resolve queries on regular bases",
-        image: imageCat304,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire skilled delivery professionals to execute daily allocations, maintaining predefined TAT and SLA commitments",
-        image: imageCat305,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire B2B eCommerce team to handle processes, from order and product management to payments, shipping, and returns",
-        image: imageCat306,
-        category: "Customer Servicing"
-      },
-    ],
-    tab2: [
-      { point: "Logo & Brand Guidelines Designer", image: imageCat01, category: "Innovative Designers" },
-      { point: "Web / Graphic Designer", image: imageCat02, category: "Innovative Designers" },
-      { point: "UI / UX Design", image: imageCat03, category: "Innovative Designers" },
-      { point: "Power point designer", image: imageCat04, category: "Innovative Designers" },
-      { point: "Whitepaper / datasheet designers", image: imageCat05, category: "Innovative Designers" },
-      { point: "Email and Newsletter Designer", image: imageCat06, category: "Innovative Designers" },
-      { point: "Social media post designer", image: imageCat07, category: "Innovative Designers" },
-      { point: "Event Collateral Designers", image: imageCat08, category: "Innovative Designers" },
-      { point: "Postcards and poster Designers", image: imageCat09, category: "Innovative Designers" },
-      { point: "Brochures and leaflet designer", image: imageCat10, category: "Innovative Designers" },
-      { point: "Office Branding designer", image: imageCat11, category: "Innovative Designers" },
-      { point: "Audio Visuals experts", image: imageCat12, category: "Innovative Designers" },
-      { point: "Video editors", image: imageCat13, category: "Innovative Designers" },
-      { point: "Animated PPT designer", image: imageCat14, category: "Innovative Designers" },
-    ],
-    tab3: [
-      {
-        point: "Expert Front-end Angular, React, and Vue.js Developers",
-        image: imageCat201,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Expert Crown Peak & HCL DX Developers",
-        image: imageCat202,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "CSS frameworks experts such as Tailwind and Bootstrap",
-        image: imageCat203,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "High-Performance SPA Development",
-        image: imageCat204,
-        category: "Full Stack Developers"
-      },
-
-      {
-        point: "Sketch, Figma, and Adobe XD designer to fully functional front-end solutions",
-        image: imageCat205,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Fluid and Interactive Front-end Design experts with knowledge of React and JavaScript",
-        image: imageCat206,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Figma, InVision, and Axure Prototyping & Wireframing experts",
-        image: imageCat207,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Website Maintenance & Updates",
-        image: imageCat208,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "Shopify, Magento, and WooCommerce developers for eCommerce solutions",
-        image: imageCat209,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "WordPress, Drupal, PHP, and .NET Website Developers",
-        image: imageCat210,
-        category: "Full Stack Developers"
-      },
-      {
-        point: "UI/UX Designers for creating wireframes and interactive prototypes using Figma or Adobe XD",
-        image: imageCat211,
-        category: "Full Stack Developers"
-      },
-    ],
-    tab4: [
-      {
-        point:
-          "B2B e-Commerce Support to help your end customer in designing online sales catalogue by listing products",
-        image: imageCat301,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire a skilled voice team for L1-L3 support, telemarketing, sales, promotions, and verification services",
-        image: imageCat302,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Chat Process: Hire dedicated chat team delivers instant responses to live chat, assisting customers, answering questions, and enhancing engagement",
-        image: imageCat303,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire Email Process experts in India to resolve queries on regular bases",
-        image: imageCat304,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire skilled delivery professionals to execute daily allocations, maintaining predefined TAT and SLA commitments",
-        image: imageCat305,
-        category: "Customer Servicing"
-      },
-      {
-        point:
-          "Hire B2B eCommerce team to handle processes, from order and product management to payments, shipping, and returns",
-        image: imageCat306,
-        category: "Customer Servicing"
-      },
-    ],
-  };
 
 
   const containerVariants = {
@@ -309,16 +347,17 @@ const JobFunctionTabs = () => {
       className="min-h-screen relative flex flex-col gap-8 items-center justify-center bg-white py-10"
     >
       <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto'>Hire Virtual Talent in Any Domain</h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10 rounded-3xl bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10 rounded-3xl bg-white">
         {/* up Side Tabs */}
-        <div>
-        
-          <div className="shadow-lg bg-gray-50 p-5 rounded-3xl flex gap-3 flex-col">
+        <div className="">
+
+          <div className="shadow-lg bg-gray-50 p-5 rounded-3xl">
             <div className="flex justify-between mb-5">
               <p className="text-lg md:text-xl">Categories</p>
-              <button className={activeTab === "tab1" ? "flex items-center gap-1 text-gray-300" : "text-gray-600 flex items-center gap-1"} onClick={() => setActiveTab("tab1")}><MdSettingsBackupRestore  className={activeTab === "tab1" ? "hidden" : "block"} /> Clear</button>
+              <button className={activeTab === "tab1" ? "flex items-center gap-1 text-gray-300" : "text-gray-600 flex items-center gap-1"} onClick={() => setActiveTab("tab1")}><MdSettingsBackupRestore className={activeTab === "tab1" ? "hidden" : "block"} /> Clear</button>
             </div>
-            {tabs.map((tab) => (
+            <div className="flex flex-col md:flex-row lg:flex-col gap-3">
+              {tabs.map((tab) => (
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -332,11 +371,12 @@ const JobFunctionTabs = () => {
                 {tab.label}
               </motion.button>
             ))}
+            </div>
           </div>
         </div>
 
         {/* down Side Content */}
-        <div className="md:col-span-3 bg-white h-full max-sm:mt-10 rounded-xl">
+        <div className="lg:col-span-3 bg-white h-full max-sm:mt-10 rounded-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -351,12 +391,21 @@ const JobFunctionTabs = () => {
 
                 <motion.div
                   key={index}
-                  className="border text-left p-5 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300"
+                  className="border text-left p-5 rounded-3xl shadow-md hover:shadow-lg group transition-all duration-300"
                 >
-                  <img src={item.image} alt="" className="w-16 mb-2" />
-                  <p className="bg-gray-200 p-2 px-5 text-xs font-semibold inline-block rounded-full mt-6 mb-3">{item.category}</p>
-                  <p className="text-xl mb-6">{item.point}</p>
-                  <button className="flex gap-2 items-center group mt-10"><IoArrowForwardCircleOutline className="text-3xl group-hover:ml-2 group-hover:text-[var(--pink)]" /></button>
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <img src={item.image} alt="" className="w-16 mb-2" />
+                      {/* <p className="bg-gray-200 p-2 px-5 text-xs font-semibold inline-block rounded-full mt-6 mb-3">{item.category}</p> */}
+                      <p className="text-xl mb-6">{item.point}</p>
+                      <div className="flex flex-wrap gap-1">
+                        {item.labels.map((label, idx) => (
+                          <span key={idx} className="border border-[var(--purple)] px-3 py-1 rounded-full text-xs">{label}</span>
+                        ))}
+                      </div>
+                    </div>
+                  {/* <button className="flex w-full gap-2 items-center group mt-10"><IoArrowForwardCircleOutline className="text-3xl group-hover:ml-2 group-hover:text-[var(--purple)]" /></button> */}
+                  </div>
                 </motion.div>
 
               ))}
@@ -374,8 +423,8 @@ const JobFunctionTabs = () => {
         transition={{ delay: 0.3 }}
       >
         <Link
-          to="/join-us"
-          className="bg-gradient-to-r from-[var(--pink)] to-[var(--blue)] bg-[length:200%_200%] hover:bg-[length:200%_200%] hover:bg-gradient-to-l transition-all duration-700 text-white px-16 text-2xl tracking-wide py-3 rounded-lg inline-block shadow-md"
+          to="/contact-us"
+          className="bg-gradient-to-r from-[var(--pink)] to-[var(--blue)] hover:bg-gradient-to-l transition-all duration-700 text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block shadow-md"
         >
           Start Hiring
         </Link>

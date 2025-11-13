@@ -21,21 +21,19 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6">
+    <div className="">
       <form
         onSubmit={handleSubmit}
         className="lg:p-8 w-full"
       >
         <h2 className="text-xl md:text-3xl font-semibold text-center mb-8 inline-block px-4 py-2 rounded">
-          Book a 25-minute intro call
+          Book an intro call
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-y-12 gap-x-6">
+        <div className="grid md:grid-cols-2 gap-y-4 md:gap-y-6 gap-x-6">
           {/* Work Email */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Work Email*
-            </label>
+           
             <input
               type="email"
               name="workEmail"
@@ -43,53 +41,49 @@ const ContactUsForm = () => {
               value={formData.workEmail}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             />
           </div>
 
           {/* Company Name */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Company Name*
-            </label>
+          
             <input
               type="text"
               name="companyName"
+              placeholder="Company Name"
               value={formData.companyName}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             />
           </div>
 
           {/* Company URL */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Company URL*
-            </label>
+           
             <input
               type="url"
               name="companyUrl"
+              placeholder="Company URL"
               value={formData.companyUrl}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             />
           </div>
 
           {/* Company Size */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Company Size*
-            </label>
+            
             <select
               name="companySize"
               value={formData.companySize}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             >
-              <option value="">Please Select</option>
+              <option value="">Company Size</option>
               <option>1-10</option>
               <option>11-50</option>
               <option>51-250</option>
@@ -100,16 +94,15 @@ const ContactUsForm = () => {
 
           {/* How did you hear about us */}
           <div className="md:col-span-1">
-            <label className="block text-gray-700 font-medium mb-1">
-              How did you hear about us?
-            </label>
+            
             <select
               name="hearAbout"
               value={formData.hearAbout}
+              placeholder="How did you hear about us?"
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             >
-              <option value="">Please Select</option>
+              <option value="">How did you hear about us?</option>
               <option>Google</option>
               <option>LinkedIn</option>
               <option>Referral</option>
@@ -120,17 +113,15 @@ const ContactUsForm = () => {
 
           {/* Duration of the project */}
           <div className="md:col-span-1">
-            <label className="block text-gray-700 font-medium mb-1">
-              Duration of the project*
-            </label>
+           
             <input
               type="text"
               name="duration"
-              placeholder="e.g. 3 months"
+              placeholder="Duration of the project - e.g. 3 months"
               value={formData.duration}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[var(--pink)] outline-none"
             />
           </div>
         </div>
@@ -146,7 +137,7 @@ const ContactUsForm = () => {
           <p className="text-lg">
             By submitting this form, you consent to the collection and use of
             your information in accordance with our{" "}
-            <a href="#" className="text-emerald-500 underline">
+            <a href="/privacy-policy" className="text-emerald-500 underline">
               Privacy Policy
             </a>
             .

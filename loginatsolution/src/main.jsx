@@ -13,8 +13,8 @@ import Capabilities from './pages/Capabilities.jsx'
 import TheImportanceofBranding from './pages/blogs/TheImportanceofBranding.jsx'
 import CookiesPolicy from './pages/CookiesPolicy.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import TermsService from './pages/TermsService.jsx'
 import JobFunction from './pages/JobFunction.jsx'
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +28,7 @@ const router = createBrowserRouter(
       <Route path='capabilities' element={<Capabilities />} />
       <Route path='cookies-policy' element={<CookiesPolicy />} />
       <Route path='privacy-policy' element={<PrivacyPolicy />} />
+      <Route path='terms-service' element={<TermsService />} />
       <Route path='jobfunction' element={<JobFunction />} />
 
 

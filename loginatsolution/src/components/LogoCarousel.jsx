@@ -1,7 +1,4 @@
 import React from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Logo1 from '../assets/logo/tech-1.png'
 import Logo2 from '../assets/logo/tech-2.png'
 import Logo3 from '../assets/logo/tech-3.png'
@@ -27,6 +24,11 @@ import Logo22 from '../assets/logo/tech-22.png'
 import Logo23 from '../assets/logo/tech-23.png'
 import Logo24 from '../assets/logo/tech-24.png'
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 
 const logos = [
     Logo1,
@@ -57,42 +59,6 @@ const logos = [
 ]
 function LogoCarousel({bgColor, cardColor}) {
 
-var settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 3000,
-    slidesToShow: 7,
-    centerMode: true,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
 
 
 
@@ -100,18 +66,36 @@ var settings = {
      <>
         <section className={`py-20 w-full z-50 bg-${bgColor} relative flex flex-col items-center justify-center text-center`}>
             <div className='w-full'>
-                <h2 className='text-2xl md:text-5xl text-black mb-5 max-w-5xl mx-auto'>Our technical depth</h2>
-                <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto'>We provide talent who specializes in specific tools and technologies to deliver high-quality solutions tailored to your business needs. Each professional brings focused expertise, ensuring the right skills are matched to your project requirements.</p>
+                <h2 className='text-2xl md:text-5xl text-black mb-5 font-bold max-w-5xl mx-auto'>Our technical depth</h2>
+                <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto max-sm:px-8'>We provide talent who specializes in specific tools and technologies to deliver high-quality solutions tailored to your business needs. Each professional brings focused expertise, ensuring the right skills are matched to your project requirements.</p>
                 
-                <Slider {...settings}>
+                <Swiper
+                modules={[Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                speed={2000}
+                spaceBetween={0}
+                slidesPerView={7}
+                allowTouchMove={false}
+                breakpoints={{
+                  320: { slidesPerView: 2 },
+                  640: { slidesPerView: 3 },
+                  768: { slidesPerView: 4 },
+                  1024: { slidesPerView: 5 },
+                  1280: { slidesPerView: 7 },
+                }}
+                >
                 {logos.map((logo, index) => (
-                    <div key={index} className='px-2 mt-10'>
+                    <SwiperSlide key={index} className='px-2'>
                         <div className={`content-center bg-${cardColor} p-4 border border-gray-200 rounded-lg`}>
                             <img src={logo} alt={`Technology Logo ${index + 1}`} className='mx-auto object-contain' />
                         </div>
-                    </div>
+                    </SwiperSlide>
                 ))}
-                </Slider>               
+                </Swiper>               
             </div>
         </section>
     </>

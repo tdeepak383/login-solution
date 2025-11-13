@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 import img1 from "../assets/join/slide1.jpg";
 import img2 from "../assets/join/slide2.jpg";
 import img3 from "../assets/join/slide3.jpg";
@@ -11,77 +14,62 @@ import img5 from "../assets/join/slide5.jpg";
 import img6 from "../assets/join/slide6.jpg";
 
 const JoinSlider = () => {
-  const sliderRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-           initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
-
+  const swiperRef = useRef(null);
   const images = [img1, img2, img3, img4, img5, img6];
 
   return (
     <div className="relative py-20">
-      {/* Custom buttons (top right) */}
+      {/* Custom Navigation Buttons */}
       <div className="absolute top-4 right-6 z-20 flex gap-3">
         <button
-          onClick={() => sliderRef.current.slickPrev()}
-          className="bg-[var(--purple)] hover:bg-[var(--blue)] text-white rounded p-4 shadow-lg transition"
+          onClick={() => swiperRef.current?.slidePrev()}
+          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded p-4 shadow-lg transition"
         >
           <FaArrowLeft />
         </button>
         <button
-          onClick={() => sliderRef.current.slickNext()}
-          className="bg-[var(--purple)] hover:bg-[var(--blue)] text-white rounded p-4 shadow-lg transition"
+          onClick={() => swiperRef.current?.slideNext()}
+          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded p-4 shadow-lg transition"
         >
           <FaArrowRight />
         </button>
       </div>
 
-      {/* Slider */}
-      <Slider ref={sliderRef} {...settings}>
+      {/* Swiper Slider */}
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={2}
+        loop={true}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        pagination={{
+          clickable: true,
+          el: ".custom-pagination", // custom pagination container
+        }}
+        speed={2000}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 2 },
+        }}
+        className="join-swiper"
+      >
         {images.map((src, index) => (
-          <div key={index} className="px-2">
-            <img
-              src={src}
-              alt={`Slide ${index + 1}`}
-              className="rounded-2xl"
-            />          
-          </div>
+          <SwiperSlide key={index}>
+            <div className="px-2">
+              <img
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="rounded-2xl w-full object-cover"
+              />
+            </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
+
+      {/* Pagination placed below */}
+      <div className="custom-pagination !relative mt-6 flex justify-center"></div>
     </div>
   );
 };

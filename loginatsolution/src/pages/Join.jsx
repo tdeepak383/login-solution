@@ -18,7 +18,7 @@ function Join() {
       children={"We believe the every individual in the team is important. Our regular interactions / feedbacks & faith in every individual inculcate a sense of comfort. This helps us in building a stable & consistent team Life@LoginAt is happening and full of life few snapshot might tell you the story"}
       />
       <section className='margin-top-Subhero'>
-        <div className='max-w-6xl mx-auto py-10 px-6'>
+        <div className='max-w-6xl mx-auto md:py-10 md:px-6'>
           <JoinSlider />
           <CurrentOpenings onClick={() => setIsPopupOpen(true)} />
         </div>

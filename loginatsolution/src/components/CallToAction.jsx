@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import RequirementForm from './Form';
-import { FaPhoneVolume } from "react-icons/fa";
-import { RiNewspaperLine } from "react-icons/ri";
-import { MdOutlineConnectWithoutContact } from "react-icons/md";
 import curvedline from '../assets/curved-line-icon.png'
 import call from '../assets/call.svg'
 import connect from '../assets/connect.svg'
 import list from '../assets/list.svg'
+import curvedLineMob from '../assets/curved-line-mob.png'
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -53,40 +52,44 @@ function CallToAction() {
               </motion.h4>
 
               <motion.div
-                className='mt-10 relative'
+                className='mt-10 relative hidden md:block'
                 variants={staggerContainer}
               >
-                <img src={curvedline} alt="" className='w-3/4 ml-10' />
-                <div className='absolute left-0 top-0'>
-                  <div className='bg-white text-black p-3 rounded-full'>
+                <img src={curvedline} alt="" className='lg:w-3/4 md:w-full lg:ml-10 hidden md:block' />
+                {/* <img src={curvedLineMob} alt="" className='w-3/4 ml-10 md:hidden block' /> */}
+                <div className='md:absolute flex md:left-0 md:-top-8 lg:left-0 lg:top-0'>
+                  <div className='bg-white text-black p-3 rounded-full '>
                     <img src={call} className='w-10' />
-                  </div>                  
+                  </div>
                 </div>
-                <div className='absolute left-0 top-20'>
+                <div className='md:absolute flex md:left-0 md:top-10 lg:left-0 lg:top-20'>
                   <p className='text-xs md:text-xl text-left'>Call us for <br /> a discussion</p>
                 </div>
-                <div className='absolute md:left-72 left-40 top-20 md:top-52'>
+                <div className='md:absolute flex md:left-80 md:top-72 lg:left-72 lg:top-52'>
                   <div className='bg-white text-black p-3 rounded-full'>
                     <img src={list} className='w-10' />
-                  </div>                  
+                  </div>
                 </div>
-                <div className='absolute left-36 md:left-64 top-0 md:top-20'>
-                  <p className='text-xs md:text-xl text-center'>We arrange <br />Interviews <br /> with shortlisted <br />candidates</p>
+                <div className='md:absolute flex md:left-72 md:top-40 lg:left-64 lg:top-20'>
+                  <p className='text-xs md:text-xl text-left md:text-center'>We arrange <br />Interviews <br /> with shortlisted <br />candidates</p>
                 </div>
-                <div className='absolute left-3/4 top-0 md:top-20'>
+                <div className='md:absolute flex md:right-0 md:top-20 lg:left-3/4 lg:top-20'>
                   <div className='bg-white text-black p-3 rounded-full'>
                     <img src={connect} className='w-10' />
-                  </div>                  
+                  </div>
                 </div>
-                <div className='absolute left-2/3 top-20 md:top-48'>
-                  <p className='text-xs md:text-xl text-right'>Connect with the <br /> solver for regular <br /> deliveries</p>
+                <div className='md:absolute flex md:right-0 md:top-40 lg:left-2/3 lg:top-48'>
+                  <p className='text-xs md:text-xl text-left md:text-right'>Connect with the <br /> solver for regular <br /> deliveries</p>
                 </div>
               </motion.div>
 
             </motion.div>
 
             {/* Right Column (Form) */}
-            <motion.div variants={fadeUp}>
+            <motion.div 
+            variants={fadeUp}
+            className='md:max-w-xl mx-auto md:mt-5  lg:max-w-full w-full'
+            >
               <RequirementForm color={"white"}/>
             </motion.div>
           </div>

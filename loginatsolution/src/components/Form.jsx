@@ -1,32 +1,135 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
-const RequirementForm = ({color}) => {
+const jobs = [
+  { id: "job1", label: "Innovative Designers" },
+  { id: "job2", label: "Full Stack Developers" },
+  { id: "job3", label: "Customer Servicing" },
+];
+
+const jobsFunction = {
+  job1: [
+    { point: "Brand Experience Designer" },
+    { point: "Web/Graphic Designer" },
+    { point: "UI/UX Designer" },
+    { point: "PowerPoint Designer" },
+    { point: "Whitepaper/ Datasheet Designer" },
+    { point: "Email and Newsletter Designer" },
+    { point: "Social Media Post Designer" },
+    { point: "Event Collateral Designer" },
+    { point: "Postcards and Poster Designer" },
+    { point: "Brochures and Leaflet Designer" },
+    { point: "Office Branding Designer" },
+    { point: "Audio Visuals Experts" },
+    { point: "Video Editors" },
+    { point: "Animated PPT Designer" },
+  ],
+  job2: [
+    { point: "Front-End Developers: Angular, React, and Vue.js" },
+    { point: "Crownpeak and HCL DX Developer" },
+    { point: "CSS frameworks experts: Tailwind CSS and Bootstrap" },
+    { point: "Single Page Application (SPA) Developer" },
+    { point: "Sketch, Figma, and Adobe XD Designers" },
+    { point: "Fluid and Interactive Front-End Design Experts" },
+    { point: "Prototyping & Wireframing Experts: Figma/InVision/Axure" },
+    { point: "Website Maintenance & Update Services" },
+    { point: "ECommerce Developer: Shopify, Magento, WooCommerce" },
+    { point: "Web Developer: WordPress, Drupal, PHP, .NET" },
+    { point: "Wireframes and Prototype designer: Figma or Adobe XD" },
+  ],
+  job3: [
+    { point: "Customer Support / Helpdesk Services" },
+    { point: "Order Taking & Processing" },
+    { point: "Technical Support (L1, L2, L3)" },
+    { point: "Billing & Payment Support" },
+    { point: "Reservation & Booking Services" },
+    { point: "Product Information & Inquiry Handling" },
+    { point: "Complaint Resolution / Grievance Handling" },
+    { point: "Customer Retention Programs" },
+    { point: "Virtual Receptionist / Switchboard Services" },
+    { point: "Chat Process Experts" },
+    { point: "Email Process Experts" },
+    { point: "Product Management to Payments, Shipping, and Returns" },
+  ],
+};
+
+const RequirementForm = ({ color }) => {
+  const form = useRef();
+  const [status, setStatus] = useState("");
+  const [selectJob, setSelectJob] = useState(""); 
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     contact: "",
-    duration: "",
     company: "",
+    jobCategory: "",
+    jobRole: "",
+    duration: "",
     requirement: "",
     consent: false,
   });
 
+  // ✅ Handle Input Change
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+    const newValue = type === "checkbox" ? checked : value;
+
+    // If jobCategory changes → find actual category label
+    if (name === "jobCategory") {
+      const selected = jobs.find((job) => job.id === value);
+      setSelectJob(value); // for rendering sub-jobs
+      setFormData((prev) => ({
+        ...prev,
+        jobCategory: selected ? selected.label : "",
+        jobRole: "", // reset job role when changing category
+      }));
+      return;
+    }
+
+    // Default handler
+    setFormData((prev) => ({
+      ...prev,
+      [name]: newValue,
+    }));
   };
 
+  // ✅ Handle Submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setStatus("Sending...");
+
+    emailjs
+      .sendForm(
+        "service_68aw1vp",
+        "template_wpwn4op",
+        form.current,
+        "AJkmrIMNpmyESloDc"
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            contact: "",
+            company: "",
+            jobCategory: "",
+            jobRole: "",
+            duration: "",
+            requirement: "",
+            consent: false,
+          });
+          setSelectJob("");
+        },
+        () => setStatus("❌ Failed to send message. Please try again.")
+      );
   };
 
   return (
     <div className={`bg-${color} rounded-3xl`}>
       <form
+        ref={form}
         onSubmit={handleSubmit}
         className="w-full text-left p-8 space-y-8"
       >
@@ -34,70 +137,35 @@ const RequirementForm = ({color}) => {
           Share Your Requirement
         </h2>
 
-        {/* 2-column grid */}
+        {/* Basic Info */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Name */}
-          <div>
-            
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-           
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
-            />
-          </div>
-
-          {/* Contact */}
-          <div>
-            
-            <input
-              type="text"
-              name="contact"
-              placeholder="Contact Number"
-              value={formData.contact}
-              onChange={handleChange}
-              required
-              className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
-            />
-          </div>
-
-          {/* Duration */}
-          <div>
-           
-            <select
-              name="duration"
-              value={formData.duration}
-              onChange={handleChange}
-              required
-              className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
-            >
-              <option value="">Select Duration</option>
-              <option value="1-3 months">1-3 Months</option>
-              <option value="3-6 months">3-6 Months</option>
-              <option value="6+ months">6+ Months</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Company */}
-        <div>         
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+          />
+          <input
+            type="phone"
+            name="contact"
+            placeholder="Contact Number"
+            value={formData.contact}
+            onChange={handleChange}
+            required
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+          />
           <input
             type="text"
             name="company"
@@ -105,24 +173,74 @@ const RequirementForm = ({color}) => {
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full text-xs py-1 border-b border-gray-300 focus:outline-none  "
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
           />
         </div>
 
-        {/* Work Requirement */}
+        {/* Job Category */}
         <div>
-         
-          <textarea
-            name="requirement"
-            placeholder="Add Your Requirement"
-            value={formData.requirement}
+          <select
+            name="jobCategory"
+            value={selectJob} // ✅ value now job1/job2/job3 (for dropdown logic)
             onChange={handleChange}
-            rows="4"
-            type="text"
             required
-            className="w-full  text-xs py-1 border-b border-gray-300 focus:outline-none  "
-          ></textarea>
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+          >
+            <option value="">Select Job Category</option>
+            {jobs.map((job) => (
+              <option key={job.id} value={job.id}>
+                {job.label}
+              </option>
+            ))}
+          </select>
         </div>
+
+        {/* Sub Role */}
+        {selectJob && (
+          <div>
+            <select
+              name="jobRole"
+              value={formData.jobRole}
+              onChange={handleChange}
+              required
+              className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+            >
+              <option value="">Select Role</option>
+              {jobsFunction[selectJob]?.map((item, index) => (
+                <option key={index} value={item.point}>
+                  {item.point}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {/* Duration */}
+        <div>
+          <select
+            name="duration"
+            value={formData.duration}
+            onChange={handleChange}
+            required
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+          >
+            <option value="">Select Duration</option>
+            <option value="1-3 months">1-3 Months</option>
+            <option value="3-6 months">3-6 Months</option>
+            <option value="6+ months">6+ Months</option>
+          </select>
+        </div>
+
+        {/* Requirement */}
+        <textarea
+          name="requirement"
+          placeholder="Add Your Requirement"
+          value={formData.requirement}
+          onChange={handleChange}
+          rows="4"
+          required
+          className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+        ></textarea>
 
         {/* Consent */}
         <div className="flex items-start space-x-2 text-xs py-1 text-gray-600">
@@ -131,9 +249,9 @@ const RequirementForm = ({color}) => {
             name="consent"
             checked={formData.consent}
             onChange={handleChange}
-            className="mt-1 border-gray-400 rounded focus:ring-[var(--pink)]"
+            className="mt-1 border-gray-400 rounded"
           />
-          <p className="text-xs">
+          <p>
             By submitting this form, you consent to the collection and use of
             your information in accordance with our{" "}
             <a href="#" className="text-emerald-500 underline">
@@ -143,7 +261,7 @@ const RequirementForm = ({color}) => {
           </p>
         </div>
 
-        {/* Button */}
+        {/* Submit */}
         <div className="text-center">
           <button
             type="submit"
@@ -151,6 +269,9 @@ const RequirementForm = ({color}) => {
           >
             Submit Your Requirement
           </button>
+          {status && (
+            <p className="mt-4 text-xs text-gray-600 text-center">{status}</p>
+          )}
         </div>
       </form>
     </div>

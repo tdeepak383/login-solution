@@ -6,9 +6,11 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
+
 import video1 from '../assets/art-1.mp4'
 import video2 from '../assets/art-2.mov'
 import video3 from '../assets/art-3.mov'
@@ -46,54 +48,43 @@ const staggerContainer = {
 
 function Footer() {
 
-   var settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 10000,
-    autoplaySpeed: 500,
-    cssEase: "linear",
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
-
-
   return (
     <>
-    <div className="slider-container">
-        <Slider {...settings}>
-            {videoSlide.map((videoSrc, index) => (
-                <div key={index}>
-                    <video  src={videoSrc} autoPlay loop muted className="" />
-                </div>
-            ))}
-        </Slider>
+   <div className="">
+      <div className='w-full overflow-hidden'>
+          <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={5000}
+          spaceBetween={0}
+          slidesPerView={7}
+          allowTouchMove={false}
+          breakpoints={{
+            320: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 },
+            1280: { slidesPerView: 7 },
+          }}
+          className="overflow-hidden"
+        >
+              {videoSlide.map((videoSrc, index) => (
+              <SwiperSlide key={index}>
+                <video
+                  src={videoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-4 object-cover"
+                />
+            </SwiperSlide>
+          ))}
+          </Swiper>
         </div>
     <footer className="w-full z-40 relative flex flex-col items-center bg-gray-200 justify-center text-center px-5 pt-10 pb-5">
       <motion.div
@@ -161,14 +152,15 @@ function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="border-t border-gray-200 text-center text-black"
+          className="border-t border-gray-200 text-center text-black max-sm:mt-5"
           variants={fadeUp}
         >
-          <p>© 2025 <a href="https://loginatsolution.com/" className="underline text-[var(--purple)]">LoginAtSolutions Pvt. Ltd.</a> |  All rights reserved.</p>
+          <p>© 2025 <a href="/" className="underline text-[var(--purple)]">LoginAtSolutions Pvt. Ltd.</a> |  All rights reserved.</p>
           
         </motion.div>
       </motion.div>
     </footer>
+   </div>
     </>
   );
 }

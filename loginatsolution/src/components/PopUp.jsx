@@ -19,7 +19,7 @@ function PopUp({ isOpen, onClose }) {
         </button>
       <h2 className='text-3xl text-blue-700 font-bold'></h2>
       <div className='mt-20'>
-      <RequirementForm color={"white"} />
+      <RequirementForm color={"white"} FormTitle={"Share Your Requirement"} />
     </div>
     </div>
     </>

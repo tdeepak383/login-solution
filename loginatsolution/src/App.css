@@ -6,6 +6,7 @@
 }
 
 
+
 .slick-prev, .slick-next{
   display: none !important;
 }
@@ -17,6 +18,13 @@ body {
 .para-line-height{
   line-height: 55px;
 }
+
+@media (max-width: 480px) {
+  .para-line-height{
+    line-height: 40px;
+  }
+}
+
 
 @font-face {
   font-family: 'Aminute';
@@ -63,12 +71,34 @@ body {
   background-color: white;
 }
 
+.margin-top-about{
+  position: relative;
+  margin-top: 75vh;
+  z-index: 50;
+  background-color: white;
+}
+
+@media (max-width: 480px){
+  .margin-top-about{
+  position: relative;
+  margin-top: 88vh;
+  z-index: 50;
+  background-color: white;
+}
+}
+
 .right-slide-z-index{
   z-index: 1000px;
 }
 
 .custom-line-height{
   line-height: 55px;
+}
+
+@media (max-width: 480px) {
+  .custom-line-height{
+    line-height: 40px;
+  }
 }
 
 /* hide horizontal scrollbar */
