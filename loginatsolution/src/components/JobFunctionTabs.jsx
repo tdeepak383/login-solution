@@ -47,9 +47,9 @@ import imageCat312 from '../assets/services-logo/cat-3/12.svg'
 
 
 const tabs = [
-  { id: "tab2", label: "Innovative Designers" },
-  { id: "tab3", label: "Full Stack Developers" },
-  { id: "tab4", label: "Customer Servicing" },
+  { id: "tab2", label: "Designer" },
+  { id: "tab3", label: "Full Stack Developer" },
+  { id: "tab4", label: "Customer Support Services" },
 ];
 
 

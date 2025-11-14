@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const jobs = [
-  { id: "job1", label: "Innovative Designers" },
-  { id: "job2", label: "Full Stack Developers" },
-  { id: "job3", label: "Customer Servicing" },
+  { id: "job1", label: "Designer" },
+  { id: "job2", label: "Full Stack Developer" },
+  { id: "job3", label: "Customer Support Services" },
 ];
 
 const jobsFunction = {
@@ -158,7 +158,7 @@ const RequirementForm = ({ color }) => {
             className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
           />
           <input
-            type="phone"
+            type="tel"
             name="contact"
             placeholder="Contact Number"
             value={formData.contact}

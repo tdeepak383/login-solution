@@ -114,7 +114,7 @@ function About({onClick}) {
     </div>
       <section className='after-hero-section relative min-h-screen md:px-4 margin-top-about' id="next-section">
         <div className='max-w-6xl text-center mx-auto py-10 md:px-6 '>
-          <h2 className='md:text-5xl sm:text-3xl font-bold text-xl mb-10'>We work as Partners, not supplier</h2>
+          <h2 className='md:text-5xl sm:text-3xl font-bold text-xl mb-10'>We work as your Partner, <br />not a Service Provider</h2>
           <p className='max-sm:px-5 md:text-xl'>We connect with you as a partner, not a supplier, because we believe that true success is built on collaboration and trust. Our approach is centered around working alongside you, understanding your goals, and crafting solutions that align perfectly with your vision.</p>
         </div>
         <ClientsLogo/>
@@ -133,22 +133,22 @@ function About({onClick}) {
               </div>
 
               {/* Info Card */}
-              <div className="relative z-10 bg-[var(--pink-light)] border border-[var(--pink-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
+              <div className="relative z-10 bg-[var(--blue-light)] border border-[var(--blue-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
                 <div className="flex justify-between items-center">
                   <div>
                     <h4 className="md:text-2xl font-bold">Gunjan Gupta</h4>
                     <p className="md:text-xl">Founder & CEO</p>
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
-                    <a
+                    {/* <a
                       href="https://www.facebook.com/LoginAtSolutions"
                       className="bg-[var(--pink)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaFacebookF />
-                    </a>
+                    </a> */}
                     <a
                       href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/"
-                      className="bg-[var(--pink)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
+                      className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaLinkedinIn />
                     </a>
@@ -157,7 +157,7 @@ function About({onClick}) {
 
                 <div className="mt-5 space-y-3">
                   <div className="relative">
-                    <RiDropFill className="absolute top-1 text-[var(--pink)] rotate-90" />
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
                       Computer Engineer from Manipal University, has honed her technical skills working for
                       industry leaders such as American Express Bank and NIIT Ltd having extensive experience
@@ -165,7 +165,7 @@ function About({onClick}) {
                     </p>
                   </div>
                   <div className="relative">
-                    <RiDropFill className="absolute top-1 text-[var(--pink)] rotate-90" />
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
                       A people's person, who likes to lead from the front, her biggest strength lies in her
                       entrepreneurial style and the ability to build strong relationships.
@@ -189,14 +189,14 @@ function About({onClick}) {
                     <p className="md:text-xl">Founder & CEO</p>
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
-                    <a
+                    {/* <a
                       href="https://www.facebook.com/LoginAtSolutions"
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaFacebookF />
-                    </a>
+                    </a> */}
                     <a
-                      href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/"
+                      href="http://linkedin.com/in/atul-gupta-38333118"
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaLinkedinIn />

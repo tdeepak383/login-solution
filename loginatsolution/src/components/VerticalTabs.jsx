@@ -61,9 +61,9 @@ const VerticalTabs = () => {
   }, []);
 
   const tabs = [
-    { id: "tab1", label: "Innovative Designers" },
-    { id: "tab2", label: "Full Stack Developers" },
-    { id: "tab3", label: "Customer Servicing" },
+    { id: "tab1", label: "Designer" },
+    { id: "tab2", label: "Full Stack Developer" },
+    { id: "tab3", label: "Customer Support Services" },
   ];
 
 const tabsContent = {

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 function JoinUsForm() {
-
-
+  const form = useRef();
+  const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -13,6 +14,7 @@ function JoinUsForm() {
     resume: null,
   });
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
 
@@ -23,13 +25,44 @@ function JoinUsForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  // Submit handler
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus("Sending...");
 
-  }
+    emailjs
+      .sendForm(
+        "service_68aw1vp",
+        "template_vhjj1ja",
+        form.current,
+        "AJkmrIMNpmyESloDc"
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+
+          // Reset form
+          setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            position: "",
+            experience: "",
+            message: "",
+            resume: null,
+          });
+
+          form.current.reset();
+        },
+        () => {
+          setStatus("❌ Failed to send message. Please try again.");
+        }
+      );
+  };
 
   return (
     <form
+      ref={form}
       onSubmit={handleSubmit}
       className="w-full p-6 md:p-10 space-y-6"
       encType="multipart/form-data"
@@ -40,8 +73,11 @@ function JoinUsForm() {
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
+        {/* Full Name */}
         <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">Full Name *</label>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Full Name *
+          </label>
           <input
             type="text"
             name="fullName"
@@ -53,8 +89,11 @@ function JoinUsForm() {
           />
         </div>
 
+        {/* Email */}
         <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">Email *</label>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Email *
+          </label>
           <input
             type="email"
             name="email"
@@ -66,8 +105,11 @@ function JoinUsForm() {
           />
         </div>
 
+        {/* Phone */}
         <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">Phone *</label>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Phone *
+          </label>
           <input
             type="tel"
             name="phone"
@@ -79,8 +121,11 @@ function JoinUsForm() {
           />
         </div>
 
+        {/* Position */}
         <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">Applying For *</label>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Applying For *
+          </label>
           <select
             name="position"
             required
@@ -89,15 +134,44 @@ function JoinUsForm() {
             className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
           >
             <option value="">Select Position</option>
-            <option value="Frontend Developer">Frontend Developer</option>
-            <option value="Backend Developer">Backend Developer</option>
-            <option value="UI/UX Designer">UI/UX Designer</option>
-            <option value="React Developer">React Developer</option>
-            <option value="Digital Marketer">Digital Marketer</option>
-            <option value="HR Executive">HR Executive</option>
+            <option value="Telecalling Executive / Telemarketing Executive">
+              Telecalling Executive / Telemarketing Executive
+            </option>
+            <option value="Sales Executive">Sales Executive</option>
+            <option value="SEO - CW">SEO - CW</option>
+            <option value="HTML Designer">HTML Designer</option>
+            <option value="PHP Developer">PHP Developer</option>
           </select>
         </div>
 
+       
+
+        {/* Resume Upload */}
+        {/* <div>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Upload Resume (PDF/DOC)
+          </label>
+          <input
+            type="file"
+            name="resume"
+            accept=".pdf,.doc,.docx"
+            required
+            onChange={handleChange}
+            className="w-full border p-3 rounded-md bg-white 
+            file:mr-4 file:py-2 file:px-4 file:border 
+            file:rounded-md file:bg-gray-200 file:text-gray-900"
+          />
+
+          
+          <input
+            type="hidden"
+            name="resume_filename"
+            value={formData.resume?.name || ""}
+          />
+        </div> */}
+      </div>
+
+       {/* Experience */}
         <div>
           <label className="block text-sm font-bold text-gray-700 mb-1">
             Experience (Years)
@@ -113,21 +187,11 @@ function JoinUsForm() {
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">Upload Resume (PDF/DOC)</label>
-          <input
-            type="file"
-            name="resume"
-            accept=".pdf,.doc,.docx"
-            required
-            onChange={handleChange}
-            className="w-full border p-3 rounded-md bg-white file:mr-4 file:py-2 file:px-4 file:border file:rounded-md file:bg-gray-200 file:text-gray-900"
-          />
-        </div>
-      </div>
-
+      {/* Message */}
       <div>
-        <label className="block text-sm font-bold text-gray-700 mb-1">Message</label>
+        <label className="block text-sm font-bold text-gray-700 mb-1">
+          Message
+        </label>
         <textarea
           name="message"
           rows="4"
@@ -138,12 +202,17 @@ function JoinUsForm() {
         ></textarea>
       </div>
 
+      {/* Submit */}
       <button
         type="submit"
         className="w-full gradient text-white py-3 rounded-md text-lg hover:opacity-90 transition"
       >
         Submit Application
       </button>
+
+      {status && (
+        <p className="mt-4 text-xs text-gray-600 text-center">{status}</p>
+      )}
     </form>
   );
 }

@@ -31,16 +31,9 @@ function Contact() {
                 <p className='md:text-xl'>hr@loginatsolution.com</p>
               </div>
             </div>
-            {/* <div className='mt-10 md:mt-20 flex gap-4 items-start'>
-              <IoMdCall className='text-2xl text-[var(--blue)]'/>
-              <div >                
-                <h4 className='text-2xl font-bold'>Or reach us at:</h4>
-                <p className='text-xl'>(+91) 7722223505</p>
-                <p className='text-xl'>(+91) 7722223505</p>
-              </div>
-            </div> */}
+           
         </div>
-        <div className='p-5 md:p-20 bg-[#ebede7]'>
+        <div className='p-5 md:p-20 bg-white'>
           <RequirementForm FormTitle={"Book an intro call"} color={""}/>
         </div>
 
