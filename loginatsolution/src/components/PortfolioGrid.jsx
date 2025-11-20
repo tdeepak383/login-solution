@@ -6,7 +6,7 @@ import video2 from '../assets/portfolio-video2.mp4'
 import video3 from '../assets/portfolio-video7.mp4'
 import video4 from '../assets/portfolio-video4.mp4'
 import video5 from '../assets/portfolio-video5.mp4'
-import video6 from '../assets/portfolio-video6.mp4'
+import video6 from '../assets/portfolio-video8.mp4'
 
 const PortfolioGrid = () => {
   return (

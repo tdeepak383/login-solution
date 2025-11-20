@@ -1,8 +1,6 @@
-import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import React, { useEffect, useState } from "react";
 
 function JoinUsForm() {
-  const form = useRef();
   const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -14,7 +12,6 @@ function JoinUsForm() {
     resume: null,
   });
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
 
@@ -25,51 +22,70 @@ function JoinUsForm() {
     }
   };
 
-  // Submit handler
-  const handleSubmit = (e) => {
+  // ✅ Submit form using FormData (supports file upload)
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
-    emailjs
-      .sendForm(
-        "service_68aw1vp",
-        "template_vhjj1ja",
-        form.current,
-        "AJkmrIMNpmyESloDc"
-      )
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
+    try {
+      const fd = new FormData();
 
-          // Reset form
-          setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            position: "",
-            experience: "",
-            message: "",
-            resume: null,
-          });
+      Object.keys(formData).forEach((key) => {
+        fd.append(key, formData[key]);
+      });
 
-          form.current.reset();
-        },
-        () => {
-          setStatus("❌ Failed to send message. Please try again.");
+      const response = await fetch(
+        `${import.meta.env.VITE_VERCEL_URL}/api/joinuslist`,
+        {
+          method: "POST",
+          body: fd, // ❗ IMPORTANT: Do NOT add content-type manually
         }
       );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus("✅ Message sent successfully!");
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          position: "",
+          experience: "", 
+          message: "",
+          resume: null,
+        });
+      } else {
+        setStatus("❌ Failed to submit. Try again.");
+      }
+    } catch (error) {
+      console.error("Submit Error:", error);
+      setStatus("❌ Server error. Try again later.");
+    }
   };
+
+  useEffect(() => {
+    if (!status) return;
+  
+    const timer = setTimeout(() => {
+      setStatus("");
+    }, 2000);
+  
+    return () => clearTimeout(timer);
+  }, [status]);
 
   return (
     <form
-      ref={form}
       onSubmit={handleSubmit}
       className="w-full p-6 md:p-10 space-y-6"
       encType="multipart/form-data"
     >
-      <h2 className="text-3xl font-bold mb-3">Join Our Team</h2>
+      <h2 className="text-3xl font-bold mb-3">Join our team</h2>
+
       <p className="text-gray-600 mb-6">
-        Fill out the form and upload your resume. Our HR team will contact you soon.
+        Fill out the form and upload your resume. Our HR team will contact you
+        soon.
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -84,7 +100,7 @@ function JoinUsForm() {
             required
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
+            className="w-full border p-3 rounded-md"
             placeholder="Your full name"
           />
         </div>
@@ -100,7 +116,7 @@ function JoinUsForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
+            className="w-full border p-3 rounded-md"
             placeholder="name@example.com"
           />
         </div>
@@ -116,7 +132,7 @@ function JoinUsForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
+            className="w-full border p-3 rounded-md"
             placeholder="+91 9876543210"
           />
         </div>
@@ -131,7 +147,7 @@ function JoinUsForm() {
             required
             value={formData.position}
             onChange={handleChange}
-            className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
+            className="w-full border p-3 rounded-md"
           >
             <option value="">Select Position</option>
             <option value="Telecalling Executive / Telemarketing Executive">
@@ -146,8 +162,24 @@ function JoinUsForm() {
 
        
 
-        {/* Resume Upload */}
-        {/* <div>
+         {/* Experience */}
+        <div>
+          <label className="block text-sm font-bold text-gray-700 mb-1">
+            Experience (Years)
+          </label>
+          <input
+            type="number"
+            name="experience"
+            value={formData.experience}
+            onChange={handleChange}
+            className="w-full border p-3 rounded-md"
+            placeholder="e.g. 2"
+            min="0"
+          />
+        </div>
+
+         {/* Resume Upload */}
+        <div>
           <label className="block text-sm font-bold text-gray-700 mb-1">
             Upload Resume (PDF/DOC)
           </label>
@@ -158,34 +190,13 @@ function JoinUsForm() {
             required
             onChange={handleChange}
             className="w-full border p-3 rounded-md bg-white 
-            file:mr-4 file:py-2 file:px-4 file:border 
-            file:rounded-md file:bg-gray-200 file:text-gray-900"
-          />
-
-          
-          <input
-            type="hidden"
-            name="resume_filename"
-            value={formData.resume?.name || ""}
-          />
-        </div> */}
-      </div>
-
-       {/* Experience */}
-        <div>
-          <label className="block text-sm font-bold text-gray-700 mb-1">
-            Experience (Years)
-          </label>
-          <input
-            type="number"
-            name="experience"
-            value={formData.experience}
-            onChange={handleChange}
-            className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
-            placeholder="e.g. 2"
-            min="0"
+              file:mr-4 file:py-2 file:px-4 file:border 
+              file:rounded-md file:bg-gray-200 file:text-gray-900"
           />
         </div>
+      </div>
+
+     
 
       {/* Message */}
       <div>
@@ -197,22 +208,24 @@ function JoinUsForm() {
           rows="4"
           value={formData.message}
           onChange={handleChange}
-          className="w-full border p-3 rounded-md focus:ring focus:ring-blue-300"
+          className="w-full border p-3 rounded-md"
           placeholder="Tell us something about yourself..."
         ></textarea>
       </div>
 
       {/* Submit */}
-      <button
-        type="submit"
-        className="w-full gradient text-white py-3 rounded-md text-lg hover:opacity-90 transition"
-      >
-        Submit Application
-      </button>
+      <div className="text-center">
+        <button
+          type="submit"
+          className="w-full md:w-auto px-8 py-3 gradient text-white font-medium rounded-lg shadow-md hover:opacity-90 transition"
+        >
+          Submit
+        </button>
 
-      {status && (
-        <p className="mt-4 text-xs text-gray-600 text-center">{status}</p>
-      )}
+        {status && (
+          <p className="mt-4 text-xs text-gray-600 text-center">{status}</p>
+        )}
+      </div>
     </form>
   );
 }

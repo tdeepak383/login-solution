@@ -52,7 +52,7 @@ function AfterHero({onClick}) {
               onClick={onClick}
               className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block"
             >
-              Connect with Us
+              Connect with us
             </button>
           </motion.div>
         </div>

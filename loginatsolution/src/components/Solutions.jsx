@@ -93,7 +93,7 @@ const Solutions = () => {
         <div className="max-w-6xl mx-auto w-full p-6 relative z-10">
         <div className="flex lg:flex-row flex-col gap-8">
           <div className="lg:w-1/3">
-            <h2 className='text-xl md:text-4xl text-black max-w-6xl mx-auto custom-line-height'>We can also take full ownership and deliver your project end-to-end</h2>
+            <h2 className='text-xl md:text-4xl text-black max-w-6xl mx-auto custom-line-height'>We build, manage, and deliver end-to-end with precision and accountability</h2>
             <hr className="border-b border-4 w-1/3 mt-5 border-[var(--pink)]"/>
           </div>
 

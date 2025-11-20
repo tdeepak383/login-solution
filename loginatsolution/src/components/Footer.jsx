@@ -95,44 +95,47 @@ function Footer() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-5 gap-10"
+          className="grid md:grid-cols-2 lg:grid-cols-5 gap-5"
           variants={staggerContainer}
         >
           {/* Left - Logo and description */}
-          <motion.div className="flex flex-col justify-between col-span-2" variants={fadeUp}>
+          <motion.div className="flex justify-between" variants={fadeUp}>
             <div className="flex items-center space-x-3">
               <Link to="/"><img src={logo} alt="logo" className="w-40 md:w-48" /></Link>
             </div>
-            
-            <div className="flex space-x-4 text-black text-xl mt-10">
+          </motion.div>
+          <motion.div className="lg:ml-20">
+            <div className="flex space-x-4 text-black text-xl">
               {/* <a href="https://www.facebook.com/LoginAtSolutions" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
               <FaFacebookF />
               </a> */}
               <a href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
               <FaLinkedinIn />
               </a>
-              <a href="https://www.youtube.com/@loginatsolution" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
+              {/* <a href="https://www.youtube.com/@loginatsolution" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
               <FaYoutube />
-              </a>
+              </a> */}
             </div>
           </motion.div>
             {/* Company */}
-          <motion.div variants={fadeUp} className="text-left">
+          <motion.div variants={fadeUp} className="text-left col-span-3">
             {/* <h3 className="font-semibold text-xl text-gray-900 mb-4">Company</h3> */}
-            <ul className="space-y-3 text-black">
+            <ul className="space-y-3 text-black md:columns-3 columns-2">
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/jobfunction">Job Function</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/services">Services</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/about">About Us</Link></li>
-              
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/blogs">Blogs</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/join-us" >Join Us</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/contact-us">Contact Us</Link></li>
             </ul>
           </motion.div>
           {/* Product */}
           <motion.div variants={fadeUp} className="text-left">
             {/* <h3 className="font-semibold text-xl text-gray-900 mb-4">Quick Links</h3> */}
             <ul className="space-y-3 text-black">
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/blogs">Blogs</Link></li>
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/join-us" >Join Us</Link></li>
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/contact-us">Contact Us</Link></li>
+              {/* <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/about">About Us</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/blogs">Blogs</Link></li> */}
+              
             </ul>
           </motion.div>
 
@@ -140,10 +143,11 @@ function Footer() {
           <motion.div variants={fadeUp} className="flex flex-col justify-start text-left">
             {/* <h3 className="font-semibold text-xl text-gray-900 mb-4">Resources</h3> */}
             <ul className="space-y-3 text-black">
-              
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/privacy-policy">Privacy Policy</Link></li>
+              {/* <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/join-us" >Join Us</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/contact-us">Contact Us</Link></li> */}
+              {/* <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/terms-service">Terms of Service</Link></li>
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/cookies-policy">Cookies Settings</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/cookies-policy">Cookies Policy</Link></li> */}
             </ul>
           </motion.div>
 
@@ -152,10 +156,11 @@ function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="border-t border-gray-200 text-center text-black max-sm:mt-5"
+          className="border-t border-gray-400 text-sm text-center pt-2 text-black "
           variants={fadeUp}
         >
-          <p>© 2025 <a href="/" className="underline text-[var(--purple)]">LoginAtSolutions Pvt. Ltd.</a> |  All rights reserved.</p>
+          <p className="mb-1">Copyright © 2025 Loginat Solutions Pvt. Ltd. | <Link to="/privacy-policy" className="underline text-[var(--purple)]">Privacy Policy</Link> |  <Link to="/terms-service" className="underline text-[var(--purple)]">Terms of use</Link></p>
+          <p>We use cookies on our site. Please read more about cookies policy <Link to="/cookies-policy" className="underline text-[var(--purple)]">here.</Link></p>
           
         </motion.div>
       </motion.div>

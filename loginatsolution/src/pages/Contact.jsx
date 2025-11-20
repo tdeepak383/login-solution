@@ -46,7 +46,7 @@ function Contact() {
             <div className='mt-10 flex flex-col md:flex-row gap-4 items-center'>
                 
                   <button onClick={() => handleButton("noida")} 
-                     className={`py-4 px-4 md:px-8 rounded-full font-bold text-xs md:text-xl transition-all ${
+                     className={`py-4 px-4 md:px-8 rounded-lg font-bold text-xs md:text-xl transition-all ${
                       activeMap === "noida"
                         ? "bg-black text-white"
                         : "bg-gray-300 text-black"
@@ -55,7 +55,7 @@ function Contact() {
                 
                   <button 
                   onClick={() => handleButton("ghaziabad")}
-                  className={`py-4 px-4 md:px-8 rounded-full font-bold text-xs md:text-xl transition-all ${
+                  className={`py-4 px-4 md:px-8 rounded-lg font-bold text-xs md:text-xl transition-all ${
                     activeMap === "ghaziabad"
                       ? "bg-black text-white"
                       : "bg-gray-300 text-black"

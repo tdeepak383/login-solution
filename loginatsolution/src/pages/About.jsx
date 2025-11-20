@@ -73,7 +73,7 @@ function About({onClick}) {
       ></div>
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-16 md:mt-28">
             <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold mb-10">We connect you with the right talent for your business goals</h1>
-            <Link to={"/contact-us"} className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-10 md:px-16 md:text-2xl tracking-wide py-3 rounded-lg mt-5 ${scrolled ? "z-0" : "relative z-50"}`}>Connect with Us</Link>
+            <Link to={"/contact-us"} className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-10 md:px-16 md:text-2xl tracking-wide py-3 rounded-lg mt-5 ${scrolled ? "z-0" : "relative z-50"}`}>Connect with us</Link>
             <p className='mt-10 text-xl'>Our process ensures every professional is carefully vetted, technically proficient, and aligned with your company’s objectives. Helping you build a reliable, high-performing team that delivers consistent results</p>
         </div>
         <div className='w-full overflow-hidden'>
@@ -115,7 +115,7 @@ function About({onClick}) {
       <section className='after-hero-section relative min-h-screen md:px-4 margin-top-about' id="next-section">
         <div className='max-w-6xl text-center mx-auto py-10 md:px-6 '>
           <h2 className='md:text-5xl sm:text-3xl font-bold text-xl mb-10'>We work as your Partner, <br />not a Service Provider</h2>
-          <p className='max-sm:px-5 md:text-xl'>We connect with you as a partner, not a supplier, because we believe that true success is built on collaboration and trust. Our approach is centered around working alongside you, understanding your goals, and crafting solutions that align perfectly with your vision.</p>
+          <p className='max-sm:px-5 md:text-xl'>We connect with you as a partner, because we believe that true success is built on collaboration and trust. Our approach is centered around working alongside you, understanding your goals, and crafting solutions that align perfectly with your vision.</p>
         </div>
         <ClientsLogo/>
         <div className='bg-gray-50 max-sm:px-4'>         
@@ -133,11 +133,11 @@ function About({onClick}) {
               </div>
 
               {/* Info Card */}
-              <div className="relative z-10 bg-[var(--blue-light)] border border-[var(--blue-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
+              <div className="relative md:h-[600px] z-10 bg-[var(--blue-light)] border border-[var(--blue-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
                 <div className="flex justify-between items-center">
                   <div>
                     <h4 className="md:text-2xl font-bold">Gunjan Gupta</h4>
-                    <p className="md:text-xl">Founder & CEO</p>
+                    <p className="md:text-xl">Co-founder</p>
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
                     {/* <a
@@ -147,7 +147,7 @@ function About({onClick}) {
                       <FaFacebookF />
                     </a> */}
                     <a
-                      href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/"
+                      href="http://linkedin.com/in/gunjan-gupta-a700237"
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaLinkedinIn />
@@ -156,19 +156,29 @@ function About({onClick}) {
                 </div>
 
                 <div className="mt-5 space-y-3">
+                  {/* <div className="relative">
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
+                    <p className="max-sm:text-xs ml-7">
+                      “Gunjan is the co-founder of Loginat Solutions Pvt. Ltd., a journey that began with her roots in software development before transitioning into project management. With over 25+ years of experience, she discovered her true passion for entrepreneurship."
+                    </p>
+                  </div> */}
                   <div className="relative">
                     <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
-                      Computer Engineer from Manipal University, has honed her technical skills working for
-                      industry leaders such as American Express Bank and NIIT Ltd having extensive experience
-                      in the field of Internet Development and Consulting.
+                      Combines her strong technical foundation with strategic leadership to drive growth and innovation. Her professional journey began in software development and evolved into project management, giving her a deep understanding of how technology, people, and process come together to deliver impactful outcomes.
+
                     </p>
                   </div>
                   <div className="relative">
                     <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
-                      A people's person, who likes to lead from the front, her biggest strength lies in her
-                      entrepreneurial style and the ability to build strong relationships.
+                      Led diverse teams, managed complex digital initiatives, and built lasting partnerships based on trust and collaboration. Her transition from technologist to entrepreneur reflects a passion for creating meaningful value and fostering a culture of excellence.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
+                    <p className="max-sm:text-xs ml-7">
+                      At Loginat, Gunjan continues to shape the organization's vision with a focus on quality, efficiency, and long-term client success.
                     </p>
                   </div>
                 </div>
@@ -182,11 +192,11 @@ function About({onClick}) {
               </div>
 
               {/* Info Card */}
-              <div className="relative z-10 bg-[var(--blue-light)] border border-[var(--blue-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
+              <div className="relative md:h-[600px] z-10 bg-[var(--blue-light)] border border-[var(--blue-light)] shadow-xl rounded-3xl p-5 md:p-8 mx-2 md:mx-6 -mt-10">
                 <div className="flex justify-between items-center">
                   <div>
                     <h4 className="md:text-2xl font-bold">Atul Gupta</h4>
-                    <p className="md:text-xl">Founder & CEO</p>
+                    <p className="md:text-xl">Co-founder</p>
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
                     {/* <a
@@ -205,18 +215,31 @@ function About({onClick}) {
                 </div>
 
                 <div className="mt-5 space-y-3">
+                  {/* <div className="relative">
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
+                    <p className="max-sm:text-xs ml-7">
+                      “Atul Gupta co-founder of Loginat Solutions Pvt. Ltd., a Visualizer with strong understanding of communication strategy, advertising, design & development. Started career as a coder and became an entrepreneur.”
+                    </p>
+                  </div> */}
                   <div className="relative">
                     <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
-                      Lead designer and creative director on projects with some of the biggest companies in the world. Has strong understanding of communication strategy, Advertising, Design & Development. 
+                      Leads with a vision to merge creativity and technology into purposeful digital experiences. With a career spanning communication strategy, advertising, design, and software development, he brings a multidisciplinary perspective to every project.
                     </p>
                   </div>
                   <div className="relative">
                     <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
                     <p className="max-sm:text-xs ml-7">
-                      Career as a coder but soon picked up Design and communication as his new career zone to work with a ‘.com’ a venture of candico industries, vCustomer and HCL Technologies.
+                      Atul’s deep technical roots give him a rare ability to align creative vision with executional precision. Over the years, he has helped brands strengthen their digital presence, streamline communication, and deliver results-driven marketing outcomes.
                     </p>
                   </div>
+                  <div className="relative">
+                    <RiDropFill className="absolute top-1 text-[var(--blue)] rotate-90" />
+                    <p className="max-sm:text-xs ml-7">
+                      His entrepreneurial spirit continues to shape Loginat’s mission, to empower ideas that inspire, engage, and perform.
+                    </p>
+                  </div>
+               
                 </div>
               </div>
             </div>

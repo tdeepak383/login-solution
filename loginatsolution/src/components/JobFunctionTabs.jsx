@@ -349,7 +349,7 @@ const JobFunctionTabs = () => {
       <h2 className='text-2xl md:text-5xl text-black font-bold text-center max-w-6xl mx-auto'>Hire Virtual Talent in Any Domain</h2>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10 rounded-3xl bg-white">
         {/* up Side Tabs */}
-        <div className="">
+        <div className="md:sticky max-sm:sticky max-sm:top-0 md:top-0">
 
           <div className="shadow-lg bg-gray-50 p-5 rounded-3xl">
             <div className="flex justify-between mb-5">
@@ -363,7 +363,7 @@ const JobFunctionTabs = () => {
                 whileTap={{ scale: 0.98 }}
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`text-center bg-gray-200 px-5 py-3 text-sm md:text-sm rounded-3xl transition-all duration-300 ${activeTab === tab.id
+                className={`text-left bg-gray-200 px-5 py-3 text-sm md:text-sm rounded-lg transition-all duration-300 ${activeTab === tab.id
                   ? "gradient text-white"
                   : "hover:bg-gray-100 text-gray-600"
                   }`}
@@ -376,7 +376,7 @@ const JobFunctionTabs = () => {
         </div>
 
         {/* down Side Content */}
-        <div className="lg:col-span-3 bg-white h-full max-sm:mt-10 rounded-xl">
+        <div className="lg:col-span-3 bg-white h-full max-sm:mt-10 max-sm:px-3 rounded-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -426,7 +426,7 @@ const JobFunctionTabs = () => {
           to="/contact-us"
           className="bg-gradient-to-r from-[var(--pink)] to-[var(--blue)] hover:bg-gradient-to-l transition-all duration-700 text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block shadow-md"
         >
-          Start Hiring
+          Start hiring
         </Link>
       </motion.div>
     </motion.div>

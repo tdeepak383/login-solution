@@ -43,7 +43,7 @@ const openings = [
 
 const CurrentOpenings = ({onClick}) => {
   return (
-    <section className="relative w-full py-20 px-6">
+    <section className="relative w-full pb-20 px-6">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ const CurrentOpenings = ({onClick}) => {
               onClick={onClick}
               className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--pink)] to-[var(--purple)] text-white font-semibold py-2 rounded-lg transition hover:shadow-md"
             >
-              Apply Now <FaArrowRight className="text-sm" />
+              Apply now <FaArrowRight className="text-sm" />
             </button>
           </motion.div>
         ))}

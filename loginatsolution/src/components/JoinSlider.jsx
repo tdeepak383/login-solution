@@ -23,13 +23,13 @@ const JoinSlider = () => {
       <div className="absolute top-4 right-6 z-20 flex gap-3">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
-          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded p-4 shadow-lg transition"
+          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"
         >
           <FaArrowLeft />
         </button>
         <button
           onClick={() => swiperRef.current?.slideNext()}
-          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded p-4 shadow-lg transition"
+          className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"
         >
           <FaArrowRight />
         </button>

@@ -14,11 +14,11 @@ function Join() {
        onClick={() => setIsPopupOpen(true)}
       title={"We build team, not individual employees"}
       subtitle={"You could be the next Solver!"}
-      buttontext={"Join Us Now"}
-      children={"We believe the every individual in the team is important. Our regular interactions / feedbacks & faith in every individual inculcate a sense of comfort. This helps us in building a stable & consistent team Life@LoginAt is happening and full of life few snapshot might tell you the story"}
+      buttontext={"Join us now"}
+      children={"At Loginat, we believe every individual is an essential part of the team. Through regular interactions, open feedback, and mutual trust, we foster a sense of comfort and collaboration that builds a strong, consistent team. Life@Loginat is dynamic, engaging, and full of life. A few snapshots below might just tell you the story!"}
       />
-      <section className='margin-top-Subhero'>
-        <div className='max-w-6xl mx-auto md:py-10 md:px-6'>
+      <section className='margin-top-join'>
+        <div className='max-w-6xl mx-auto md:py-0 md:px-6'>
           <JoinSlider />
           <CurrentOpenings onClick={() => setIsPopupOpen(true)} />
         </div>

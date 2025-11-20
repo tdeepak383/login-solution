@@ -41,7 +41,7 @@ function CallToAction() {
                 className='lg:text-6xl md:text-3xl text-2xl text-left tracking-wide'
                 variants={fadeUp}
               >
-                Top Talent Made Easy!
+                Top talent made easy!
               </motion.h2>
 
               <motion.h4

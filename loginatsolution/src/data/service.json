@@ -3,13 +3,12 @@
     "title": "Branding",
     "id": "branding",
     "content": [
-      { "points": "Naming", "image": "images/branding/1.svg" },
       { "points": "Messaging & Positioning", "image": "images/branding/2.svg" },
-      { "points": "Social Media Posts", "image": "images/branding/3.svg" },
+      { "points": "Brand Guidelines", "image": "images/branding/7.svg" },
       { "points": "Office Branding", "image": "images/branding/4.svg" },
       { "points": "Logo Designing", "image": "images/branding/5.svg" },
       { "points": "Website Development", "image": "images/branding/6.svg" },
-      { "points": "Brand Guidelines", "image": "images/branding/7.svg" },
+      { "points": "Social Media", "image": "images/branding/3.svg" },
       { "points": "Iconography", "image": "images/branding/8.svg" },
       { "points": "Illustration", "image": "images/branding/9.svg" },
       { "points": "Animation", "image": "images/branding/10.svg" }
@@ -19,14 +18,17 @@
     "title": "Design",
     "id": "design",
     "content": [
-      { "points": "UI/UX Design", "image": "images/design/1.svg" },
-      { "points": "Website Design", "image": "images/design/2.svg" },
-      { "points": "Website Development", "image": "images/design/3.svg" },
-      { "points": "Mobile App Design", "image": "images/design/4.svg" },
-      { "points": "Packaging Design", "image": "images/design/5.svg" },
-      { "points": "Graphic Design", "image": "images/design/6.svg" },
-      { "points": "Emailers Design", "image": "images/design/7.svg" },
-      { "points": "Magazine Design", "image": "images/design/8.svg" }
+      { "points": "Web/Graphic Design", "image": "images/design/1.svg" },
+      { "points": "UI/UX Design", "image": "images/design/2.svg" },
+      { "points": "Email and Newsletter Design", "image": "images/design/3.svg" },   
+      { "points": "PowerPoint Design", "image": "images/design/4.svg" },   
+      { "points": "Whitepaper / Datasheet Design", "image": "images/design/5.svg" },
+      { "points": "Event Collateral Design", "image": "images/design/6.svg" },
+      { "points": "Social Media Post Design", "image": "images/design/7.svg" },
+      { "points": "Video Editors", "image": "images/design/8.svg" },
+      { "points": "Brochures and Leaflet Design", "image": "images/design/9.svg" },
+      { "points": "Office Branding Design", "image": "images/design/10.svg" },
+      { "points": "Audio Visuals Experts", "image": "images/design/11.svg" }
     ]
   },
   {
@@ -34,15 +36,13 @@
     "id": "techsolution",
     "content": [
       { "points": "Stunning Website", "image": "images/techsolution/1.svg" },
-      { "points": "Applications or Software", "image": "images/techsolution/2.svg" },
-      { "points": "Fully-functional Customized", "image": "images/techsolution/3.svg" },
       { "points": "E-commerce Solutions", "image": "images/techsolution/4.svg" },
+      { "points": "Web Development Solutions", "image": "images/techsolution/10.svg" },
+      { "points": "Web Applications", "image": "images/techsolution/2.svg" },
       { "points": "Full-stack Android/iOS App Development", "image": "images/techsolution/5.svg" },
       { "points": "Customized ERP Solutions", "image": "images/techsolution/6.svg" },
       { "points": "Advanced HRMS to Manage Employee", "image": "images/techsolution/7.svg" },
-      { "points": "Managing AWS Servers", "image": "images/techsolution/8.svg" },
-      { "points": "Website Maintenance & Support", "image": "images/techsolution/9.svg" },
-      { "points": "Web Development Solutions", "image": "images/techsolution/10.svg" }
+      { "points": "Website Maintenance & Support", "image": "images/techsolution/9.svg" } 
     ]
   },
   {
@@ -61,12 +61,19 @@
     "title": "Back Office",
     "id": "backoffice",
     "content": [
-      { "points": "Data Entry and Data Processing", "image": "images/backoffice/1.svg" },
-      { "points": "Catalogue and content Management", "image": "images/backoffice/2.svg" },
-      { "points": "Finance and Accounting Support", "image": "images/backoffice/3.svg" },
-      { "points": "HR and Payroll", "image": "images/backoffice/4.svg" },
-      { "points": "Compliance and Documentation", "image": "images/backoffice/5.svg" },
-      { "points": "Reporting and Analytics Support", "image": "images/backoffice/6.svg" }
+      { "points": "Order Taking & Processing", "image": "images/backoffice/1.svg" },
+      { "points": "Customer support services", "image": "images/backoffice/2.svg" },
+      { "points": "Product Management", "image": "images/backoffice/3.svg" },
+      { "points": "Complaint Resolution / Grievance Handling", "image": "images/backoffice/4.svg" },
+      { "points": "Virtual Receptionist/ Switchboard Services", "image": "images/backoffice/5.svg" },
+      { "points": "Customer Support/ Helpdesk Services", "image": "images/backoffice/6.svg" },
+      { "points": "Data Entry and Data Processing", "image": "images/backoffice/7.svg" },
+      { "points": "Catalogue and content Management", "image": "images/backoffice/8.svg" },
+      { "points": "HR and Payroll", "image": "images/backoffice/9.svg" },
+      { "points": "Compliance and Documentation", "image": "images/backoffice/10.svg" },
+      { "points": "Reporting and Analytics Support", "image": "images/backoffice/11.svg" }
+      
+      
     ]
   }
 ]

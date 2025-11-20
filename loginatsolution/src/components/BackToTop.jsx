@@ -34,7 +34,7 @@ function BackToTop() {
     >
       <button
         onClick={scrollToTop}
-        className="bg-[var(--purple)] text-white p-3 rounded-full shadow-lg hover:bg-[var(--purple-light)] transition-all duration-300"
+        className="bg-[var(--purple)] text-white p-3 rounded-lg shadow-lg hover:bg-[var(--pink)] transition-all duration-300"
         aria-label="Back to top"
       >
         <HiArrowUp className="text-2xl" />

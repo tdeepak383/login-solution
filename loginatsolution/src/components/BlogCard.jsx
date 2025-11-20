@@ -15,11 +15,11 @@ function BlogCard({title, date, content, link, image}) {
                     to={`/blogs/${link}`}
                     className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-10 md:text-xl tracking-wide py-2 mt-5 rounded-lg inline-block"
                   >
-                    Read More
+                    Read more
                   </Link>
               </div>
               <div className='order-1 lg:order-2'>
-                <img src={`/clientdemo/loginatsol/images/${image}`} alt={title} className='rounded-xl'/>
+                <img src={`/images/${image}`} alt={title} className='rounded-xl'/>
               </div>
             </div>           
         </div>

@@ -27,7 +27,7 @@ export default function TestimonialSlider() {
         <div className="absolute top-1/2 left-3 md:-left-20 z-20 flex gap-3">
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-full p-4 shadow-lg transition"
+            className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"
           >
             <FaArrowLeft />
           </button>
@@ -35,7 +35,7 @@ export default function TestimonialSlider() {
         <div className="absolute top-1/2 right-3 md:-right-20 z-20 flex gap-3">
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-full p-4 shadow-lg transition"
+            className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"
           >
             <FaArrowRight />
           </button>

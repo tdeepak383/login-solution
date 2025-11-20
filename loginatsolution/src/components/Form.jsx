@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import { useEffect, useRef, useState } from "react";
 
 const jobs = [
   { id: "job1", label: "Designer" },
@@ -95,36 +94,59 @@ const RequirementForm = ({ color }) => {
   };
 
   // ✅ Handle Submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("Sending...");
 
-    emailjs
-      .sendForm(
-        "service_68aw1vp",
-        "template_wpwn4op",
-        form.current,
-        "AJkmrIMNpmyESloDc"
-      )
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            contact: "",
-            company: "",
-            jobCategory: "",
-            jobRole: "",
-            duration: "",
-            requirement: "",
-            consent: false,
-          });
-          setSelectJob("");
-        },
-        () => setStatus("❌ Failed to send message. Please try again.")
-      );
-  };
+  try {
+    const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setStatus("✅ Message sent successfully!");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        contact: "",
+        company: "",
+        jobCategory: "",
+        jobRole: "",
+        duration: "",
+        requirement: "",
+        consent: false,
+      });
+
+      setSelectJob("");
+    } else {
+      setStatus("❌ Failed to submit. Try again.");
+    }
+  } catch (error) {
+    console.error("Submit Error:", error);
+    setStatus("❌ Server error. Try again later.");
+  }
+};
+
+
+useEffect(() => {
+  if (!status) return;
+
+  const timer = setTimeout(() => {
+    setStatus("");
+  }, 2000);
+
+  return () => clearTimeout(timer);
+}, [status]);
+
+
 
   return (
     <div className={`bg-${color} rounded-3xl`}>
@@ -134,7 +156,7 @@ const RequirementForm = ({ color }) => {
         className="w-full text-left p-8 space-y-8"
       >
         <h2 className="text-xl font-semibold text-center text-gray-800">
-          Share Your Requirement
+          Share your requirement
         </h2>
 
         {/* Basic Info */}
@@ -265,9 +287,9 @@ const RequirementForm = ({ color }) => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full text-xs md:w-auto px-8 py-3 gradient text-white font-medium rounded-full shadow-md hover:opacity-90 transition"
+            className="w-full md:w-auto px-8 py-3 gradient text-white font-medium rounded-lg shadow-md hover:opacity-90 transition"
           >
-            Submit Your Requirement
+            Submit
           </button>
           {status && (
             <p className="mt-4 text-xs text-gray-600 text-center">{status}</p>

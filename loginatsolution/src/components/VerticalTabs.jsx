@@ -334,14 +334,14 @@ const tabsContent = {
       <h2 className='text-2xl md:text-5xl text-black text-center max-w-6xl mx-auto'>Embed trained professionals and stay focused on accelerating your growth</h2>
       <div className="flex flex-col lg:flex-row w-full shadow-lg max-w-6xl mx-auto mt-10 p-5 bg-white rounded-3xl">
         {/* Left Side Tabs */}
-        <div className="flex md:flex-col flex-row flex-wrap lg:w-1/4 w-full bg-gray-50 rounded-l-xl py-5 px-3">
+        <div className="flex lg:flex-col md:sticky max-sm:sticky max-sm:top-0 md:top-0 flex-row gap-2 flex-wrap lg:w-1/4 w-full bg-gray-50 rounded-l-xl py-5 px-3">
           {tabs.map((tab) => (
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full text-center md:text-left px-4 py-3 mb-2 md:mb-5 bg-gray-200  text-sm md:text-xl rounded-lg ${
+              className={`w-full text-left md:text-left px-4 py-3 bg-gray-200  text-sm md:text-xl rounded-lg ${
                 activeTab === tab.id
                   ? "bg-gray-200 text-white gradient"
                   : "hover:bg-gray-100 text-gray-600"
@@ -353,7 +353,7 @@ const tabsContent = {
         </div>
 
         {/* Right Side Content */}
-        <div className="md:px-10 lg:w-3/4 w-full bg-gray-50 rounded-r-xl">
+        <div className="md:px-10 px-3 lg:w-3/4 w-full bg-gray-50 rounded-r-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -413,7 +413,7 @@ const tabsContent = {
           to="/contact-us"
           className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] transition-all duration-700 text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg inline-block shadow-md"
         >
-          Start Hiring
+          Start hiring
         </Link>
       </motion.div>
     </motion.div>

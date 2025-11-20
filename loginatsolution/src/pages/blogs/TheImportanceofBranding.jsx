@@ -8,7 +8,7 @@ function TheImportanceofBranding() {
                 <div className='max-w-3xl'>
                     <h3 className='text-2xl md:text-4xl font-bold'>The Importance of Branding</h3>
                     <p className='py-4'>Published: 07 Oct, 2025</p>
-                    <img src="/clientdemo/loginatsol/images/branding.jpg" alt="" className='rounded-xl'/>
+                    <img src="/images/branding.jpg" alt="" className='rounded-xl'/>
                     <div className='mt-10'>
                         <h4 className='text-xl font-semibold mb-5'>Building Recognition, Trust, and Loyalty:</h4>
                         <p>Branding is far more than just a logo or a catchy tagline: it is the very identity of a business and the foundation of its connection with customers. In fact, branding reflects a company's values, behaviour, quality, and purpose. A thoughtfully designed logo should resonate with the target audience from the very first glance and can even influence investor perceptions. Whether it's a growing startup or an established enterprise, effective branding plays a pivotal role in distinguishing your business from competitors and building long-term success.</p>

@@ -84,21 +84,21 @@ function Service() {
   }, [activeTab]);
 
   return (
-    <section className="w-full z-50 flex flex-col gap-0 items-center justify-center py-14 pb-20 px-5 bg-white overflow-hidden min-w-full snap-start flex-shrink-0">
+    <section className="w-full z-50 flex flex-col gap-0 items-center justify-center py-14 pb-20 px-5 bg-white min-w-full snap-start flex-shrink-0">
       <motion.div className="absolute inset-0 pointer-events-none" />
       <div className="max-w-6xl mx-auto w-full md:p-6 relative z-10">
         <h2 className="lg:text-5xl text-center md:text-4xl text-2xl font-bold">
-          We can also take full ownership and deliver your project end to end
+          We build, manage, and deliver end-to-end with precision and accountability
         </h2>
 
         {/* --- Tabs --- */}
-        <div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10 p-3 bg-gray-200 rounded-lg md:rounded-3xl lg:rounded-full max-w-6xl mx-auto">
+        <div className="max-sm:sticky max-sm:top-0">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10 p-3 bg-gray-200 rounded-lg max-w-6xl mx-auto">
             {data.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-5 py-3 w-full text-sm md:text-lg rounded-full text-center transition-all duration-300 ${
+                className={`px-5 py-3 w-full text-sm md:text-lg rounded-lg text-center transition-all duration-300 ${
                   activeTab === item.id
                     ? "gradient text-white shadow-md"
                     : "text-black bg-white hover:shadow-md"
@@ -130,7 +130,7 @@ function Service() {
                     <div className="grid grid-cols-4 gap-4">
                       <div className="p-3 border rounded-lg">
                         <img
-                          src={`/clientdemo/loginatsol/${service.image}`}
+                          src={`/${service.image}`}
                           alt=""
                           className="w-12 h-12 object-contain"
                         />

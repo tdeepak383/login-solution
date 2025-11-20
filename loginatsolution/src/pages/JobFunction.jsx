@@ -16,11 +16,11 @@ function JobFunction() {
       onClick={() => setIsPopupOpen(true)}
       title={"Job Functions"}
       subtitle={""}
-      buttontext={"Schedule a Consultation"}
+      buttontext={"Schedule a consultation"}
       children={"FTE-based delivery model allows our clients to scale with dedicated experts across various job functions, including marketing, design, development, customer support, and back-office operations."}
     />
     <section className='margin-top-Subhero'>
-        <div className='max-w-6xl text-center mx-auto py-10 px-6 '>
+        <div className='max-w-6xl text-center mx-auto pb-10 px-6 '>
             <JobFunctionTabs/>
         </div>
     </section>
