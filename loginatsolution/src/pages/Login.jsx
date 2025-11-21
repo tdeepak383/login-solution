@@ -125,7 +125,7 @@ function Login() {
           </div>
 
           {/* Extras */}
-          <div className="flex items-center justify-between text-sm">
+          {/* <div className="flex items-center justify-between text-sm">
             <label className="inline-flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -138,7 +138,7 @@ function Login() {
             <Link to="/forgot-password" className="text-blue-700 underline">
               Forgot password?
             </Link>
-          </div>
+          </div> */}
  
           {/* Submit */}
           <button
@@ -150,12 +150,12 @@ function Login() {
           </button>
         </form>
 
-        <p className="text-sm text-center font-medium mt-4">
+        {/* <p className="text-sm text-center font-medium mt-4">
           New here?{' '}
           <Link to="/register" className="text-blue-700 underline">
             Create an account
           </Link>
-        </p>
+        </p> */}
       </div>
     </div>
   );

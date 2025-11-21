@@ -65,6 +65,7 @@ function About({onClick}) {
 
   return (
     <>
+   
     <div className='w-full h-[90vh] fixed top-0'>
       <div
         className={`absolute inset-0 transition-all duration-1000 ease-in-out ${

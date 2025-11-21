@@ -32,7 +32,7 @@ export function ProtectedRoute({ children }) {
 
 
 const router = createBrowserRouter(
-  
+
     [
       {
         path: "/",

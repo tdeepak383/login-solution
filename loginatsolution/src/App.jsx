@@ -6,12 +6,14 @@ import Header from './components/Header'
 import BackToTop from './components/BackToTop'
 import CookieConsent from './components/CookieConsent'
 import ScrollToTop from './components/scrollToTop'
+import AutoSEO from './components/SEO'
 
 
 function App() {
 
   return (
     <>    
+      <AutoSEO/>
       <Header />
       <Outlet />
       <Footer />

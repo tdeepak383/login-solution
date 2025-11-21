@@ -3,6 +3,7 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdLogout, MdOutlineLibraryAdd } from "react-icons/md";
 import { FaBars, FaBlog, FaComments,  FaUserCircle, FaUsers } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import AutoSEO from '../components/SEO';
 function AdminLayout() {
 
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ function AdminLayout() {
 
   return (
     <>
-        
+        <AutoSEO/>
     <div className='flex h-screen mx-auto'>
       <aside className={`w-64 bg-[var(--purple)] text-white p-6 space-y-4 ${isSidebarOpen ? 'block' : 'max-sm:hidden'}`}>
           

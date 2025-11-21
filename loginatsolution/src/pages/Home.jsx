@@ -14,6 +14,7 @@ function Home() {
    const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <>    
+      
       <HeroSection onClick={() => setIsPopupOpen(true)} />
       <AfterHero onClick={() => setIsPopupOpen(true)}/>
       <VerticalTabs />      
