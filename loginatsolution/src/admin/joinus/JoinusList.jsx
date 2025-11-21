@@ -71,8 +71,8 @@ function JoinusList() {
                           <td><p className="text-sm line-clamp-1">{item.experience}</p></td>
                           <td><p className="text-sm w-3/4">{item.message}</p></td>
                           <td><p className="text-sm underline text-blue-700"><a href={item.resume} target='_blank'>Download</a></p></td>
-                          <td className=" py-2 align-middle text-center">
-                            <div className="flex items-center justify-center gap-3">
+                          <td className=" py-2 align-middle text-left">
+                            <div className="flex items-center justify-left gap-3">
                               <Link to={`/admin/resume-list/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
                               <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
                             </div>
