@@ -2,19 +2,26 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/db.js");
 const multer = require("multer");
-const path = require("path");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require('../config/cloudinary.js')
+
 
 // ---------------------------
 // MULTER STORAGE SETUP
 // ---------------------------
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/resumes/"),
-  filename: (req, file, cb) =>
-    cb(null, Date.now() + "-" + file.originalname),
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "resumes",
+    resource_type: "raw", // allows PDF, DOC, DOCX
+    public_id: (req, file) => 
+      Date.now() + "-" + file.originalname.replace(/\s+/g, "_"),
+  },
 });
 
 const upload = multer({ storage });
+
 
 
 // -----------------------------
@@ -24,22 +31,22 @@ router.post("/", upload.single("resume"), async (req, res) => {
   try {
     const { fullName, email, phone, position, experience, message } = req.body;
 
-    let resumePath = null;
-    if (req.file) {
-      resumePath = "uploads/resumes/" + req.file.filename;
-    }
+    const resumeUrl = req.file?.path || ""; // cloudinary URL returned
 
     await pool.query(
-      "INSERT INTO joinuslist (fullName, email, phone, position, experience, message, resume) VALUES (?,?,?,?,?,?,?)",
-      [fullName, email, phone, position, experience, message, resumePath]
+      `INSERT INTO joinuslist 
+       (fullName, email, phone, position, experience, message, resume) 
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [fullName, email, phone, position, experience, message, resumeUrl]
     );
 
-    res.json({ success: true, message: "Submitted Successfully" });
-  } catch (error) {
-    console.error("Error creating record:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.json({ success: true, message: "Saved successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
   }
 });
+
 
 
 
@@ -81,50 +88,38 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", upload.single("resume"), async (req, res) => {
   try {
     const { id } = req.params;
+    const { fullName, email, phone, position, experience, message } = req.body;
 
-    const fullName = req.body.fullName || "";
-    const email = req.body.email || "";
-    const phone = req.body.phone || "";
-    const position = req.body.position || "";
-    const experience = req.body.experience || "";
-    const message = req.body.message || "";
+    let resumeUrl = req.file?.path || null;
 
-    let resumePath = null;
-
-    if (req.file) {
-      resumePath = "uploads/resumes/" + req.file.filename;
-    }
-
-    const sql = `
-      UPDATE joinuslist SET 
-      fullName = ?, 
-      email = ?, 
-      phone = ?, 
-      position = ?, 
-      experience = ?, 
-      message = ?,
-      resume = COALESCE(?, resume)
-      WHERE id = ?
-    `;
-
-    await pool.query(sql, [
+    let query =
+      "UPDATE joinuslist SET fullName=?, email=?, phone=?, position=?, experience=?, message=?";
+    let values = [
       fullName,
       email,
       phone,
       position,
       experience,
       message,
-      resumePath,
-      id,
-    ]);
+    ];
 
-    res.json({ success: true, message: "Updated Successfully" });
+    if (resumeUrl) {
+      query += ", resume=?";
+      values.push(resumeUrl);
+    }
 
-  } catch (error) {
-    console.error("Error updating contact:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    query += " WHERE id=?";
+    values.push(id);
+
+    await pool.query(query, values);
+
+    res.json({ success: true, message: "Updated successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
   }
 });
+
 
 
 // ==========================

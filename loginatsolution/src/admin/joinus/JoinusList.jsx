@@ -70,7 +70,7 @@ function JoinusList() {
                           <td><p className="text-sm line-clamp-1">{item.position}</p></td>
                           <td><p className="text-sm line-clamp-1">{item.experience}</p></td>
                           <td><p className="text-sm w-3/4">{item.message}</p></td>
-                          <td><p className="text-sm underline text-blue-700"><a href={`http://localhost:5000/uploads/resumes/${item.resume}`} target='_blank'>Download</a></p></td>
+                          <td><p className="text-sm underline text-blue-700"><a href={item.resume} target='_blank'>Download</a></p></td>
                           <td className=" py-2 align-middle text-center">
                             <div className="flex items-center justify-center gap-3">
                               <Link to={`/admin/resume-list/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>

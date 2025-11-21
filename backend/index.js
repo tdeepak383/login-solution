@@ -18,7 +18,6 @@ app.use(cookieParser());
 app.use('/api/auth', AuthRouter);
 app.use('/api/contacts', contactRouter);
 app.use('/api/joinuslist', joinUsRouter);
-app.use("/uploads", express.static("uploads"));
 
 // error handler
 app.use((err, _req, res, _next) => {
