@@ -33,6 +33,8 @@ function Header() {
           isActive ? "text-[var(--purple)]" : "hover:text-[var(--purple)] transition" }>About Us</NavLink></li>
             <li><NavLink to="/blogs" className={({ isActive }) =>
           isActive ? "text-[var(--purple)]" : "hover:text-[var(--purple)] transition" }>Blog</NavLink></li>
+            <li><NavLink to="/client-stories" className={({ isActive }) =>
+          isActive ? "text-[var(--purple)]" : "hover:text-[var(--purple)] transition" }>Client Stories</NavLink></li>
             <li><NavLink to="/contact-us" className={({ isActive }) =>
           isActive ? "text-[var(--purple)]" : "hover:text-[var(--purple)] transition" }>Contact Us</NavLink></li>
             <li><NavLink to="/join-us" className={({ isActive }) =>
@@ -66,6 +68,8 @@ function Header() {
           isActive ? "block text-[var(--purple)]" : "hover:text-[var(--purple)] transition" } onClick={() => setMenuOpen(false)}>About Us</NavLink></li>
               <li><NavLink to="/blogs" className={({ isActive }) =>
           isActive ? "block text-[var(--purple)]" : "hover:text-[var(--purple)] transition" } onClick={() => setMenuOpen(false)}>Blog</NavLink></li>
+              <li><NavLink to="/client-stories" className={({ isActive }) =>
+          isActive ? "block text-[var(--purple)]" : "hover:text-[var(--purple)] transition" } onClick={() => setMenuOpen(false)}>Client Stories</NavLink></li>
               <li><NavLink to="/contact-us" className={({ isActive }) =>
           isActive ? "block text-[var(--purple)]" : "hover:text-[var(--purple)] transition" } onClick={() => setMenuOpen(false)}>Contact Us</NavLink></li>
               <li><NavLink to="/join-us" className={({ isActive }) =>

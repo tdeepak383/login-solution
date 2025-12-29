@@ -24,6 +24,18 @@ import JoinusList from './admin/joinus/JoinusList.jsx'
 import NotFound from './pages/NotFound.jsx'
 import EditContacts from './admin/contacts/EditContacts.jsx'
 import EditJoinusList from './admin/joinus/EditJoinusList.jsx'
+import BlogList from './admin/blogs/BlogList.jsx'
+import HiringAVirtualTeam from './pages/blogs/HiringAVirtualTeam.jsx'
+import PDE from './pages/jobs/PDE.jsx'
+import TeamLead from './pages/jobs/TeamLead.jsx'
+import ClientStories from './pages/ClientStories.jsx'
+import TimelyDeliveryofHighQualityeLearning from './pages/client-strories/TimelyDeliveryofHighQualityeLearning.jsx'
+import CreativeSolutionsforGlobalAviation from './pages/client-strories/CreativeSolutionsforGlobalAviation.jsx'
+import IntegratedCreativeandDigitalMarketingSupport from './pages/client-strories/IntegratedCreativeandDigitalMarketingSupport.jsx'
+import TradeIndia from './pages/client-strories/TradeIndia.jsx'
+import IndiaMart from './pages/client-strories/IndiaMart.jsx'
+import NIIT from './pages/client-strories/NIIT.jsx'
+import TEConnectivity from './pages/client-strories/TEConnectivity.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -50,7 +62,25 @@ const router = createBrowserRouter(
           { path: 'jobfunction', element: <JobFunction />},
           { path: 'register', element: <Register />},
           { path: 'login', element: <Login />},
+
+          // Blogs paths
           { path: 'blogs/the-importance-of-branding', element: <TheImportanceofBranding />},
+          { path: 'blogs/hiring-a-virtual-enabling-team', element: <HiringAVirtualTeam />},
+
+          // Jobs paths
+          { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },
+          { path: 'jobs/team-lead', element: <TeamLead /> },
+
+          // Client Strories paths
+          { path: 'client-stories', element: <ClientStories /> },
+          { path: 'client-stories/timely-delivery-high-quality-elearning-modules-aptara', element: <TimelyDeliveryofHighQualityeLearning /> },
+          { path: 'client-stories/creative-solutions-global-aviation-leaders-in-high-pressure-environments', element: <CreativeSolutionsforGlobalAviation /> },
+          { path: 'client-stories/integrated-creative-and-digital-marketing-support-for-an-ai-technology-leader', element: <IntegratedCreativeandDigitalMarketingSupport /> },
+          { path: 'client-stories/long-term-content-and-backend-support-for-a-leading-b2b-portal-in-india', element: <TradeIndia /> },
+          { path: 'client-stories/long-term-backend-operations-support-for-a-leading-b2b-portal-in-india', element: <IndiaMart /> },
+          { path: 'client-stories/staff-augmentation-with-high-resource-continuity-for-niit-ltd', element: <NIIT /> },
+          { path: 'client-stories/creative-and-intranet-solutions-for-internal-communications-at-te-connectivity', element: <TEConnectivity /> },
+
         ]
       },
 
@@ -60,13 +90,19 @@ const router = createBrowserRouter(
         children: [
           { index: true, element: <Dashboard /> },
           { path: 'contacts', element: <ContactList /> },
+          { path: 'blogs', element: <BlogList /> },
           { path: 'contacts/edit/:id', element: <EditContacts /> },
           { path: 'resume-list', element: <JoinusList /> },
           { path: 'resume-list/edit/:id', element: <EditJoinusList /> },
         ]
       },
       { path: '*', element: <NotFound /> },
-    ]
+      
+      
+    ],
+    // {
+    //   basename: "/demo",
+    // }
 
 )
 

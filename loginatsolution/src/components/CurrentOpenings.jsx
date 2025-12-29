@@ -1,45 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, SwitchLayoutGroupContext } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import openings from '../data/openings.json'
 
-const openings = [
-  {
-    title: "Telecalling Executive / Telemarketing Executive",
-    location: "Noida",
-    type: "1 - 3 Years",
-    description:
-      "Experience in Telecalling / Telemarketing with excellent communication skills.",
-  },
-  {
-    title: "Sales Executive",
-    location: "Noida / Remote",
-    type: "1 - 4 Years",
-    description:
-      "Experience in B2B Sales with a proven track record of achieving sales targets.",
-  },
-  {
-    title: "SEO - CW",
-    location: "Noida",
-    type: "2 - 5 Years",
-    description:
-      "Experience in SEO with knowledge of on-page and off-page optimization techniques.",
-  },
-  {
-    title: "HTML Designer",
-    location: "Noida",
-    type: "2 - 3 Years",
-    description:
-      "Experience in HTML designing with proficiency in HTML5, CSS3, and responsive design.",
-  },
-  {
-    title: "Php Developer",
-    location: "Noida",
-    type: "2 - 5 Years",
-    description:
-      "Experience in PHP development with knowledge of frameworks like Laravel or CodeIgniter.",
-  },
-];
 
 const CurrentOpenings = ({onClick}) => {
   return (
@@ -68,9 +32,11 @@ const CurrentOpenings = ({onClick}) => {
             className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-gray-100"
           >
             <div className="text-left">
+              <Link to={`/jobs/${job.slug}`}>
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                 {job.title}
               </h3>
+              </Link>
               <p className="text-gray-600 mb-3">{job.description}</p>
               <div className="flex items-center justify-between text-sm text-gray-500 mt-4">
                 <span>{job.location}</span>
@@ -82,7 +48,7 @@ const CurrentOpenings = ({onClick}) => {
 
             <button
               onClick={onClick}
-              className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--pink)] to-[var(--purple)] text-white font-semibold py-2 rounded-lg transition hover:shadow-md"
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white font-semibold py-2 rounded-lg transition hover:shadow-md"
             >
               Apply now <FaArrowRight className="text-sm" />
             </button>

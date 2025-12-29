@@ -159,6 +159,8 @@ useEffect(() => {
             className="w-full border p-3 rounded-md"
           >
             <option value="">Select Position</option>
+            <option value="Project Delivery Executive (PDE)">Project Delivery Executive (PDE)</option>
+            <option value="Team Lead">Team Lead</option>
             <option value="Telecalling Executive / Telemarketing Executive">
               Telecalling Executive / Telemarketing Executive
             </option>

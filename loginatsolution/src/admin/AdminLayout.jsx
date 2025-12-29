@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet, Link, useNavigate } from "react-router-dom";
-import { MdDashboard, MdLogout, MdOutlineLibraryAdd } from "react-icons/md";
-import { FaBars, FaBlog, FaComments,  FaUserCircle, FaUsers } from "react-icons/fa";
+import { MdDashboard, MdLogout } from "react-icons/md";
+import { FaBars, FaBlog, FaUserCircle, FaUsers } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import AutoSEO from '../components/SEO';
 function AdminLayout() {
@@ -24,11 +24,12 @@ function AdminLayout() {
           
         <div className="flex flex-col h-full justify-between">
           <div>
-          <h2 className='lg:text-xl font-bold flex items-center my-4 gap-3'>Login@ Solution</h2>
+          <h2 className='lg:text-xl font-bold flex items-center my-4 gap-3'>Loginat Solution</h2>
           {/* <h2 className='lg:text-xl font-bold flex items-center mb-4 gap-3'><FaPenSquare />Admin Panel</h2> */}
           <nav className='space-y-6 text-sm'>
               
-              <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>              
+              <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
+              <Link to="/admin/blogs" className="flex items-center gap-3"><FaBlog className='text-lg' />Blogs</Link>
               <Link to="/admin/contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />Contacts List</Link>
               <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserCircle className='text-lg' />Applicants List</Link>
           </nav>

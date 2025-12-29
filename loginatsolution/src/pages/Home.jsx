@@ -8,6 +8,8 @@ import TestimonialSlider from '../components/Testimonial'
 import LogoCarousel from '../components/LogoCarousel'
 import ClientsLogo from '../components/ClientsLogo'
 import PopUp from '../components/PopUp'
+import ClientStoriesSection from '../components/ClientStoriesSection'
+import ProductsShowcase from '../components/ProductsShowcase'
 
 
 function Home() {
@@ -20,7 +22,9 @@ function Home() {
       <VerticalTabs />      
       <Solutions />
       <CallToAction />
-      <LogoCarousel bgColor={"gray-200"} cardColor={"white"} />
+      <LogoCarousel bgColor={"gray-100"} cardColor={"white"} />
+      <ProductsShowcase/>
+      <ClientStoriesSection />
       <TestimonialSlider />
       <ClientsLogo />
       <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />

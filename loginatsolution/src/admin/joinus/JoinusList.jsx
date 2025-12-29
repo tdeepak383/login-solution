@@ -50,6 +50,7 @@ function JoinusList() {
                 <table className="w-full table-auto border-collapse">
                   <thead className='text-left border-b-4'>
                     <tr>
+                      <th>Date</th>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Phone</th>
@@ -64,6 +65,11 @@ function JoinusList() {
                       {
                         joinuslist.map(item => (
                         <tr key={item.id} className="border-b">
+                          <td><p>{new Date(item.created_at).toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                          })}</p></td>
                           <td className="py-2 align-middle"><p className="text-sm line-clamp-1">{item.fullName}</p></td>
                           <td><p className="text-sm line-clamp-1">{item.email}</p></td>
                           <td><p className="text-sm line-clamp-1">{item.phone}</p></td>
@@ -78,8 +84,7 @@ function JoinusList() {
                             </div>
                           </td>
                         </tr>
-                      ))
-                      }
+                      ))}
                   </tbody>
                 </table>
               </div>

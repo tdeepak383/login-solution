@@ -16,7 +16,7 @@ export default function TestimonialSlider() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8 text-center">
           <h3 className="text-gray-500 tracking-wider">Testimonials</h3>
-          <h2 className="text-3xl md:text-5xl text-gray-800">
+          <h2 className="text-3xl font-bold md:text-5xl text-gray-800">
             What our clients say
           </h2>
         </div>
@@ -24,7 +24,7 @@ export default function TestimonialSlider() {
 
       <div className="relative lg:w-1/2 md:w-3/4 w-72 mx-auto">
         {/* Navigation Buttons */}
-        <div className="absolute top-1/2 left-3 md:-left-20 z-20 flex gap-3">
+        <div className="absolute md:top-1/2 max-sm:hidden right-16 md:-left-20 z-20 flex gap-3">
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"
@@ -32,7 +32,7 @@ export default function TestimonialSlider() {
             <FaArrowLeft />
           </button>
         </div>
-        <div className="absolute top-1/2 right-3 md:-right-20 z-20 flex gap-3">
+        <div className="absolute md:top-1/2 max-sm:hidden right-3 md:-right-20 z-20 flex gap-3">
           <button
             onClick={() => swiperRef.current?.slideNext()}
             className="bg-[var(--purple)] hover:bg-[var(--pink)] text-white rounded-lg p-4 shadow-lg transition"

@@ -142,7 +142,7 @@ function About({onClick}) {
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
                     {/* <a
-                      href="https://www.facebook.com/LoginAtSolutions"
+                      href="https://www.facebook.com/Loginat Solutions "
                       className="bg-[var(--pink)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaFacebookF />
@@ -201,7 +201,7 @@ function About({onClick}) {
                   </div>
                   <div className="flex space-x-2 text-white text-xl">
                     {/* <a
-                      href="https://www.facebook.com/LoginAtSolutions"
+                      href="https://www.facebook.com/Loginat Solutions "
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaFacebookF />

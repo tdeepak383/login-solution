@@ -1,14 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
+import RecentBlogCard from '../../components/RecentBlogCard'
+import data from '../../data/blog.json'
+import { IconButton, Stack, Typography } from "@mui/material";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+
 
 function TheImportanceofBranding() {
+
+
+    const [likes, setLikes] = useState(63);
+    const [dislikes, setDislikes] = useState(26);
+    const [reaction, setReaction] = useState(null);
+
+      const handleLike = () => {
+    if (reaction === true) {
+      setLikes(likes - 1);
+      setReaction(null);
+    } else {
+      setLikes(likes + 1);
+      if (reaction === false) setDislikes(dislikes - 1);
+      setReaction(true);
+    }
+  };
+
+  const handleDislike = () => {
+    if (reaction === false) {
+      setDislikes(dislikes - 1);
+      setReaction(null);
+    } else {
+      setDislikes(dislikes + 1);
+      if (reaction === true) setLikes(likes - 1);
+      setReaction(false);
+    }
+  };
+
   return (
     <>
         <section>
             <div className='max-w-6xl mx-auto py-10 px-6'>
-                <div className='max-w-3xl'>
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-6 lg:grid-cols-5 ">
+                    <div className='lg:col-span-3'>
                     <h3 className='text-2xl md:text-4xl font-bold'>The Importance of Branding</h3>
                     <p className='py-4'>Published: 07 Oct, 2025</p>
-                    <img src="/images/branding.jpg" alt="" className='rounded-xl'/>
+                    <Stack direction="row" spacing={1} alignItems="center" className='mb-5'>
+                    <IconButton onClick={handleLike} color={reaction === true ? "primary" : "default"}>
+                        <ThumbUpIcon />
+                    </IconButton>
+                    <Typography>{likes}</Typography>
+
+                    <IconButton onClick={handleDislike} color={reaction === false ? "error" : "default"}>
+                        <ThumbDownIcon />
+                    </IconButton>
+                    <Typography>{dislikes}</Typography>
+                    </Stack>
+                    <img src="/demo/images/branding.jpg" alt="" className='rounded-xl'/>
                     <div className='mt-10'>
                         <h4 className='text-xl font-semibold mb-5'>Building Recognition, Trust, and Loyalty:</h4>
                         <p>Branding is far more than just a logo or a catchy tagline: it is the very identity of a business and the foundation of its connection with customers. In fact, branding reflects a company's values, behaviour, quality, and purpose. A thoughtfully designed logo should resonate with the target audience from the very first glance and can even influence investor perceptions. Whether it's a growing startup or an established enterprise, effective branding plays a pivotal role in distinguishing your business from competitors and building long-term success.</p>
@@ -37,6 +83,26 @@ function TheImportanceofBranding() {
                         <h4 className='text-xl font-semibold mb-5'>Conclusion</h4>
                         <p>Branding is a critical asset that impacts every aspect of your business, from how you market your products to the way customers perceive and engage with your company. By developing a solid brand identity, you can foster recognition, trust, and loyalty, all of which contribute to long-term business growth. In today's competitive market, a strong brand is not just an option; it's a necessity.</p>
                     </div>
+                </div>
+                <div className='lg:col-span-2'>
+                    <div className='bg-gray-50 rounded-xl p-5'>
+                        <h4>Recent Blogs</h4>
+                        <div className='mt-5'>
+                            {
+                                data.map((blog, index) => (
+                                <RecentBlogCard 
+                                key={index}
+                                title={blog.title}
+                                date={blog.date}
+                                link={blog.link}
+                                image={blog.image}
+                                />
+                                ))
+                            }
+                        </div>
+                    </div>
+                    
+                </div>
                 </div>
             </div>
         </section>

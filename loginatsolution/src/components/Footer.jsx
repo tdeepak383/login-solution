@@ -22,6 +22,9 @@ import video8 from '../assets/art-8.mov'
 import video9 from '../assets/art-9.mov'
 
 
+import iso1 from '../assets/iso1.png';
+import iso2 from '../assets/iso2.png';
+
 const videoSlide = [
     video1,
     video2,
@@ -106,7 +109,7 @@ function Footer() {
           </motion.div>
           <motion.div className="lg:ml-20">
             <div className="flex space-x-4 text-black text-xl">
-              {/* <a href="https://www.facebook.com/LoginAtSolutions" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
+              {/* <a href="https://www.facebook.com/Loginat Solutions " className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
               <FaFacebookF />
               </a> */}
               <a href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
@@ -118,25 +121,28 @@ function Footer() {
             </div>
           </motion.div>
             {/* Company */}
-          <motion.div variants={fadeUp} className="text-left col-span-3">
+          <motion.div variants={fadeUp} className="text-left col-span-2">
             {/* <h3 className="font-semibold text-xl text-gray-900 mb-4">Company</h3> */}
-            <ul className="space-y-3 text-black md:columns-3 columns-2">
+            <ul className="space-y-3 text-black md:columns-2 columns-2">
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/jobfunction">Job Function</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/services">Services</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/about">About Us</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/blogs">Blogs</Link></li>
+              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/client-stories">Client Stories</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/join-us" >Join Us</Link></li>
               <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/contact-us">Contact Us</Link></li>
             </ul>
           </motion.div>
           {/* Product */}
-          <motion.div variants={fadeUp} className="text-left">
-            {/* <h3 className="font-semibold text-xl text-gray-900 mb-4">Quick Links</h3> */}
-            <ul className="space-y-3 text-black">
-              {/* <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/about">About Us</Link></li>
-              <li className="hover:text-[var(--purple)] cursor-pointer"><Link to="/blogs">Blogs</Link></li> */}
-              
-            </ul>
+          <motion.div variants={fadeUp} className="flex items-center gap-3 ">
+            <div>
+              <a href="/LAS(ISOIEC_27001-2022)_FINAL.pdf" target="_blank"><img src={iso1} alt="" className="w-24 mb-2" />
+              <p className="text-xs">27001:2022 (ISMS) Certifications</p></a>
+            </div>
+            <div>
+              <a href="/LAS(ISO 9001-2015)201123019101.pdf" target="_blank"><img src={iso2} alt="" className="w-24 mb-2" />
+              <p className="text-xs">ISO 9001:2015 (QMS) & ISO</p></a>
+            </div>
           </motion.div>
 
           {/* Resources */}
@@ -151,7 +157,6 @@ function Footer() {
             </ul>
           </motion.div>
 
-        
         </motion.div>
 
         {/* Divider */}

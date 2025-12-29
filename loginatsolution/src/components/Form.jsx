@@ -287,7 +287,7 @@ useEffect(() => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full md:w-auto px-8 py-3 gradient text-white font-medium rounded-lg shadow-md hover:opacity-90 transition"
+            className="w-full md:w-auto px-8 py-3 bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white font-medium rounded-lg shadow-md hover:opacity-90 transition"
           >
             Submit
           </button>

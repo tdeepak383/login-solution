@@ -65,7 +65,7 @@ function HeroSection({onClick}) {
         <div className="max-w-6xl mx-auto text-center py-16 px-4 mt-28">
             <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold">
               Scale Without  <span className="text-[var(--purple)]">Boundaries </span></h1>
-            <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>Access top global experts and scale faster with a Virtual Marketing Enabling Team trusted by leading startups and enterprises.</h2>
+            <h2 className='lg:text-3xl md:text-xl text-lg mb-8 mt-10'>Access top global experts and scale faster with a Virtual Marketing Enabling Team trusted by leading  enterprises and startups.</h2>
             <button className={`bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white px-16 md:text-2xl tracking-wide py-3 rounded-lg ${scrolled ? "z-0" : "relative z-50"}`} onClick={onClick}>Connect with us</button>
         </div>
         <div className='w-full overflow-hidden'>
