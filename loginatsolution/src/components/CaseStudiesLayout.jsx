@@ -30,7 +30,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>01</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={apartaLogo} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>A leading India-based eLearning and digital content solutions provider serving global enterprises and publishers.</p>
@@ -47,7 +47,7 @@ function CaseStudiesLayout() {
                         </ul>
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -77,7 +77,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>02</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={KLMLogo} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>Air France and KLM Royal Dutch Airlines – Two of the world’s leading aviation brands with global operations and high-impact communication needs.</p>
@@ -95,7 +95,7 @@ function CaseStudiesLayout() {
                     </div>
                 </div>
 
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -123,7 +123,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>03</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={vitriaLogo} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>Vitria Technology – A leading AI-driven enterprise technology company specializing in intelligent automation and real-time analytics.</p>
@@ -142,7 +142,7 @@ function CaseStudiesLayout() {
                 </div>
 
 
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -171,7 +171,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>04</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={tradeindia} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>Leading B2B Portal, India - A prominent digital marketplace connecting buyers and sellers across multiple industries.</p>
@@ -189,7 +189,7 @@ function CaseStudiesLayout() {
                     </div>
                 </div>
 
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -217,7 +217,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>05</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={indiamartLogo} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>Leading B2B Portal, India – A prominent digital marketplace connecting businesses across multiple industries.</p>
@@ -234,7 +234,7 @@ function CaseStudiesLayout() {
                         </ul>
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -263,7 +263,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>06</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={NIITLogo} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>NIIT Ltd. - A leading global eLearning and skills development company delivering learning solutions across industries.</p>
@@ -280,7 +280,7 @@ function CaseStudiesLayout() {
                         </ul>
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold mt-6'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
@@ -308,7 +308,7 @@ function CaseStudiesLayout() {
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
                     <p className='text-sm'><span className='text-xl font-semibold'>07</span>/07</p>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <img src={TEConnectivity} alt="" className='w-40' />
                         <p className='text-left mt-5 text-xs'>TE Connectivity – Connectors & Sensors for a Connected World A global engineering leader enabling connectivity and sensor solutions across industries.</p>
@@ -325,7 +325,7 @@ function CaseStudiesLayout() {
                         </ul>
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 gap-4'>
+                <div className='grid md:grid-cols-2 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />

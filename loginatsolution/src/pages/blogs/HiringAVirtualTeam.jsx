@@ -56,7 +56,7 @@ function TheImportanceofBranding() {
                     </IconButton>
                     <Typography>{dislikes}</Typography>
                     </Stack>
-                    <img src="/demo/images/blog-2.jpg" alt="" className='rounded-xl'/>
+                    <img src="/images/blog-2.jpg" alt="" className='rounded-xl'/>
                     <div className='mt-10'>
                         <p>In today’s rapidly evolving business environment, agility is the key. Organizations are under constant pressure to innovate quickly, enhance customer experiences, and achieve more with limited resources. However, assembling the right team to drive goals can be difficult, especially when facing constraints in budget, time, and access to skilled local talent.</p>
                         <p>That’s where a Virtual Enabling Team comes in.</p>

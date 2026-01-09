@@ -36,6 +36,8 @@ import TradeIndia from './pages/client-strories/TradeIndia.jsx'
 import IndiaMart from './pages/client-strories/IndiaMart.jsx'
 import NIIT from './pages/client-strories/NIIT.jsx'
 import TEConnectivity from './pages/client-strories/TEConnectivity.jsx'
+import AddBlog from './admin/blogs/AddBlog.jsx'
+import AslContact from './admin/aslcontacts/AslContact.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -91,9 +93,11 @@ const router = createBrowserRouter(
           { index: true, element: <Dashboard /> },
           { path: 'contacts', element: <ContactList /> },
           { path: 'blogs', element: <BlogList /> },
+          { path: 'add-blog', element: <AddBlog /> },
           { path: 'contacts/edit/:id', element: <EditContacts /> },
           { path: 'resume-list', element: <JoinusList /> },
           { path: 'resume-list/edit/:id', element: <EditJoinusList /> },
+          { path: 'asl-contacts', element: <AslContact/> }
         ]
       },
       { path: '*', element: <NotFound /> },

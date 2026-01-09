@@ -18,9 +18,9 @@ function AdminLayout() {
 
   return (
     <>
-        <AutoSEO/>
+    <AutoSEO/>
     <div className='flex h-screen mx-auto'>
-      <aside className={`w-64 bg-[var(--purple)] text-white p-6 space-y-4 ${isSidebarOpen ? 'block' : 'max-sm:hidden'}`}>
+      <aside className={`lg:w-64 w-96 bg-[var(--purple)] text-white p-6 space-y-4 ${isSidebarOpen ? 'block' : 'max-sm:hidden'}`}>
           
         <div className="flex flex-col h-full justify-between">
           <div>
@@ -29,9 +29,11 @@ function AdminLayout() {
           <nav className='space-y-6 text-sm'>
               
               <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
-              <Link to="/admin/blogs" className="flex items-center gap-3"><FaBlog className='text-lg' />Blogs</Link>
+              <Link to="/admin/blogs" className="flex items-center gap-3"><FaBlog className='text-lg' />All Blogs</Link>
+              <Link to="/admin/add-blog" className="flex items-center gap-3"><FaBlog className='text-lg' />Add Blogs</Link>
               <Link to="/admin/contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />Contacts List</Link>
               <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserCircle className='text-lg' />Applicants List</Link>
+              <Link to="/admin/asl-contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />ASL Contacts List</Link>
           </nav>
         </div>
         <div className='mt-10'>

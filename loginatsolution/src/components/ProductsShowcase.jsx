@@ -182,7 +182,7 @@ export default function ProductsShowcase() {
             <SwiperSlide key={slide.id}>
               <div className="bg-gray-100 h-[220px] sm:h-[280px] md:h-[400px] rounded-2xl md:rounded-3xl flex items-center justify-center">
                 <img
-                  src={`/demo/${slide.image}`}
+                  src={`${slide.image}`}
                   alt={slide.title}
                   className="w-full h-full object-contain md:object-cover"
                 />

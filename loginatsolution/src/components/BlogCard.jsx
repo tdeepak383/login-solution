@@ -19,7 +19,7 @@ function BlogCard({title, date, content, link, image}) {
                   </Link>
               </div>
               <div className='order-1 lg:order-2'>
-                <img src={`/demo/images/${image}`} alt={title} className='rounded-xl'/>
+                <img src={`/images/${image}`} alt={title} className='rounded-xl'/>
               </div>
             </div>           
         </div>

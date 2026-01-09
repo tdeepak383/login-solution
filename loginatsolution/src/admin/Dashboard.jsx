@@ -11,7 +11,8 @@ function Dashboard() {
     const fetchData = async () => {
       const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts`);
       const result = await response.json();
-      setContacts(result.data);
+      const uniqueData = filterDuplicates(result.data);
+      setContacts(uniqueData);
     };
     fetchData();
   }, []);
@@ -23,14 +24,27 @@ function Dashboard() {
           const fetchData = async () => {
             const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/joinuslist`);
             const result = await response.json();
-            setJoinuslist(result.data);
+            const uniqueData = filterDuplicates(result.data);
+            setJoinuslist(uniqueData);
           };
           fetchData();
         }, []);
 
+  const filterDuplicates = (data) => {
+    return Array.from(
+      new Map(
+        data.map(item => [
+          `${item.email}`,
+          item
+        ])
+      ).values()
+    );
+  };
+
+
 
   return (
-    <div className='p-10 bg-gray-100 h-full max-sm:w-[800px]'>
+    <div className='p-10 bg-gray-100 h-full lg:w-full w-[1200px]'>
       <h2 className='text-2xl mb-5 font-bold'>Dashboard</h2>
       <p>Welcome to the Admin Dashboard!</p>
 

@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function BlogList() {
+
+const [blogs, setBlogs] = useState([]);
+
+useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`);
+      const result = await response.json();
+      setBlogs(result);
+    };
+    fetchData();
+}, [])
+
+
   return (
-    <div className='p-10 bg-gray-100 max-sm:w-[1200px]'>
+    <div className='p-10 bg-gray-100 lg:w-full w-[1200px]'>
       <h2 className='text-2xl mb-5 font-bold'>Blogs List</h2>
 
       <div className='mt-10'>
@@ -16,18 +29,28 @@ function BlogList() {
                   <th>Featured Image</th>
                   <th>Title</th>
                   <th>Date</th>
-                  <th>Content</th>
-                  <th>Post by</th>
+                  <th>Category</th>
+                  <th>Tags</th>
                 </tr>
               </thead>
               <tbody>
-                <tr> 
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                {
+                  blogs.map(item => (
+                    <tr key={item.id} className="border-b">
+                      <img src={item.image} alt="" className='w-28 my-2 rounded-lg'/>
+                      <td className='py-2'>{item.title}</td>
+                      <td>
+                        {new Date(item.created_at).toLocaleDateString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </td>
+                      <td>{item.category}</td>
+                      <td>{item.tags}</td>
+                    </tr>
+                  ))
+                }
               </tbody>
             </table>
           </div>
