@@ -97,6 +97,17 @@ function AddBlog() {
                   "undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code",
               }}
             />
+
+            {/* Excerpt */}
+            <div className="mt-8">
+              <p className="font-medium mb-2">Excerpt</p>
+              <textarea
+                name="excerpt"
+                placeholder="Short description of the blog"
+                className="w-full border rounded-lg p-3"
+                rows={4}
+              />
+            </div>
           </div>
 
           {/* ---------------- RIGHT ---------------- */}

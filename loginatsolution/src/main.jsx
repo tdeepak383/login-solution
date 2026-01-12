@@ -9,7 +9,6 @@ import Contact from './pages/Contact.jsx'
 import Join from './pages/Join.jsx'
 import Blog from './pages/Blog.jsx'
 import Service from './pages/Service.jsx'
-import TheImportanceofBranding from './pages/blogs/TheImportanceofBranding.jsx'
 import CookiesPolicy from './pages/CookiesPolicy.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import TermsService from './pages/TermsService.jsx'
@@ -25,7 +24,6 @@ import NotFound from './pages/NotFound.jsx'
 import EditContacts from './admin/contacts/EditContacts.jsx'
 import EditJoinusList from './admin/joinus/EditJoinusList.jsx'
 import BlogList from './admin/blogs/BlogList.jsx'
-import HiringAVirtualTeam from './pages/blogs/HiringAVirtualTeam.jsx'
 import PDE from './pages/jobs/PDE.jsx'
 import TeamLead from './pages/jobs/TeamLead.jsx'
 import ClientStories from './pages/ClientStories.jsx'
@@ -38,6 +36,7 @@ import NIIT from './pages/client-strories/NIIT.jsx'
 import TEConnectivity from './pages/client-strories/TEConnectivity.jsx'
 import AddBlog from './admin/blogs/AddBlog.jsx'
 import AslContact from './admin/aslcontacts/AslContact.jsx'
+import BlogPage from './pages/blogs/BlogPage.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -57,6 +56,7 @@ const router = createBrowserRouter(
           { path: 'contact-us', element: <Contact /> },
           { path: 'join-us', element: <Join />},
           { path: 'blogs', element: <Blog />},
+          { path: 'blogs/:slug', element: <BlogPage />},
           { path: 'services', element: <Service />},
           { path: 'cookies-policy', element: <CookiesPolicy />},
           { path: 'privacy-policy', element: <PrivacyPolicy />},
@@ -65,9 +65,7 @@ const router = createBrowserRouter(
           { path: 'register', element: <Register />},
           { path: 'login', element: <Login />},
 
-          // Blogs paths
-          { path: 'blogs/the-importance-of-branding', element: <TheImportanceofBranding />},
-          { path: 'blogs/hiring-a-virtual-enabling-team', element: <HiringAVirtualTeam />},
+
 
           // Jobs paths
           { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },

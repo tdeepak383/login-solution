@@ -6,7 +6,7 @@ const { upload } = require("../uploads/upload");
 /* ---------------- CREATE BLOG ---------------- */
 router.post("/", upload.single("thumbnail"), async (req, res) => {
   try {
-    let { title, slug, content, category, tags } = req.body;
+    let { title, slug, excerpt, content, category, tags } = req.body;
     const thumbnail = req.file ? req.file.path : null;
 
     if (!title || !slug || !content) {
@@ -30,9 +30,9 @@ router.post("/", upload.single("thumbnail"), async (req, res) => {
     }
 
     await pool.query(
-      `INSERT INTO posts (title, slug, content, thumbnail, category, tags)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [title, finalSlug, content, thumbnail, category, tags]
+      `INSERT INTO posts (title, slug, excerpt, content, thumbnail, category, tags)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [title, finalSlug, excerpt, content, thumbnail, category, tags]
     );
 
     res.status(201).json({
@@ -50,7 +50,7 @@ router.post("/", upload.single("thumbnail"), async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query(`
-      SELECT id, title, slug, thumbnail, category, tags, created_at
+      SELECT id, title, slug, thumbnail, category, tags, created_at, excerpt, content
       FROM posts
       ORDER BY created_at DESC
     `);

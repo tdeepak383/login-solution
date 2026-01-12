@@ -2,6 +2,8 @@ import React from 'react'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdLogout } from "react-icons/md";
 import { FaBars, FaBlog, FaUserCircle, FaUsers } from "react-icons/fa";
+import { MdAddToPhotos } from "react-icons/md";
+
 import { RxCross2 } from "react-icons/rx";
 import AutoSEO from '../components/SEO';
 function AdminLayout() {
@@ -30,7 +32,7 @@ function AdminLayout() {
               
               <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
               <Link to="/admin/blogs" className="flex items-center gap-3"><FaBlog className='text-lg' />All Blogs</Link>
-              <Link to="/admin/add-blog" className="flex items-center gap-3"><FaBlog className='text-lg' />Add Blogs</Link>
+              <Link to="/admin/add-blog" className="flex items-center gap-3"><MdAddToPhotos className='text-lg ml-2' />Add Blogs</Link>
               <Link to="/admin/contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />Contacts List</Link>
               <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserCircle className='text-lg' />Applicants List</Link>
               <Link to="/admin/asl-contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />ASL Contacts List</Link>

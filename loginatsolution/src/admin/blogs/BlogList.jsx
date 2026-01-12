@@ -31,13 +31,14 @@ useEffect(() => {
                   <th>Date</th>
                   <th>Category</th>
                   <th>Tags</th>
+                  <th>Excerpt</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   blogs.map(item => (
                     <tr key={item.id} className="border-b">
-                      <img src={item.image} alt="" className='w-28 my-2 rounded-lg'/>
+                      <img src={item.thumbnail} alt="" className='w-28 my-2 rounded-lg'/>
                       <td className='py-2'>{item.title}</td>
                       <td>
                         {new Date(item.created_at).toLocaleDateString("en-IN", {
@@ -48,6 +49,7 @@ useEffect(() => {
                       </td>
                       <td>{item.category}</td>
                       <td>{item.tags}</td>
+                      <td>{item.excerpt}</td>
                     </tr>
                   ))
                 }
