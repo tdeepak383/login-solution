@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { MdDateRange } from 'react-icons/md'
 
 function RecentBlogCard({image, title, date, link}) {
   return (
@@ -11,12 +12,13 @@ function RecentBlogCard({image, title, date, link}) {
         </div>
         <div className='md:col-span-2'>
             <h4 className='text-sm font-semibold'>{title}</h4>
-            <div>
-                <p className='text-xs'>Published: {new Date(date).toLocaleDateString("en-IN", {
+            <div className='font-semibold mt-2'>
+                <p className='text-[var(--purple)] text-xs flex items-center gap-1'><MdDateRange /> {new Date(date).toLocaleDateString("en-IN", {
                 day: "2-digit",
                 month: "short",
                 year: "numeric",
-                })}</p>
+                })}
+                </p>
             </div>
         </div>
     </div>

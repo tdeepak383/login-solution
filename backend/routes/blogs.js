@@ -13,7 +13,7 @@ router.post("/", upload.single("thumbnail"), async (req, res) => {
       return res.status(400).json({ message: "Required fields missing" });
     }
 
-    // 🔁 CHECK SLUG AVAILABILITY
+    // CHECK SLUG AVAILABILITY
     let finalSlug = slug;
     let counter = 1;
 
@@ -80,5 +80,53 @@ router.get("/:slug", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+/* ---------------- DELETE BLOG BY ID ---------------- */
+
+router.delete("/:id", async(req, res) => {
+  try {
+    const {id} = req.params;
+    const [result] = await pool.query("DELETE FROM posts WHERE id = ?", [id]);
+
+    if(result.affectedRows === 0){
+      return res.status(404).json({message: "Post not found"});
+    } 
+    res.json({message: "Post deleted successfully"});
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+
+/* ---------------- UPDATE BLOG BY ID ---------------- */
+
+router.put("/:id", upload.single("thumbnail"), async(req, res) => {
+  try {
+    const {id} = req.params;
+    let { title, slug, excerpt, content, category, tags } = req.body;
+    const thumbnail = req.file ? req.file.path : null;
+    if (!title || !slug || !content) {
+      return res.status(400).json({ message: "Required fields missing" });
+    }
+    const [existingRows] = await pool.query(
+      "SELECT id FROM posts WHERE id = ? LIMIT 1",
+      [id]
+    );
+    if (!existingRows.length) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    await pool.query(
+      `UPDATE posts 
+      SET title = ?, slug = ?, excerpt = ?, content = ?, thumbnail = ?, category = ?, tags = ?
+      WHERE id = ?`,
+      [title, slug, excerpt, content, thumbnail, category, tags, id]
+    );
+    res.json({message: "Post updated successfully"});
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+
 
 module.exports = router;

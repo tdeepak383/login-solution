@@ -42,7 +42,7 @@ function BlogPage() {
                                 <h4>Recent Blogs</h4>
                                 <div className='mt-5'>
                                     {
-                                        blogData.map((blog, index) => (
+                                        blogData.slice(0, 10).map((blog, index) => (
                                             <RecentBlogCard
                                                 key={index}
                                                 title={blog.title}

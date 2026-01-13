@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 function Dashboard() {
 
+  const [dataBlogs, setDataBlogs] = React.useState([]);
+  
+  useEffect(() => {
+      const fetchData = async () => {
+        const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`);
+        const result = await response.json();
+        setDataBlogs(result);
+      };
+      fetchData();
+  }, [])
 
   const [contacts, setContacts] = useState([]);
 
@@ -49,6 +58,44 @@ function Dashboard() {
       <p>Welcome to the Admin Dashboard!</p>
 
       <div className='grid grid-cols-1 gap-6 mt-10'>
+        <div className='bg-white p-5 rounded-xl border'>
+          <h3 className='font-bold text-lg'>Total Blogs</h3>
+          <p className='text-2xl'>{dataBlogs.length}</p>
+          <div className='mt-5'>
+            <table className="w-full table-auto border-collapse">
+              <thead className='text-left border-b-4'>
+                  <tr>
+                    <th>Featured Image</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Tags</th>
+                  </tr>
+                </thead>
+              <tbody>
+                
+                  {
+                    dataBlogs.slice(0, 10).map(item => (
+                    <tr key={item.id} className="border-b">
+                      <td><img src={item.thumbnail} alt={item.title} className='w-28 my-2 rounded-lg' /></td>
+                      <td className="py-3 align-middle text-left"><p className="text-sm line-clamp-1">{item.title}</p></td>
+                      <td><p className="text-sm line-clamp-1">{new Date(item.created_at).toLocaleDateString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}</p></td>
+                      <td><p className="text-sm line-clamp-1">{item.category}</p></td>
+                      <td><p className="text-sm line-clamp-1">{item.tags}</p></td>                     
+                    </tr>
+                  ))
+                  }
+              </tbody>
+            </table>
+            <div className='text-right mt-3'>
+              <Link to="/admin/blogs" className='text-sm text-blue-600 hover:underline'>View All</Link>
+            </div>
+          </div>
+        </div>
         <div className='bg-white p-5 rounded-xl border'>
           <h3 className='font-bold text-lg'>Total Contacts</h3>
           <p className='text-2xl'>{contacts.length}</p>

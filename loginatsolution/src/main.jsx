@@ -37,6 +37,7 @@ import TEConnectivity from './pages/client-strories/TEConnectivity.jsx'
 import AddBlog from './admin/blogs/AddBlog.jsx'
 import AslContact from './admin/aslcontacts/AslContact.jsx'
 import BlogPage from './pages/blogs/BlogPage.jsx'
+import EditBlog from './admin/blogs/EditBlog.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -92,6 +93,7 @@ const router = createBrowserRouter(
           { path: 'contacts', element: <ContactList /> },
           { path: 'blogs', element: <BlogList /> },
           { path: 'add-blog', element: <AddBlog /> },
+          { path: 'blogs/edit/:id', element: <EditBlog /> },
           { path: 'contacts/edit/:id', element: <EditContacts /> },
           { path: 'resume-list', element: <JoinusList /> },
           { path: 'resume-list/edit/:id', element: <EditJoinusList /> },

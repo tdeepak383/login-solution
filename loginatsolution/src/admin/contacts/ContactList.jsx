@@ -47,8 +47,8 @@ function ContactList() {
           }
         })
         .catch(error => {
-          console.error('Error deleting passion:', error);
-          alert('Failed to delete passion');
+          console.error('Error deleting contact:', error);
+          alert('Failed to delete contact');
         });
     }
   };

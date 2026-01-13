@@ -69,7 +69,7 @@ function BlogDetailsPage({ title, content, image, created_at, tags }) {
 
         <div 
         dangerouslySetInnerHTML={{ __html: content }} 
-        className="prose prose-lg max-w-none"
+        className="prose prose-lg max-w-none mt-10"
         />
         <p className='text-sm text-gray-600 mt-5'><span className='font-semibold'>Tags:</span> {tags}</p>
         </div>

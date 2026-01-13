@@ -8,6 +8,10 @@ function AddBlog() {
   const [slug, setSlug] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [excerpt, setExcerpt] = useState("");
+  const [category, setCategory] = useState("");
+  const [tags, setTags] = useState("");
+
 
   /* ---------------- SLUG GENERATOR ---------------- */
   useEffect(() => {
@@ -31,27 +35,44 @@ function AddBlog() {
   };
 
   /* ---------------- SUBMIT ---------------- */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const content = editorRef.current.getContent();
+  const content = editorRef.current.getContent();
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("slug", slug);
-    formData.append("content", content);
-    formData.append("thumbnail", thumbnail);
-    
-    await fetch(
+  const formData = new FormData();
+  formData.append("title", title);
+  formData.append("slug", slug);
+  formData.append("content", content);
+  formData.append("excerpt", excerpt);
+  formData.append("category", category);
+  formData.append("tags", tags);
+  formData.append("thumbnail", thumbnail);
 
-      `${import.meta.env.VITE_VERCEL_URL}/api/blogs/`, 
-    {
-      method: "POST",
-      body: formData,
-    });
+  const res = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`, {
+    method: "POST",
+    body: formData,
+  });
 
-    alert("Blog published successfully");
-  };
+  if (!res.ok) {
+    alert("Something went wrong");
+    return;
+  }
+  
+  setTitle("");
+  setSlug("");
+  setExcerpt("");
+  setCategory("");
+  setTags("");
+  setThumbnail(null);
+  setPreview(null);
+
+  
+  editorRef.current.setContent("");
+
+  alert("Blog published successfully");
+};
+
 
   return (
     <section className="p-10 bg-gray-100">
@@ -106,6 +127,8 @@ function AddBlog() {
                 placeholder="Short description of the blog"
                 className="w-full border rounded-lg p-3"
                 rows={4}
+                value={excerpt}
+                onChange={(e) => setExcerpt(e.target.value)}
               />
             </div>
           </div>
@@ -146,6 +169,8 @@ function AddBlog() {
                 name="category"
                 placeholder="Type category"
                 className="w-full border rounded-lg p-3"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               />
             </div>
 
@@ -157,6 +182,8 @@ function AddBlog() {
                 name="tags"
                 placeholder="Separate with commas"
                 className="w-full border rounded-lg p-3"
+                value={tags}
+                onChange={(e) => setTags(e.target.value)}
               />
             </div>
           </div>
