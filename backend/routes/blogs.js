@@ -61,14 +61,15 @@ router.get("/", async (req, res) => {
   }
 });
 
+
 /* ---------------- GET BLOG BY SLUG ---------------- */
-router.get("/:slug", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const { slug } = req.params;
+    const { id } = req.params;
 
     const [rows] = await pool.query(
-      "SELECT * FROM posts WHERE slug = ? LIMIT 1",
-      [slug]
+      "SELECT * FROM posts WHERE id = ? LIMIT 1",
+      [id]
     );
 
     if (!rows.length) {
@@ -80,6 +81,7 @@ router.get("/:slug", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 /* ---------------- DELETE BLOG BY ID ---------------- */
 
