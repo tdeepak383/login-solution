@@ -100,33 +100,42 @@ router.delete("/:id", async(req, res) => {
 
 /* ---------------- UPDATE BLOG BY ID ---------------- */
 
-router.put("/:id", upload.single("thumbnail"), async(req, res) => {
+router.put("/:id", upload.single("thumbnail"), async (req, res) => {
   try {
-    const {id} = req.params;
-    let { title, slug, excerpt, content, category, tags } = req.body;
-    const thumbnail = req.file ? req.file.path : null;
+    const { id } = req.params;
+    const { title, slug, excerpt, content, category, tags } = req.body;
+
     if (!title || !slug || !content) {
       return res.status(400).json({ message: "Required fields missing" });
     }
+
     const [existingRows] = await pool.query(
-      "SELECT id FROM posts WHERE id = ? LIMIT 1",
+      "SELECT thumbnail FROM posts WHERE id = ? LIMIT 1",
       [id]
     );
+
     if (!existingRows.length) {
       return res.status(404).json({ message: "Post not found" });
     }
+
+    const thumbnail = req.file
+      ? req.file.path
+      : existingRows[0].thumbnail;
+
     await pool.query(
       `UPDATE posts 
-      SET title = ?, slug = ?, excerpt = ?, content = ?, thumbnail = ?, category = ?, tags = ?
-      WHERE id = ?`,
+       SET title = ?, slug = ?, excerpt = ?, content = ?, thumbnail = ?, category = ?, tags = ?
+       WHERE id = ?`,
       [title, slug, excerpt, content, thumbnail, category, tags, id]
     );
-    res.json({message: "Post updated successfully"});
+
+    res.json({ message: "Post updated successfully", id });
+
   } catch (error) {
-    res.status(500).json(error);
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
   }
 });
-
 
 
 module.exports = router;
