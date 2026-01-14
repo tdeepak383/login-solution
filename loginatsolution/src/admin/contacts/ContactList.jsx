@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ExportDropdown from '../components/ExportDropdown';
 
 
 function ContactList() {
@@ -34,7 +35,7 @@ function ContactList() {
     const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this passion?')) {
 
-      fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts/${id}`, {
+      fetch(`http://localhost:5000/api/contacts/${id}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -53,14 +54,22 @@ function ContactList() {
     }
   };
 
+
   return (
     <div className='p-10 bg-gray-100 lg:w-full w-[1200px]'>
       <h2 className='text-2xl mb-5 font-bold'>Contacts List</h2>
 
       <div className='mt-10'>
         <div className='bg-white p-5 rounded-xl shadow-xl'>
-          <h3 className='font-bold text-lg'>Total Contacts</h3>
-          <p className='text-2xl'>{contacts.length}</p>
+          <div className="flex justify-between">
+            <div>
+            <h3 className='font-bold text-lg'>Total Contacts</h3>
+            <p className='text-2xl'>{contacts.length}</p>
+          </div>
+           <div>
+            <ExportDropdown baseUrl="http://localhost:5000/api/contacts" />
+           </div>
+          </div> 
           <div className='mt-5'>
             <table className="w-full table-auto border-collapse">
               <thead className='text-left border-b-4'>

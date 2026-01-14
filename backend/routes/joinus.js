@@ -4,7 +4,7 @@ const pool = require("../config/db.js");
 const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const cloudinary = require('../config/cloudinary.js')
-
+const ExcelJS = require("exceljs");
 
 // ---------------------------
 // MULTER STORAGE SETUP
@@ -45,6 +45,71 @@ router.post("/", upload.single("resume"), async (req, res) => {
     console.error(err);
     res.status(500).send("Server error");
   }
+});
+
+// ==========================
+// Export Excel api
+// ==========================
+
+
+router.get("/export", async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT * FROM joinuslist ORDER BY id DESC");
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Applicants");
+
+    // Columns
+    worksheet.columns = [
+      { header: "ID", key: "id", width: 10 },
+      { header: "Name", key: "fullName", width: 25 },
+      { header: "Email", key: "email", width: 30 },
+      { header: "Phone", key: "phone", width: 20 },
+      { header: "Position", key: "position", width: 25 },
+      { header: "Experience", key: "experience", width: 25 },
+      { header: "Message", key: "message", width: 40 },
+      { header: "Resume", key: "resume", width: 15 },
+      { header: "Created At", key: "created_at", width: 20 }
+    ];
+
+    // Rows
+    rows.forEach(row => worksheet.addRow(row));
+
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=contacts.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Export failed" });
+  }
+});
+
+
+// ==========================
+// Export CSV api
+// ==========================
+
+router.get("/export-csv", async (req, res) => {
+  const [rows] = await pool.query("SELECT * FROM joinuslist");
+  if (!rows.length) return res.send("");
+
+  const headers = Object.keys(rows[0]).join(",");
+  const csvData = rows.map(row =>
+    Object.values(row).map(val => `"${val}"`).join(",")
+  );
+
+  res.setHeader("Content-Type", "text/csv");
+  res.setHeader("Content-Disposition", "attachment; filename=contacts.csv");
+
+  res.send([headers, ...csvData].join("\n"));
 });
 
 

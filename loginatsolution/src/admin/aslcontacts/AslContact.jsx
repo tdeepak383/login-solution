@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-
+import ExportDropdown from '../components/ExportDropdown';
 
 function AslContact() {
    const [contacts, setContacts] = useState([]);
@@ -15,8 +15,8 @@ function AslContact() {
       };
       fetchData();
     }, []);
-  
-  
+ 
+
     const filterDuplicates = (data) => {
     return Array.from(
         new Map(
@@ -57,8 +57,15 @@ function AslContact() {
         <h2 className='text-2xl mb-5 font-bold'>Asl Infosystems Contacts List</h2>
         <div className='mt-10'>
         <div className='bg-white p-5 rounded-xl shadow-xl'>
-          <h3 className='font-bold text-lg'>Total Contacts</h3>
-          <p className='text-2xl'>{contacts.length}</p>
+          <div className="flex justify-between">
+            <div>
+            <h3 className='font-bold text-lg'>Total Contacts</h3>
+            <p className='text-2xl'>{contacts.length}</p>
+          </div>
+           <div>
+            <ExportDropdown baseUrl="http://localhost:5000/api/aslcontacts" />
+           </div>
+          </div>
           <div className='mt-5'>
             <table className="w-full table-auto border-collapse">
               <thead className='text-left border-b-4'>

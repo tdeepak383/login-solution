@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ExportDropdown from '../components/ExportDropdown';
 
 
 function JoinusList() {
@@ -97,8 +98,15 @@ function JoinusList() {
     
           <div className='mt-10'>
             <div className='bg-white p-5 rounded-xl shadow-xl'>
-              <h3 className='font-bold text-lg'>Total Applicants</h3>
-              <p className='text-2xl'>{filteredAndSortedList.length}</p>
+              <div className='flex justify-between'>
+                <div>
+                  <h3 className='font-bold text-lg'>Total Applicants</h3>
+                  <p className='text-2xl'>{filteredAndSortedList.length}</p>
+                </div>
+                <div>
+                  <ExportDropdown baseUrl="http://localhost:5000/api/joinuslist" />
+                </div>
+              </div>
               <div className='mt-5'>
                 <table className="w-full table-auto border-collapse">
                   <thead className='text-left border-b-4'>

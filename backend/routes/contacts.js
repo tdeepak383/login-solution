@@ -1,10 +1,70 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/db.js");
+const ExcelJS = require("exceljs");
+
+router.get("/export", async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT * FROM contacts ORDER BY id DESC"); 
+    
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Contacts");
+
+    // Columns
+    worksheet.columns = [
+      { header: "ID", key: "id", width: 10 },
+      { header: "Name", key: "name", width: 25 },
+      { header: "Email", key: "email", width: 30 },
+      { header: "Phone", key: "contact", width: 20 },
+      { header: "Company", key: "company", width: 25 },
+      { header: "Job Category", key: "jobCategory", width: 25 },
+      { header: "Job Role", key: "jobRole", width: 25 },
+      { header: "Duration", key: "duration", width: 20 },
+      { header: "Requirement", key: "requirement", width: 40 },
+      { header: "Consent", key: "consent", width: 15 },
+      { header: "Created At", key: "created_at", width: 20 }
+    ];
+
+    // Rows
+    rows.forEach(row => worksheet.addRow(row));
+
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=contacts.xlsx"
+    );    
+
+    await workbook.xlsx.write(res);
+    res.end();
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Export failed" });
+  }
+});
+
+
+router.get("/export-csv", async (req, res) => {
+  const [rows] = await pool.query("SELECT * FROM contacts");
+  if (!rows.length) return res.send("");
+
+  const headers = Object.keys(rows[0]).join(",");
+  const csvData = rows.map(row =>
+    Object.values(row).map(val => `"${val}"`).join(",")
+  );
+
+  res.setHeader("Content-Type", "text/csv");
+  res.setHeader("Content-Disposition", "attachment; filename=contacts.csv");
+
+  res.send([headers, ...csvData].join("\n"));
+});
 
 // ==========================
 // GET ALL CONTACTS
 // ==========================
+
 router.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT * FROM contacts ORDER BY id DESC");
@@ -18,6 +78,7 @@ router.get("/", async (req, res) => {
 // ==========================
 // GET CONTACT BY ID
 // ==========================
+
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -37,6 +98,7 @@ router.get("/:id", async (req, res) => {
 // ==========================
 // CREATE NEW CONTACT
 // ==========================
+
 router.post("/", async (req, res) => {
   try {
     const {
@@ -53,7 +115,7 @@ router.post("/", async (req, res) => {
 
     const [result] = await pool.query(
       `INSERT INTO contacts 
-      (name, email, contact, company, jobCategory, jobRole, duration, requirement, consent) 
+      (name, email, contact, company, jobCategory, jobRole, duration, requirement, consent)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         name,
@@ -89,6 +151,7 @@ router.post("/", async (req, res) => {
 // ==========================
 // UPDATE CONTACT
 // ==========================
+
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -158,6 +221,7 @@ router.put("/:id", async (req, res) => {
 // ==========================
 // DELETE CONTACT
 // ==========================
+
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -174,5 +238,9 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+
+
 
 module.exports = router;

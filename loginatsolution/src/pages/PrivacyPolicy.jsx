@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           At{" "}
           <span className="font-semibold text-[var(--pink)]">
             LoginAt Solutions Pvt. Ltd.
-          </span>{" "}
+          </span>{" "}``
           , your privacy is important to us.
           This Privacy Policy explains how we collect, use, disclose, and
           protect your information when you visit our website{" "}
