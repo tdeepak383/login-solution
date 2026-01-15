@@ -13,7 +13,7 @@ function ContactList() {
 
     useEffect(() => {
       const fetchData = async () => {
-        const response = await fetch(`http://localhost:5000/api/contacts`);
+        const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts`);
         const result = await response.json();
         const uniqueData = filterDuplicates(result.data)
         setContacts(uniqueData);
@@ -37,7 +37,7 @@ function ContactList() {
     const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this passion?')) {
 
-      fetch(`http://localhost:5000/api/contacts/${id}`, {
+      fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts/${id}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -84,7 +84,7 @@ function ContactList() {
             />
 
             <ExportDropdown
-              baseUrl={`http://localhost:5000/api/contacts`}
+              baseUrl={`${import.meta.env.VITE_VERCEL_URL}/api/contacts`}
               from={fromDate}
               to={toDate}
             />

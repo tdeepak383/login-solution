@@ -119,7 +119,7 @@ function JoinusList() {
               />
 
               <ExportDropdown
-                baseUrl={`http://localhost:5000/api/joinuslist`}
+                baseUrl={`${import.meta.env.VITE_VERCEL_URL}/api/joinuslist`}
                 from={fromDate}
                 to={toDate}
               />
