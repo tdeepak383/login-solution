@@ -39,6 +39,7 @@ import AslContact from './admin/aslcontacts/AslContact.jsx'
 import BlogPage from './pages/blogs/BlogPage.jsx'
 import EditBlog from './admin/blogs/EditBlog.jsx'
 
+
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
   return isAuthenticated ? children : <Navigate to="/login" />;

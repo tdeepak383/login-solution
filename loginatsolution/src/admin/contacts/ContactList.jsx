@@ -8,10 +8,12 @@ function ContactList() {
 
 
     const [contacts, setContacts] = useState([]);
-  
+    const [fromDate, setFromDate] = useState("");
+    const [toDate, setToDate] = useState("");
+
     useEffect(() => {
       const fetchData = async () => {
-        const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/contacts`);
+        const response = await fetch(`http://localhost:5000/api/contacts`);
         const result = await response.json();
         const uniqueData = filterDuplicates(result.data)
         setContacts(uniqueData);
@@ -66,9 +68,28 @@ function ContactList() {
             <h3 className='font-bold text-lg'>Total Contacts</h3>
             <p className='text-2xl'>{contacts.length}</p>
           </div>
-           <div>
-            <ExportDropdown baseUrl="http://localhost:5000/api/contacts" />
-           </div>
+           <div className="flex items-center gap-3">
+            <input
+              type="date"
+              value={fromDate}
+              onChange={(e) => setFromDate(e.target.value)}
+              className="border px-3 py-2 rounded-lg"
+            />
+
+            <input
+              type="date"
+              value={toDate}
+              onChange={(e) => setToDate(e.target.value)}
+              className="border px-3 py-2 rounded-lg"
+            />
+
+            <ExportDropdown
+              baseUrl={`http://localhost:5000/api/contacts`}
+              from={fromDate}
+              to={toDate}
+            />
+          </div>
+
           </div> 
           <div className='mt-5'>
             <table className="w-full table-auto border-collapse">

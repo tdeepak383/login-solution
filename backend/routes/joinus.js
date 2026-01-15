@@ -54,12 +54,33 @@ router.post("/", upload.single("resume"), async (req, res) => {
 
 router.get("/export", async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT * FROM joinuslist ORDER BY id DESC");
+    const { from, to } = req.query;
 
+    let query = "SELECT * FROM joinuslist";
+    let params = [];
+
+    // ✅ Apply date filter only if both dates exist
+    if (from && to) {
+      query += " WHERE DATE(created_at) BETWEEN ? AND ?";
+      params.push(from, to);
+    }
+
+    query += " ORDER BY id DESC";
+
+    const [rows] = await pool.query(query, params);
+
+    if (!rows.length) {
+      return res.status(200).json({
+        success: false,
+        message: "No applicants found for the selected date range",
+        data: []
+      });
+    }
+    const ExcelJS = require("exceljs");
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Applicants");
 
-    // Columns
+    // Columns (same as yours)
     worksheet.columns = [
       { header: "ID", key: "id", width: 10 },
       { header: "Name", key: "fullName", width: 25 },
@@ -72,8 +93,10 @@ router.get("/export", async (req, res) => {
       { header: "Created At", key: "created_at", width: 20 }
     ];
 
-    // Rows
     rows.forEach(row => worksheet.addRow(row));
+
+    // ✅ Dynamic filename with date range
+    const fileName = `applicants_${from || "all"}_${to || "all"}.xlsx`;
 
     res.setHeader(
       "Content-Type",
@@ -81,11 +104,12 @@ router.get("/export", async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=contacts.xlsx"
+      `attachment; filename=${fileName}`
     );
 
     await workbook.xlsx.write(res);
     res.end();
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Export failed" });
@@ -93,23 +117,59 @@ router.get("/export", async (req, res) => {
 });
 
 
-// ==========================
-// Export CSV api
-// ==========================
 
+// ==========================
+// Export CSV API (Date Range)
+// ==========================
 router.get("/export-csv", async (req, res) => {
-  const [rows] = await pool.query("SELECT * FROM joinuslist");
-  if (!rows.length) return res.send("");
+  try {
+    const { from, to } = req.query;
 
-  const headers = Object.keys(rows[0]).join(",");
-  const csvData = rows.map(row =>
-    Object.values(row).map(val => `"${val}"`).join(",")
-  );
+    let query = "SELECT * FROM joinuslist";
+    let params = [];
 
-  res.setHeader("Content-Type", "text/csv");
-  res.setHeader("Content-Disposition", "attachment; filename=contacts.csv");
+    // ✅ Apply date filter only if both dates are provided
+    if (from && to) {
+      query += " WHERE DATE(created_at) BETWEEN ? AND ?";
+      params.push(from, to);
+    }
 
-  res.send([headers, ...csvData].join("\n"));
+    query += " ORDER BY id DESC";
+
+    const [rows] = await pool.query(query, params);
+
+    if (!rows.length) {
+      return res.status(200).json({
+        success: false,
+        message: "No applicants found for the selected date range",
+        data: []
+      });
+    }
+
+    // CSV headers
+    const headers = Object.keys(rows[0]).join(",");
+
+    // CSV rows (handle null safely)
+    const csvData = rows.map(row =>
+      Object.values(row)
+        .map(val => `"${val ?? ""}"`)
+        .join(",")
+    );
+
+    const fileName = `applicants_${from || "all"}_${to || "all"}.csv`;
+
+    res.setHeader("Content-Type", "text/csv");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename=${fileName}`
+    );
+
+    res.send([headers, ...csvData].join("\n"));
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "CSV export failed" });
+  }
 });
 
 

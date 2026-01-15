@@ -7,7 +7,8 @@ import BackToTop from './components/BackToTop'
 import CookieConsent from './components/CookieConsent'
 import ScrollToTop from './components/scrollToTop'
 import AutoSEO from './components/SEO'
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
       <BackToTop />
       <CookieConsent />
       <ScrollToTop/>
-      
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   )
 }

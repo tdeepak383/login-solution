@@ -5,40 +5,51 @@ const ExcelJS = require("exceljs");
 
 router.get("/export", async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT * FROM contacts ORDER BY id DESC"); 
-    
+    const { from, to } = req.query;
+
+    let query = "SELECT * FROM contacts";
+    let params = [];
+
+    if (from && to) {
+      query += " WHERE DATE(created_at) BETWEEN ? AND ?";
+      params.push(from, to);
+    }
+
+    query += " ORDER BY id DESC";
+
+    const [rows] = await pool.query(query, params);
+
+    if (!rows.length) {
+      return res.status(200).json({
+        success: false,
+        message: "No applicants found for the selected date range",
+        data: []
+      });
+    }
+
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Contacts");
+    const sheet = workbook.addWorksheet("Contacts");
 
-    // Columns
-    worksheet.columns = [
-      { header: "ID", key: "id", width: 10 },
-      { header: "Name", key: "name", width: 25 },
-      { header: "Email", key: "email", width: 30 },
-      { header: "Phone", key: "contact", width: 20 },
-      { header: "Company", key: "company", width: 25 },
-      { header: "Job Category", key: "jobCategory", width: 25 },
-      { header: "Job Role", key: "jobRole", width: 25 },
-      { header: "Duration", key: "duration", width: 20 },
-      { header: "Requirement", key: "requirement", width: 40 },
-      { header: "Consent", key: "consent", width: 15 },
-      { header: "Created At", key: "created_at", width: 20 }
-    ];
+    sheet.columns = Object.keys(rows[0]).map(key => ({
+      header: key.replace(/_/g, " ").toUpperCase(),
+      key,
+      width: 25
+    }));
 
-    // Rows
-    rows.forEach(row => worksheet.addRow(row));
+    rows.forEach(row => sheet.addRow(row));
 
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename=contacts_${from || "all"}_${to || "all"}.xlsx`
+    );
     res.setHeader(
       "Content-Type",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
-    res.setHeader(
-      "Content-Disposition",
-      "attachment; filename=contacts.xlsx"
-    );    
 
     await workbook.xlsx.write(res);
     res.end();
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Export failed" });
@@ -46,20 +57,40 @@ router.get("/export", async (req, res) => {
 });
 
 
+
 router.get("/export-csv", async (req, res) => {
-  const [rows] = await pool.query("SELECT * FROM contacts");
-  if (!rows.length) return res.send("");
+  const { from, to } = req.query;
+
+  let query = "SELECT * FROM contacts";
+  let params = [];
+
+  if (from && to) {
+    query += " WHERE DATE(created_at) BETWEEN ? AND ?";
+    params.push(from, to);
+  }
+
+  query += " ORDER BY id DESC";
+
+  const [rows] = await pool.query(query, params);
+
+    if (!rows.length) {
+      worksheet.addRow(["No data available"]);
+    }
 
   const headers = Object.keys(rows[0]).join(",");
-  const csvData = rows.map(row =>
-    Object.values(row).map(val => `"${val}"`).join(",")
+  const data = rows.map(row =>
+    Object.values(row).map(v => `"${v ?? ""}"`).join(",")
   );
 
   res.setHeader("Content-Type", "text/csv");
-  res.setHeader("Content-Disposition", "attachment; filename=contacts.csv");
+  res.setHeader(
+    "Content-Disposition",
+    `attachment; filename=contacts_${from || "all"}_${to || "all"}.csv`
+  );
 
-  res.send([headers, ...csvData].join("\n"));
+  res.send([headers, ...data].join("\n"));
 });
+
 
 // ==========================
 // GET ALL CONTACTS

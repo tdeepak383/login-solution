@@ -30,7 +30,7 @@ function AslContact() {
 
 
     const handleDelete = (id) => {
-    if (window.confirm('Are you sure you want to delete this passion?')) {
+    if (window.confirm('Are you sure you want to delete this contact?')) {
 
       fetch(`${import.meta.env.VITE_VERCEL_URL}/api/aslcontacts/${id}`, {
         method: 'DELETE'
@@ -39,7 +39,7 @@ function AslContact() {
         .then(data => {
           if (data.success) {
 
-            setData(data.data);
+            setContacts(data.contacts);
           } else {
             alert(data.message);
           }
@@ -63,7 +63,7 @@ function AslContact() {
             <p className='text-2xl'>{contacts.length}</p>
           </div>
            <div>
-            <ExportDropdown baseUrl="http://localhost:5000/api/aslcontacts" />
+            <ExportDropdown baseUrl={`${import.meta.env.VITE_VERCEL_URL}/api/aslcontacts`} />
            </div>
           </div>
           <div className='mt-5'>
@@ -79,7 +79,7 @@ function AslContact() {
                       <th>Actions</th>
                     </tr>
                   </thead>
-              <tbody>               
+              <tbody>
                   {
                     contacts.map(item => (
                     <tr key={item.id} className="border-b">
