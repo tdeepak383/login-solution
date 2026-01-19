@@ -6,7 +6,7 @@ const { upload } = require("../uploads/upload");
 /* ---------------- CREATE BLOG ---------------- */
 router.post("/", upload.single("thumbnail"), async (req, res) => {
   try {
-    let { title, slug, excerpt, content, category, tags } = req.body;
+    let { title, slug, excerpt, content, category, tags, likes, dislikes } = req.body;
     const thumbnail = req.file ? req.file.path : null;
 
     if (!title || !slug || !content) {
@@ -30,9 +30,9 @@ router.post("/", upload.single("thumbnail"), async (req, res) => {
     }
 
     await pool.query(
-      `INSERT INTO posts (title, slug, excerpt, content, thumbnail, category, tags)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [title, finalSlug, excerpt, content, thumbnail, category, tags]
+      `INSERT INTO posts (title, slug, excerpt, content, thumbnail, category, tags, likes, dislikes)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [title, finalSlug, excerpt, content, thumbnail, category, tags, likes, dislikes]
     );
 
     res.status(201).json({
@@ -50,7 +50,7 @@ router.post("/", upload.single("thumbnail"), async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query(`
-      SELECT id, title, slug, thumbnail, category, tags, created_at, excerpt, content
+      SELECT id, title, slug, thumbnail, category, tags, created_at, excerpt, content, likes, dislikes
       FROM posts
       ORDER BY created_at DESC
     `);
@@ -105,7 +105,7 @@ router.delete("/:id", async(req, res) => {
 router.put("/:id", upload.single("thumbnail"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, slug, excerpt, content, category, tags } = req.body;
+    const { title, slug, excerpt, content, category, tags, likes, dislikes } = req.body;
 
     if (!title || !slug || !content) {
       return res.status(400).json({ message: "Required fields missing" });
@@ -126,9 +126,9 @@ router.put("/:id", upload.single("thumbnail"), async (req, res) => {
 
     await pool.query(
       `UPDATE posts 
-       SET title = ?, slug = ?, excerpt = ?, content = ?, thumbnail = ?, category = ?, tags = ?
+       SET title = ?, slug = ?, excerpt = ?, content = ?, thumbnail = ?, category = ?, tags = ?, likes = ?, dislikes = ?
        WHERE id = ?`,
-      [title, slug, excerpt, content, thumbnail, category, tags, id]
+      [title, slug, excerpt, content, thumbnail, category, tags, likes, dislikes, id]
     );
 
     res.json({ message: "Post updated successfully", id });

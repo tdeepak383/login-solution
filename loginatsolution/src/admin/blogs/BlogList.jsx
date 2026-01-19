@@ -55,6 +55,8 @@ useEffect(() => {
                   <th>Date</th>
                   <th>Category</th>
                   <th>Tags</th>
+                  <th>Likes</th>
+                  <th>Dislikes</th>
                   <th>Excerpt</th>
                   <th>Action</th>
                 </tr>
@@ -74,6 +76,8 @@ useEffect(() => {
                       </td>
                       <td>{item.category}</td>
                       <td>{item.tags}</td>
+                      <td>{item.likes}</td>
+                      <td>{item.dislikes}</td>
                       <td className=''>{item.excerpt}</td>
                       <td>
                         <div className="flex items-center justify-center gap-3">

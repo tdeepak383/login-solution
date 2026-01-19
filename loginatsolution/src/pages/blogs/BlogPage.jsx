@@ -30,11 +30,14 @@ function BlogPage() {
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 lg:grid-cols-5 ">
                         <div className='lg:col-span-3'>
                             <BlogDetailsPage
+                                blogId={blogs?.id}
                                 title={blogs?.title}
                                 content={blogs?.content}
                                 image={blogs?.thumbnail}
                                 created_at={blogs?.created_at}
                                 tags={blogs?.tags}
+                                likes={blogs?.likes}
+                                dislikes={blogs?.dislikes}
                             />
                         </div>
                         <div className='lg:col-span-2'>

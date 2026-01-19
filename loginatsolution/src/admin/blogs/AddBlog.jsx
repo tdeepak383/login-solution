@@ -11,6 +11,8 @@ function AddBlog() {
   const [excerpt, setExcerpt] = useState("");
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
+  const [likes, setLikes] = useState("");
+  const [dislikes, setDislikes] = useState("");
 
 
   /* ---------------- SLUG GENERATOR ---------------- */
@@ -47,6 +49,8 @@ const handleSubmit = async (e) => {
   formData.append("excerpt", excerpt);
   formData.append("category", category);
   formData.append("tags", tags);
+  formData.append("likes", likes);
+  formData.append("dislikes", dislikes);
   formData.append("thumbnail", thumbnail);
 
   const res = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`, {
@@ -64,6 +68,8 @@ const handleSubmit = async (e) => {
   setExcerpt("");
   setCategory("");
   setTags("");
+  setLikes("");
+  setDislikes("");
   setThumbnail(null);
   setPreview(null);
 
@@ -184,6 +190,31 @@ const handleSubmit = async (e) => {
                 className="w-full border rounded-lg p-3"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
+              />
+            </div>
+
+            {/* likes dislikes */}
+
+            <div>
+              <p className="font-medium mb-2">Likes</p>
+              <input
+                type="number"
+                name="likes"
+                placeholder="Number of likes"
+                className="w-full border rounded-lg p-3"
+                value={likes}
+                onChange={(e) => setLikes(e.target.value)}
+              />
+            </div>
+            <div>
+              <p className="font-medium mb-2">Dislikes</p>
+              <input
+                type="number"
+                name="dislikes"
+                placeholder="Number of dislikes"
+                className="w-full border rounded-lg p-3"
+                value={dislikes}
+                onChange={(e) => setDislikes(e.target.value)}
               />
             </div>
           </div>
