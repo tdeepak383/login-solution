@@ -74,7 +74,7 @@ function LogoCarousel({ bgColor, cardColor }) {
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false, }}
             speed={2000}
-            spaceBetween={0}
+            spaceBetween={20}
             slidesPerView={7}
             allowTouchMove={false}
             breakpoints={{

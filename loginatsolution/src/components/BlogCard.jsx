@@ -13,7 +13,7 @@ function BlogCard({title, date, excerpt, link, image}) {
                   <div>
                     <h3 className='text-2xl md:text-3xl lg:text-4xl font-bold'>{title}</h3>
                     <div className='flex items-center gap-6 font-semibold py-4'>
-                        <p className='text-[var(--purple)] text-sm flex items-center gap-3'><FaRegUserCircle /> Atul Gupta,</p>
+                        <p className='text-[var(--purple)] text-sm flex items-center gap-3'><FaRegUserCircle /> Atul Gupta</p>
                         <p className='text-[var(--purple)] text-sm flex items-center gap-3'><MdDateRange /> {new Date(date).toLocaleDateString("en-IN", {
                           day: "2-digit",
                           month: "short",

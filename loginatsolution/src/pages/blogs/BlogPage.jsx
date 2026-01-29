@@ -20,7 +20,6 @@ function BlogPage() {
 
 
       const blogs = blogData ? blogData.find(b => b.slug === slug) : null;
-      console.log(blogData);
       
 
     return (
@@ -43,18 +42,18 @@ function BlogPage() {
                         <div className='lg:col-span-2'>
                             <div className='bg-gray-50 rounded-xl p-5'>
                                 <h4>Recent Blogs</h4>
-                                <div className='mt-5'>
-                                    {
-                                        blogData.slice(0, 10).map((blog, index) => (
-                                            <RecentBlogCard
-                                                key={index}
-                                                title={blog.title}
-                                                date={blog.created_at}
-                                                link={blog.slug}
-                                                image={blog.thumbnail}
-                                            />
-                                        ))
-                                    }
+                                <div className="mt-5">
+                                {blogData
+                                    .filter((blog) => blog.slug !== slug)
+                                    .map((blog) => (
+                                    <RecentBlogCard
+                                        key={blog.id}
+                                        title={blog.title}
+                                        date={blog.created_at}
+                                        link={blog.slug}
+                                        image={blog.thumbnail}
+                                    />
+                                    ))}
                                 </div>
                             </div>
                         </div>

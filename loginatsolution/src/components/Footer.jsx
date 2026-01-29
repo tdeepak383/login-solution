@@ -134,13 +134,13 @@ function Footer() {
             </ul>
           </motion.div>
           {/* Product */}
-          <motion.div variants={fadeUp} className="flex items-center gap-3 ">
-            <div>
-              <a href="/LAS(ISOIEC_27001-2022)_FINAL.pdf" target="_blank"><img src={iso1} alt="" className="w-24 mb-2" />
+          <motion.div variants={fadeUp} className="flex justify-center items-center gap-3">
+            <div className="flex flex-col justify-center items-center">
+              <a href="/LAS(ISOIEC_27001-2022)_FINAL.pdf" target="_blank"><img src={iso1} alt="" className="w-24 mx-auto mb-2" />
               <p className="text-xs">27001:2022 (ISMS) Certifications</p></a>
             </div>
-            <div>
-              <a href="/LAS(ISO 9001-2015)201123019101.pdf" target="_blank"><img src={iso2} alt="" className="w-24 mb-2" />
+            <div className="flex flex-col justify-center items-center">
+              <a href="/LAS(ISO 9001-2015)201123019101.pdf" target="_blank"><img src={iso2} alt="" className="w-24 mx-auto mb-2" />
               <p className="text-xs">ISO 9001:2015 (QMS) & ISO</p></a>
             </div>
           </motion.div>

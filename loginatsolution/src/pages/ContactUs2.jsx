@@ -6,8 +6,9 @@ import { FaEnvelopeOpen } from "react-icons/fa";
 import contactus from '../assets/contact-us.jpg';
 import sector63 from '../assets/sector-63.png';
 import RequirementForm from '../components/Form'
+import Form2 from '../components/Form2';
 
-function Contact() {
+function ContactUs2() {
 
   const [activeMap, setActiveMap] = useState("noida")
 
@@ -34,7 +35,7 @@ function Contact() {
            
         </div>
         <div className='p-5 md:p-20 bg-white'>
-          <RequirementForm title={"Share your requirement"} color={""}/>
+          <Form2 title={"Connect with Our Presentation Experts"} color={""}/>
         </div>
 
     </div>
@@ -98,4 +99,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default ContactUs2

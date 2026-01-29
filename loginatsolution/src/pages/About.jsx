@@ -149,6 +149,7 @@ function About({onClick}) {
                     </a> */}
                     <a
                       href="http://linkedin.com/in/gunjan-gupta-a700237"
+                      target='_blank'
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaLinkedinIn />
@@ -208,6 +209,8 @@ function About({onClick}) {
                     </a> */}
                     <a
                       href="http://linkedin.com/in/atul-gupta-38333118"
+                      target='_blank'
+                      // href='https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=atul-gupta-38333118'
                       className="bg-[var(--blue)] hover:text-black cursor-pointer rounded-full p-3 transition-all duration-300"
                     >
                       <FaLinkedinIn />

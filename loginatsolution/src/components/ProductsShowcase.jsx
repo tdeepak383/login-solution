@@ -153,7 +153,7 @@ export default function ProductsShowcase() {
 
 
     return (
-        <section className="py-16 md:py-20 w-full bg-white relative flex flex-col items-center justify-center px-4 md:px-5">
+        <section className="py-10 md:py-10 w-full bg-white relative flex flex-col items-center justify-center px-4 md:px-5">
   <div className="max-w-6xl mx-auto w-full md:py-10 md:p-6">
 
     {/* Heading */}

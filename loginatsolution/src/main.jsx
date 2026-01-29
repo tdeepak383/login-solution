@@ -38,6 +38,8 @@ import AddBlog from './admin/blogs/AddBlog.jsx'
 import AslContact from './admin/aslcontacts/AslContact.jsx'
 import BlogPage from './pages/blogs/BlogPage.jsx'
 import EditBlog from './admin/blogs/EditBlog.jsx'
+import ContactUs2 from './pages/contactUs2.jsx'
+import ForgotPassword from './pages/ForgotPassword.jsx'
 
 
 export function ProtectedRoute({ children }) {
@@ -56,6 +58,7 @@ const router = createBrowserRouter(
           { index: true, element: <Home /> },
           { path: 'about', element: <About /> },
           { path: 'contact-us', element: <Contact /> },
+          { path: 'connect-with-our-presentation-experts', element: <ContactUs2 /> },
           { path: 'join-us', element: <Join />},
           { path: 'blogs', element: <Blog />},
           { path: 'blogs/:slug', element: <BlogPage />},
@@ -66,6 +69,7 @@ const router = createBrowserRouter(
           { path: 'jobfunction', element: <JobFunction />},
           { path: 'register', element: <Register />},
           { path: 'login', element: <Login />},
+          { path: 'forgot-password', element: <ForgotPassword />},
 
 
 

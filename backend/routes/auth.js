@@ -14,7 +14,7 @@ function signToken(payload) {
 }
 
 // ---- AUTH: REGISTER (hash the password) ----
-// routes/auth.js (snippet)
+
 AuthRouter.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body || {};
@@ -89,5 +89,33 @@ AuthRouter.get('/userslist', async (_req, res) => {
     res.status(500).json({ success: false, message: 'DB error' });
   }
 });
+
+
+AuthRouter.post("/forgot-password", async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password required" });
+  }
+
+  const [users] = await pool.query(
+    "SELECT id FROM users WHERE email = ?",
+    [email]
+  );
+
+  if (!users.length) {
+    return res.status(404).json({ message: "Email not found" });
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await pool.query(
+    "UPDATE users SET password = ? WHERE email = ?",
+    [hashedPassword, email]
+  );
+
+  res.json({ message: "Password updated successfully. Redirecting..." });
+});
+
 
 module.exports = AuthRouter;

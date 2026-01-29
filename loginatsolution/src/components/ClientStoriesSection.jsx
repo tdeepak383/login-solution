@@ -5,7 +5,7 @@ import CaseStudiesLayout from './CaseStudiesLayout'
 function ClientStoriesSection() {
   return (
     <>
-     <section className='pt-20 w-full z-50 bg-gray-100 relative flex flex-col items-center justify-center text-center px-5'>
+     <section className='py-10 w-full z-50 bg-gray-100 relative flex flex-col items-center justify-center text-center px-5'>
         <div className='max-w-6xl mx-auto md:py-10 md:p-6'>
           <h1 className="text-2xl md:text-5xl text-black mb-5 font-bold max-w-5xl mx-auto">Client Impact Stories</h1>
           <p className='text-lg md:text-xl text-gray-700 mb-10 max-w-5xl mx-auto'>A curated collection of the successes we've built with our clients—highlighting their goals, our solutions, and the results achieved.</p>

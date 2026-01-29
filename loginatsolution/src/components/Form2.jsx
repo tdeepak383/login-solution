@@ -52,7 +52,7 @@ const jobsFunction = {
   ],
 };
 
-const RequirementForm = ({ color, title }) => {
+const Form2 = ({ color, title }) => {
   const form = useRef();
   const [status, setStatus] = useState("");
   const [selectJob, setSelectJob] = useState(""); 
@@ -179,16 +179,8 @@ useEffect(() => {
             required
             className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
           />
-          <input
-            type="tel"
-            name="contact"
-            placeholder="Contact Number"
-            value={formData.contact}
-            onChange={handleChange}
-            required
-            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
-          />
-          <input
+          
+          {/* <input
             type="text"
             name="company"
             placeholder="Website / Company"
@@ -196,11 +188,18 @@ useEffect(() => {
             onChange={handleChange}
             required
             className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
-          />
+          /> */}
         </div>
-
+            <input
+            type="tel"
+            name="contact"
+            placeholder="Contact Number"
+            value={formData.contact}
+            onChange={handleChange}
+            className="w-full text-xs py-1 border-b bg-transparent border-gray-300 focus:outline-none"
+            />
         {/* Job Category */}
-        <div>
+        {/* <div>
           <select
             name="jobCategory"
             value={selectJob} // ✅ value now job1/job2/job3 (for dropdown logic)
@@ -215,10 +214,10 @@ useEffect(() => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
 
         {/* Sub Role */}
-        {selectJob && (
+        {/* {selectJob && (
           <div>
             <select
               name="jobRole"
@@ -235,10 +234,10 @@ useEffect(() => {
               ))}
             </select>
           </div>
-        )}
+        )} */}
 
         {/* Duration */}
-        <div>
+        {/* <div>
           <select
             name="duration"
             value={formData.duration}
@@ -251,7 +250,7 @@ useEffect(() => {
             <option value="3-6 months">3-6 Months</option>
             <option value="6+ months">6+ Months</option>
           </select>
-        </div>
+        </div> */}
 
         {/* Requirement */}
         <textarea
@@ -300,4 +299,4 @@ useEffect(() => {
   );
 };
 
-export default RequirementForm;
+export default Form2;
