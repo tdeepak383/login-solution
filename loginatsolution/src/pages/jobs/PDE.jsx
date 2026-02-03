@@ -22,37 +22,36 @@ function PDE() {
                     <div className='lg:col-span-3 space-y-5'>
                         <div className='bg-gray-50 p-5 rounded-xl'>
                             <div className="flex justify-between items-center mb-8">
-                            <div>
-                                <h3 className='text-xl md:text-2xl font-bold'>Project Delivery Executive (PDE)</h3>
-                                <p className='py-2 text-sm'>Hiring for India’s Leading B2B / E-commerce Company Process</p>
-                                <p className='text-sm font-semibold'>Loginat Solution Pvt. Ltd.</p>
+                                <div>
+                                    <h3 className='text-xl md:text-2xl font-bold'>Project Delivery Executive (PDE)</h3>
+                                    <p className='py-2 text-sm'>Hiring for India’s Leading B2B / E-commerce Company Process</p>
+                                    <p className='text-sm font-semibold'>Loginat Solution Pvt. Ltd.</p>
+                                </div>
+                                <div className='w-10 h-10 bg-gray-100 rounded-lg ml-auto flex items-center justify-center'>
+                                    <img src={logo} alt="" className='object-cover'/>
+                                </div>
                             </div>
-                            <div className='w-10 h-10 bg-gray-100 rounded-lg ml-auto flex items-center justify-center'>
-                                <img src={logo} alt="" className='object-cover'/>
+                            <div className='space-y-4 text-gray-700'>
+                                <div className='flex gap-3 flex-wrap text-sm items-center'>
+                                    <PiSuitcaseSimpleLight />
+                                    <span className='font-semibold'>Experience:</span>0-6 months
+                                    <p>|</p>
+                                    <FaLocationDot />
+                                    <span className='font-semibold'>Location:</span> B-91, B-Block, Sector- 63, Noida
+                                </div>
+                                <div className='flex gap-3 flex-wrap text-sm items-center'>
+                                    <MdOutlineCurrencyRupee />
+                                    <span className='font-semibold'>Salary:</span> 20,500 CTC
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => setIsPopupOpen(true)}
+                                        className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--pink)] to-[var(--purple)] text-white font-semibold py-2 px-6 rounded-lg transition hover:shadow-md"
+                                    >
+                                        Apply now <FaArrowRight className="text-sm" />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div className='space-y-4 text-gray-700'>
-                            <div className='flex gap-3 flex-wrap text-sm items-center'>
-                                <PiSuitcaseSimpleLight />
-                                <span className='font-semibold'>Experience:</span>0-6 months
-                                <p>|</p>
-                                <FaLocationDot />
-                                <span className='font-semibold'>Location:</span> B-91, B-Block, Sector- 63, Noida
-                                                             
-                            </div>
-                            <div className='flex gap-3 flex-wrap text-sm items-center'>
-                                 <MdOutlineCurrencyRupee />
-                                <span className='font-semibold'>Salary:</span> 20,500 CTC
-                            </div>
-                            <div>
-                                <button
-                                    onClick={() => setIsPopupOpen(true)}
-                                    className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--pink)] to-[var(--purple)] text-white font-semibold py-2 px-6 rounded-lg transition hover:shadow-md"
-                                >
-                                    Apply now <FaArrowRight className="text-sm" />
-                                </button>
-                            </div>
-                        </div>
                         </div>
                         <div className='bg-gray-50 p-5 rounded-xl'>
                             <div className="bg-gray-200 p-5 rounded-lg">
@@ -91,6 +90,7 @@ function PDE() {
                             </div>
                         </div>
                     </div>
+
 
 
 

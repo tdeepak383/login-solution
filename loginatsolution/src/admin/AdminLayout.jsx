@@ -1,8 +1,11 @@
 import React from 'react'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdLogout } from "react-icons/md";
-import { FaBars, FaBlog, FaUserCircle, FaUsers } from "react-icons/fa";
-import { MdAddToPhotos } from "react-icons/md";
+import { FaBars } from "react-icons/fa";
+import { FiBookOpen } from "react-icons/fi";
+import { BiSolidContact } from "react-icons/bi";
+import { LuBriefcaseBusiness } from "react-icons/lu";
+import { FaUserTie } from "react-icons/fa";
 
 import { RxCross2 } from "react-icons/rx";
 import AutoSEO from '../components/SEO';
@@ -31,11 +34,11 @@ function AdminLayout() {
           <nav className='space-y-6 text-sm'>
               
               <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
-              <Link to="/admin/blogs" className="flex items-center gap-3"><FaBlog className='text-lg' />All Blogs</Link>
-              <Link to="/admin/add-blog" className="flex items-center gap-3"><MdAddToPhotos className='text-lg ml-2' />Add Blogs</Link>
-              <Link to="/admin/contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />Contacts List</Link>
-              <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserCircle className='text-lg' />Applicants List</Link>
-              <Link to="/admin/asl-contacts" className="flex items-center gap-3"><FaUsers className='text-lg' />ASL Contacts List</Link>
+              <Link to="/admin/blogs" className="flex items-center gap-3"><FiBookOpen className="text-lg"/>Blogs</Link>
+              <Link to="/admin/contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Contacts</Link>
+              <Link to="/admin/job-posts" className="flex items-center gap-3"><LuBriefcaseBusiness className='text-lg' />Job Posts</Link>
+              <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserTie />Applicants</Link>
+              <Link to="/admin/asl-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>ASL Contacts</Link>
           </nav>
         </div>
         <div className='mt-10'>

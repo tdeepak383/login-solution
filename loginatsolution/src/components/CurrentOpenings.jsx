@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion, SwitchLayoutGroupContext } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import openings from '../data/openings.json'
+import { FaLocationDot } from "react-icons/fa6";
+import { PiSuitcaseSimpleLight } from "react-icons/pi";
+import openings from '../data/openings.json';
+import { IoBriefcase } from "react-icons/io5";
+
+
+
 
 
 const CurrentOpenings = ({onClick}) => {
+
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:5000/api/jobs`)
+      const result = await response.json();
+      setData(result.data || []);
+    
+      
+    }
+    fetchData();
+
+  }, [])
+
+    
+
   return (
     <section className="relative w-full pb-20 px-6">
       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -22,7 +46,44 @@ const CurrentOpenings = ({onClick}) => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
+        {data.map((job, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-gray-100"
+          >
+            <div className="text-left">
+              <Link
+                to={`/jobs/${job.title
+                  .toLowerCase()
+                  .replace(/[^a-z0-9\s-]/g, "")
+                  .replace(/\s+/g, "-")}`}
+              >
+              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                {job.title}
+              </h3>
+              {/* <p className="text-gray-600 font-semibold mb-3">{job.company}</p> */}
+              <p className="text-gray-600 mb-3">{job.subtitle}</p>
+              <div className="text-sm text-gray-500 mt-4">
+                <p className="flex items-center gap-2"><FaLocationDot /> {job.location}</p>
+                <p className="flex items-center gap-2 mt-3"><IoBriefcase /> {job.experience}</p>
+              </div>
+              </Link>
+            </div>
+
+            <button
+              onClick={onClick}
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r hover:bg-gradient-to-l from-[var(--pink)] to-[var(--blue)] text-white font-semibold py-2 rounded-lg transition hover:shadow-md"
+            >
+              Apply now <FaArrowRight className="text-sm" />
+            </button>
+          </motion.div>
+        ))}
+      </div>
+      <div className="grid lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto mt-10">
         {openings.map((job, index) => (
           <motion.div
             key={index}
@@ -32,18 +93,22 @@ const CurrentOpenings = ({onClick}) => {
             className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-gray-100"
           >
             <div className="text-left">
-              <Link to={`/jobs/${job.slug}`}>
+              <Link
+                to={`/jobs/${job.title
+                  .toLowerCase()
+                  .replace(/[^a-z0-9\s-]/g, "")
+                  .replace(/\s+/g, "-")}`}
+              >
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                 {job.title}
               </h3>
-              </Link>
+              {/* <p className="text-gray-600 font-semibold mb-3">{job.company}</p> */}
               <p className="text-gray-600 mb-3">{job.description}</p>
-              <div className="flex items-center justify-between text-sm text-gray-500 mt-4">
-                <span>{job.location}</span>
-                <span className="bg-[var(--accent-gradient1)] text-[var(--accent-primary)] px-3 py-1 rounded-full text-xs font-semibold">
-                  {job.type}
-                </span>
+              <div className="text-sm text-gray-500 mt-4">
+                <p className="flex items-center gap-2"><FaLocationDot /> {job.location}</p>
+                <p className="flex items-center gap-2 mt-3"><IoBriefcase /> {job.type}</p>
               </div>
+              </Link>
             </div>
 
             <button

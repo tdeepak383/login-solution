@@ -40,7 +40,12 @@ import BlogPage from './pages/blogs/BlogPage.jsx'
 import EditBlog from './admin/blogs/EditBlog.jsx'
 import ContactUs2 from './pages/contactUs2.jsx'
 import ForgotPassword from './pages/ForgotPassword.jsx'
-
+import JobList from './admin/jobs/JobList.jsx'
+import AddJob from './admin/jobs/AddJob.jsx'
+import EditJob from './admin/jobs/EditJob.jsx'
+import JobPage from './pages/jobs/JobPage.jsx'
+import GraphicDesigner from './pages/jobs/GraphicDesigner.jsx'
+import ClientCoordinator from './pages/jobs/ClientCoordinator.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -62,6 +67,7 @@ const router = createBrowserRouter(
           { path: 'join-us', element: <Join />},
           { path: 'blogs', element: <Blog />},
           { path: 'blogs/:slug', element: <BlogPage />},
+          { path: 'jobs/:slug', element: <JobPage />},
           { path: 'services', element: <Service />},
           { path: 'cookies-policy', element: <CookiesPolicy />},
           { path: 'privacy-policy', element: <PrivacyPolicy />},
@@ -74,8 +80,11 @@ const router = createBrowserRouter(
 
 
           // Jobs paths
-          { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },
-          { path: 'jobs/team-lead', element: <TeamLead /> },
+          // { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },
+          // { path: 'jobs/team-lead', element: <TeamLead /> },
+          // { path: 'jobs/graphic-designer', element: <GraphicDesigner /> },
+          // { path: 'jobs/client-coordinator', element: <ClientCoordinator /> },
+          { path: 'jobs/:slug', element: <JobPage /> },
 
           // Client Strories paths
           { path: 'client-stories', element: <ClientStories /> },
@@ -102,7 +111,10 @@ const router = createBrowserRouter(
           { path: 'contacts/edit/:id', element: <EditContacts /> },
           { path: 'resume-list', element: <JoinusList /> },
           { path: 'resume-list/edit/:id', element: <EditJoinusList /> },
-          { path: 'asl-contacts', element: <AslContact/> }
+          { path: 'asl-contacts', element: <AslContact/> },
+          { path: 'job-posts', element: <JobList/> },
+          { path: 'post-job', element: <AddJob/> },
+          { path: 'jobs/edit/:id', element: <EditJob /> },
         ]
       },
       { path: '*', element: <NotFound /> },

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import BlogCard from '../components/BlogCard'
 
 
 function Blog() {
 
-  const [dataBlogs, setDataBlogs] = React.useState([]);
+  const [dataBlogs, setDataBlogs] = useState([]);
 
 useEffect(() => {
     const fetchData = async () => {

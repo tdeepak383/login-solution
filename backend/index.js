@@ -3,11 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');   
 const AuthRouter = require('./routes/auth');
-const contactRouter = require('./routes/contacts')
-const joinUsRouter = require('./routes/joinus')
-const blogs = require('./routes/blogs')
+const contactRouter = require('./routes/contacts');
+const joinUsRouter = require('./routes/joinus');
+const blogs = require('./routes/blogs');
 const app = express();
-const aslcontacts = require('./routes/aslcontacts')
+const aslcontacts = require('./routes/aslcontacts');
+const jobs = require('./routes/jobposts');
+
+
+
 
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
@@ -20,6 +24,7 @@ app.use('/api/contacts', contactRouter);
 app.use('/api/joinuslist', joinUsRouter);
 app.use('/api/blogs', blogs)
 app.use("/api/aslcontacts", aslcontacts)
+app.use("/api/jobs", jobs)
 
 
 app.use("/uploads", express.static("uploads"));
