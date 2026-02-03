@@ -37,7 +37,7 @@ const EditJob = () => {
     try {
 
       const res = await axios.get(
-        `http://localhost:5000/api/jobs/${id}`
+        `${import.meta.env.VITE_VERCEL_URL}/api/jobs/${id}`
       );
 
       const job = res.data.data;
@@ -94,7 +94,7 @@ const EditJob = () => {
     try {
 
       await axios.put(
-        `http://localhost:5000/api/jobs/${id}`,
+        `${import.meta.env.VITE_VERCEL_URL}/api/jobs/${id}`,
         data
       );
 

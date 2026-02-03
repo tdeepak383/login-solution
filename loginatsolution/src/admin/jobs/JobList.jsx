@@ -13,7 +13,7 @@ useEffect(() => {
 
 const fetchJobs = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/jobs");
+    const response = await fetch("${import.meta.env.VITE_VERCEL_URL}/api/jobs");
     const result = await response.json();
 
     setJobs(result.data || []);
@@ -27,7 +27,7 @@ const handleDelete = async (id) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/jobs/${id}`,
+      `${import.meta.env.VITE_VERCEL_URL}/api/jobs/${id}`,
       {
         method: "DELETE",
       }

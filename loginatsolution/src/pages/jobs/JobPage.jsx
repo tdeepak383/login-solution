@@ -12,7 +12,7 @@ function JobPage() {
     
     useEffect(() => {
         const fetchData = async () => {
-        const response = await fetch(`http://localhost:5000/api/jobs`);
+        const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/jobs`);
         const result = await response.json();
         setJobsData(result.data);
         };
