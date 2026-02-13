@@ -46,6 +46,9 @@ import EditJob from './admin/jobs/EditJob.jsx'
 import JobPage from './pages/jobs/JobPage.jsx'
 import GraphicDesigner from './pages/jobs/GraphicDesigner.jsx'
 import ClientCoordinator from './pages/jobs/ClientCoordinator.jsx'
+import HCLTechnologies from './pages/client-strories/HCLTechnologies.jsx'
+
+
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -95,6 +98,7 @@ const router = createBrowserRouter(
           { path: 'client-stories/long-term-backend-operations-support-for-a-leading-b2b-portal-in-india', element: <IndiaMart /> },
           { path: 'client-stories/staff-augmentation-with-high-resource-continuity-for-niit-ltd', element: <NIIT /> },
           { path: 'client-stories/creative-and-intranet-solutions-for-internal-communications-at-te-connectivity', element: <TEConnectivity /> },
+          { path: 'client-stories/hcl-technologies', element: <HCLTechnologies /> }
 
         ]
       },

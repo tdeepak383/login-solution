@@ -13,7 +13,7 @@ useEffect(() => {
 
 const fetchJobs = async () => {
   try {
-    const response = await fetch("${import.meta.env.VITE_VERCEL_URL}/api/jobs");
+    const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/jobs`);
     const result = await response.json();
 
     setJobs(result.data || []);

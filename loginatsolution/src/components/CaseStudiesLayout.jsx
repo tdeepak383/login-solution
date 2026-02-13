@@ -13,6 +13,8 @@ import bgImage4 from '../assets/client-stories/largest-online.jpg'
 import bgImage5 from '../assets/client-stories/indiamart.jpg'
 import bgImage6 from '../assets/client-stories/NIIT.jpg'
 import bgImage7 from '../assets/client-stories/TE_Connectivity.jpg'
+import bgImage8 from '../assets/client-stories/hcl.jpeg'
+import HCLlogo from '../assets/HCLTech.png'
 
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa6";
@@ -20,54 +22,72 @@ import { FaArrowRight } from "react-icons/fa6";
 function CaseStudiesLayout() {
     return (
         <>
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
-            style={{ backgroundImage: `url(${bgImage1})` }}
+         <div id='HCL' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/40 mb-10'
+            style={{ backgroundImage: `url(${bgImage8})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
                 <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>eLearning</h2>
+                    <h2>Technologies</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>01</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>01</span>/08</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
-                        <img src={apartaLogo} alt="" className='w-40' />
-                        <p className='text-left mt-5 text-xs'>A leading India-based eLearning and digital content solutions provider serving global enterprises and publishers.</p>
-                        <h2 className='font-bold text-3xl my-6 '>Timely Delivery of High-Quality eLearning Modules for Aptara</h2>
+                        <img src={HCLlogo} alt="" className='w-40' />
+                        <p className='text-left mt-5 text-xs'>Internal & Client Experience Campaigns, Engagement Platforms, and Experiential Design</p>
+                        <p className='text-left mt-5 text-sm'><strong>Client</strong>: IT Services & Consulting</p>
+                        <p className='text-left mt-5 text-sm'><strong>Services</strong>: Internal Campaigns • Client Experience Design • Presentation Design • Experiential Branding • Employee Engagement Platforms</p>              
+                        <p className='text-left mt-5 text-sm'><strong>Engagement Model</strong>: Extended Creative & Experience Partner (Dedicated)</p>   
                     </div>
                     <div className='content-end mb-5'>
-                        <h4 className='text-xl font-bold '>Our Solution</h4>
-                        <hr className='w-32 border-b-1 ' />
-                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
-                            <li>Established a streamlined production workflow to handle parallel module development</li>
-                            <li>Collaborated closely with Aptara’s teams for rapid feedback and alignment</li>
-                            <li>Applied strong quality assurance checks at every stage—content, design, functionality, and compliance</li>
-                            <li>Leveraged experienced designers and developers to ensure consistency and accuracy</li>
+                        <h4 className='text-xl font-bold'>Impact</h4>
+                        <hr className='w-32 border-b-1' />
+                        <p className='text-left font-semibold mt-5'>Business Enablement</p>
+                        <ul className='list-disc ml-5'>
+                            <li>Supported multiple high-value bid pursuits</li>
+                            <li>Contributed to winning strategic enterprise deals through high-impact presentations and experiential storytelling</li>
                         </ul>
-                    </div>
+                        <p className='text-left font-semibold mt-5'>Employee Engagement</p>
+                        <ul className='list-disc ml-5'>
+                            <li>Increase in participation across internal events and upliftment programs</li>
+                            <li>Higher visibility of organizational culture initiatives</li>
+                        </ul>                        
+                    </div>      
                 </div>
-                <div className='grid md:grid-cols-2 gap-10'>
+
+
+                <div className='grid md:grid-cols-2 mt-5 gap-10'>
                     <div>
                         <h4 className='text-xl font-bold'>Business Challenge</h4>
                         <hr className='w-52 border-b-1 ' />
-                        <p className='text-left mt-5'>Aptara required rapid development and delivery of multiple eLearning modules to support time-sensitive client programs. The key challenge was balancing strict delivery timelines with high-quality instructional design, visual consistency, and technical accuracy across modules.</p>
+                        <p className='text-left mt-5 '>Required a unified creative approach to drive engagement, communication clarity, and experiential impact across two critical audiences:</p>
+                        {/* <ul className='list-disc ml-5'>
+                            <li>Internal Audience</li>
+                            <li>External Client Audience</li>
+                        </ul> */}
                     </div>
 
                     <div>
-                        <h4 className='text-xl font-bold'>Conclusion</h4>
+                        <h4 className='text-xl font-bold'>Solution</h4>
                         <hr className='w-28 border-b-1 ' />
-                        <p className='text-left mt-5'>By combining process efficiency with a strong focus on quality, Loginat Solutions  proved to be a dependable eLearning development partner for Aptara. The engagement highlights Loginat Solutions’ capability to deliver time-sensitive eLearning solutions while maintaining the highest standards of quality.</p>
+                        <p className='text-left mt-5'>Loginat Solutions implemented an integrated engagement model bridging internal communications and client experience design:</p>
+                        {/* <ul className='list-disc ml-5'>
+                            <li>Stakeholder alignment across HR, L&D, and Marketing</li>
+                            <li>UX-structured internal campaign platforms</li>
+                            <li>Culture-led storytelling for employee programs</li>
+                            <li>Experience design for physical client environments</li>
+                            <li>Executive-ready presentation systems for sales pursuits</li>
+                            <li>Structured onboarding communication frameworks</li>
+                        </ul> */}
                     </div>
                 </div>
                 <div className='mt-5 group flex justify-end'>
-                    <Link to="/client-stories/timely-delivery-high-quality-elearning-modules-aptara" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                    <Link to="/client-stories/hcl-technologies" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
                 </div>
-
             </div>
         </div>
-
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+        <div id="klm" className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
             style={{ backgroundImage: `url(${bgImage2})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -75,7 +95,7 @@ function CaseStudiesLayout() {
                     <h2>Aviation</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/08</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -112,8 +132,7 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
-
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+        <div id="Vitria"  className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
             style={{ backgroundImage: `url(${bgImage3})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -121,7 +140,7 @@ function CaseStudiesLayout() {
                     <h2>AI-driven</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>03</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>03</span>/08</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -160,8 +179,141 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
+        <div id='niit' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+            style={{ backgroundImage: `url(${bgImage6})` }}
+        >
+            <div className='relative pt-32 text-white text-left md:px-10 '>
+                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                    <h2>eLearning</h2>
+                </div>
+                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                    <p className='text-sm'><span className='text-xl font-semibold'>04</span>/08</p>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <img src={NIITLogo} alt="" className='w-40' />
+                        <p className='text-left mt-5 text-xs'>NIIT Ltd. - A leading global eLearning and skills development company delivering learning solutions across industries.</p>
+                        <h2 className='font-bold text-3xl my-6 '>Staff Augmentation with High Resource Continuity for NIIT Ltd</h2>
+                    </div>
+                    <div className='content-end mb-5'>
+                        <h4 className='text-xl font-bold '>Our Solution</h4>
+                        <hr className='w-32 border-b-1 ' />
+                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
+                            <li>Carefully selected and trained resources aligned with NIIT’s project requirements</li>
+                            <li>Maintained backup and cross-trained resources to reduce impact of absenteeism</li>
+                            <li>Established strong people management practices to ensure high retention rates</li>
+                            <li>Provided managerial oversight to monitor productivity, quality, and engagement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <h4 className='text-xl font-bold mt-6'>Business Challenge</h4>
+                        <hr className='w-52 border-b-1 ' />
+                        <p className='text-left mt-5 '>NIIT required skilled eLearning professionals to support multiple projects simultaneously under a Full-Time Equivalent (FTE) model. The key challenge was not only scaling resources, but also ensuring minimal downtime due to absenteeism and high employee retention, so that knowledge transfer and process onboarding did not need to be repeated—ensuring continuity and efficiency across projects.</p>
+                    </div>
+                    <div>
+                        <h4 className='text-xl font-bold mt-5'>Conclusion</h4>
+                        <hr className='w-28 border-b-1 ' />
+                        <p className='text-left mt-5 '>Through effective staff augmentation and strong resource governance, Loginat Solutions  helped NIIT Ltd. scale efficiently while maintaining continuity and quality. The engagement highlights Loginat Solutions’ ability to provide reliable, long-term FTE resources with minimal disruption and high operational stability.</p>
+                    </div>
+                </div>
+                <div className=' group flex justify-end'>
+                    <Link to="/client-stories/staff-augmentation-with-high-resource-continuity-for-niit-ltd" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                </div>
+            </div>
+        </div>
+        <div id='te' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+            style={{ backgroundImage: `url(${bgImage7})` }}
+        >
+            <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
+                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                    <h2>Engineering</h2>
+                </div>
+                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                    <p className='text-sm'><span className='text-xl font-semibold'>05</span>/08</p>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <img src={TEConnectivity} alt="" className='w-40' />
+                        <p className='text-left mt-5 text-xs'>TE Connectivity – Connectors & Sensors for a Connected World A global engineering leader enabling connectivity and sensor solutions across industries.</p>
+                        <h2 className='font-bold text-3xl my-6 '>Creative and Intranet Solutions for Internal Communications at TE Connectivity</h2>
+                    </div>
+                    <div className='content-end mb-5'>
+                        <h4 className='text-xl font-bold '>Our Solution</h4>
+                        <hr className='w-32 border-b-1 ' />
+                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
+                            <li>Allocated dedicated design resources (FTEs) to support TE Connectivity on a real-time basis</li>
+                            <li>Ensured quick turnaround for multiple, parallel creative requirements</li>
+                            <li>Maintained brand consistency and quality across all internal assets</li>
+                            <li>Worked closely with internal stakeholders to align communication goals with design output</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <h4 className='text-xl font-bold'>Business Challenge</h4>
+                        <hr className='w-52 border-b-1 ' />
+                        <p className='text-left mt-5 '>TE Connectivity required a creative partner to strengthen its internal communications through visually engaging, consistent, and timely collaterals. The challenge was to design and maintain a centralized intranet platform while also responding quickly to ongoing creative requirements across the organization.</p>
+                    </div>
+                    <div>
+                        <h4 className='text-xl font-bold'>Conclusion</h4>
+                        <hr className='w-28 border-b-1 ' />
+                        <p className='text-left mt-5'>Through dedicated design resources and a flexible engagement model, Loginat Solutions  helped TE Connectivity enhance its internal communications ecosystem. The engagement highlights Loginat Solutions  capability to deliver high-quality, real-time creative support for global engineering organizations.</p>
+                    </div>
+                </div>
+                <div className='mt-5 group flex justify-end'>
+                    <Link to="/client-stories/creative-and-intranet-solutions-for-internal-communications-at-te-connectivity" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                </div>
+            </div>
+        </div>
+         <div id='aptara' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+            style={{ backgroundImage: `url(${bgImage1})` }}
+        >
+            <div className='relative pt-32 text-white text-left md:px-10 '>
+                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                    <h2>eLearning</h2>
+                </div>
+                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                    <p className='text-sm'><span className='text-xl font-semibold'>06</span>/08</p>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <img src={apartaLogo} alt="" className='w-40' />
+                        <p className='text-left mt-5 text-xs'>A leading India-based eLearning and digital content solutions provider serving global enterprises and publishers.</p>
+                        <h2 className='font-bold text-3xl my-6 '>Timely Delivery of High-Quality eLearning Modules for Aptara</h2>
+                    </div>
+                    <div className='content-end mb-5'>
+                        <h4 className='text-xl font-bold '>Our Solution</h4>
+                        <hr className='w-32 border-b-1 ' />
+                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
+                            <li>Established a streamlined production workflow to handle parallel module development</li>
+                            <li>Collaborated closely with Aptara’s teams for rapid feedback and alignment</li>
+                            <li>Applied strong quality assurance checks at every stage—content, design, functionality, and compliance</li>
+                            <li>Leveraged experienced designers and developers to ensure consistency and accuracy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <h4 className='text-xl font-bold'>Business Challenge</h4>
+                        <hr className='w-52 border-b-1 ' />
+                        <p className='text-left mt-5'>Aptara required rapid development and delivery of multiple eLearning modules to support time-sensitive client programs. The key challenge was balancing strict delivery timelines with high-quality instructional design, visual consistency, and technical accuracy across modules.</p>
+                    </div>
 
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+                    <div>
+                        <h4 className='text-xl font-bold'>Conclusion</h4>
+                        <hr className='w-28 border-b-1 ' />
+                        <p className='text-left mt-5'>By combining process efficiency with a strong focus on quality, Loginat Solutions  proved to be a dependable eLearning development partner for Aptara. The engagement highlights Loginat Solutions’ capability to deliver time-sensitive eLearning solutions while maintaining the highest standards of quality.</p>
+                    </div>
+                </div>
+                <div className='mt-5 group flex justify-end'>
+                    <Link to="/client-stories/timely-delivery-high-quality-elearning-modules-aptara" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                </div>
+
+            </div>
+        </div>
+        <div id='trade-india' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
             style={{ backgroundImage: `url(${bgImage4})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -169,7 +321,7 @@ function CaseStudiesLayout() {
                     <h2>B2B Portal</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>04</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>07</span>/08</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -206,8 +358,7 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
-
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+        <div id='indiamart' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
             style={{ backgroundImage: `url(${bgImage5})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -215,7 +366,7 @@ function CaseStudiesLayout() {
                     <h2>B2B Portal</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>05</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>08</span>/08</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -252,98 +403,10 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
+       
 
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
-            style={{ backgroundImage: `url(${bgImage6})` }}
-        >
-            <div className='relative pt-32 text-white text-left md:px-10 '>
-                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>eLearning</h2>
-                </div>
-                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>06</span>/07</p>
-                </div>
-                <div className='grid md:grid-cols-2 gap-10'>
-                    <div>
-                        <img src={NIITLogo} alt="" className='w-40' />
-                        <p className='text-left mt-5 text-xs'>NIIT Ltd. - A leading global eLearning and skills development company delivering learning solutions across industries.</p>
-                        <h2 className='font-bold text-3xl my-6 '>Staff Augmentation with High Resource Continuity for NIIT Ltd</h2>
-                    </div>
-                    <div className='content-end mb-5'>
-                        <h4 className='text-xl font-bold '>Our Solution</h4>
-                        <hr className='w-32 border-b-1 ' />
-                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
-                            <li>Carefully selected and trained resources aligned with NIIT’s project requirements</li>
-                            <li>Maintained backup and cross-trained resources to reduce impact of absenteeism</li>
-                            <li>Established strong people management practices to ensure high retention rates</li>
-                            <li>Provided managerial oversight to monitor productivity, quality, and engagement</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className='grid md:grid-cols-2 gap-10'>
-                    <div>
-                        <h4 className='text-xl font-bold mt-6'>Business Challenge</h4>
-                        <hr className='w-52 border-b-1 ' />
-                        <p className='text-left mt-5 '>NIIT required skilled eLearning professionals to support multiple projects simultaneously under a Full-Time Equivalent (FTE) model. The key challenge was not only scaling resources, but also ensuring minimal downtime due to absenteeism and high employee retention, so that knowledge transfer and process onboarding did not need to be repeated—ensuring continuity and efficiency across projects.</p>
-                    </div>
-                    <div>
-                        <h4 className='text-xl font-bold mt-5'>Conclusion</h4>
-                        <hr className='w-28 border-b-1 ' />
-                        <p className='text-left mt-5 '>Through effective staff augmentation and strong resource governance, Loginat Solutions  helped NIIT Ltd. scale efficiently while maintaining continuity and quality. The engagement highlights Loginat Solutions’ ability to provide reliable, long-term FTE resources with minimal disruption and high operational stability.</p>
-                    </div>
-                </div>
-                <div className=' group flex justify-end'>
-                    <Link to="/client-stories/staff-augmentation-with-high-resource-continuity-for-niit-ltd" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
-                </div>
-            </div>
-        </div>
-
-        <div className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
-            style={{ backgroundImage: `url(${bgImage7})` }}
-        >
-            <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
-                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>Engineering</h2>
-                </div>
-                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>07</span>/07</p>
-                </div>
-                <div className='grid md:grid-cols-2 gap-10'>
-                    <div>
-                        <img src={TEConnectivity} alt="" className='w-40' />
-                        <p className='text-left mt-5 text-xs'>TE Connectivity – Connectors & Sensors for a Connected World A global engineering leader enabling connectivity and sensor solutions across industries.</p>
-                        <h2 className='font-bold text-3xl my-6 '>Creative and Intranet Solutions for Internal Communications at TE Connectivity</h2>
-                    </div>
-                    <div className='content-end mb-5'>
-                        <h4 className='text-xl font-bold '>Our Solution</h4>
-                        <hr className='w-32 border-b-1 ' />
-                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
-                            <li>Allocated dedicated design resources (FTEs) to support TE Connectivity on a real-time basis</li>
-                            <li>Ensured quick turnaround for multiple, parallel creative requirements</li>
-                            <li>Maintained brand consistency and quality across all internal assets</li>
-                            <li>Worked closely with internal stakeholders to align communication goals with design output</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className='grid md:grid-cols-2 gap-10'>
-                    <div>
-                        <h4 className='text-xl font-bold'>Business Challenge</h4>
-                        <hr className='w-52 border-b-1 ' />
-                        <p className='text-left mt-5 '>TE Connectivity required a creative partner to strengthen its internal communications through visually engaging, consistent, and timely collaterals. The challenge was to design and maintain a centralized intranet platform while also responding quickly to ongoing creative requirements across the organization.</p>
-                    </div>
-                    <div>
-                        <h4 className='text-xl font-bold'>Conclusion</h4>
-                        <hr className='w-28 border-b-1 ' />
-                        <p className='text-left mt-5'>Through dedicated design resources and a flexible engagement model, Loginat Solutions  helped TE Connectivity enhance its internal communications ecosystem. The engagement highlights Loginat Solutions  capability to deliver high-quality, real-time creative support for global engineering organizations.</p>
-                    </div>
-                </div>
-                <div className='mt-5 group flex justify-end'>
-                    <Link to="/client-stories/creative-and-intranet-solutions-for-internal-communications-at-te-connectivity" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
-                </div>
-            </div>
-        </div>
         </>
     )
 }
 
-export default CaseStudiesLayout
+export default CaseStudiesLayout 

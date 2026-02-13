@@ -40,13 +40,13 @@ function IntegratedCreativeandDigitalMarketingSupport() {
                     <h2>AI-driven</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>03</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/08</p>
                 </div>
                 <div className=''>
                    <div>
                      <img src={vitriaLogo} alt=""  className='w-40'/>
-                     <p className='text-left mt-5 text-sm'>Vitria Technology – A leading AI-driven enterprise technology company specializing in intelligent automation and real-time analytics.</p>
-                    <h2 className='font-bold text-3xl my-6 '>Integrated Creative and Digital Marketing Support for an AI Technology Leader</h2>      
+          
+                      <h2 className='font-bold text-3xl my-6 '>Creative Campaigns, Thought Leadership & Digital Marketing Enablement</h2>      
                      
                    </div>
                   
@@ -58,43 +58,50 @@ function IntegratedCreativeandDigitalMarketingSupport() {
         <div className="mb-10">
 
               {/* Business Challenge */}
-
+              <p className='text-left mt-5 text-sm'><strong>Client</strong>: Enterprise AI & Analytics Technology</p>
+              <p className='text-left mt-5 text-sm'><strong>Services</strong>: Campaign Design • Social Media Creatives • Thought Leadership Assets • Whitepapers & Case Studies • PowerPoint Presentations • Email Campaigns • Marketing Automation • Website Content Management • Performance Reporting</p>              
+              <p className='text-left mt-5 text-sm'><strong>Engagement Model</strong>: Dedicated Creative & Digital Marketing Partner</p> 
+              
+              
               <div className="mt-5">
                 <h2 className="text-2xl md:text-3xl mb-6">Business Challenge</h2>                
                 <p className="mt-5">
-                  Vitria Technology required a creative and digital marketing partner capable of translating complex AI solutions into engaging, consistent, and measurable marketing campaigns. The challenge was to deliver <strong>customized creative assets</strong>, manage social media presence, and track campaign performance—all while aligning with evolving marketing objectives.
+                  Vitria Technology required a creative and digital marketing partner capable of translating complex AI and analytics solutions into compelling, market-ready narratives. Beyond content creation, the mandate extended to managing always-on social media engagement, executing performance-driven email campaigns, and generating measurable pipeline insights — all while aligning to evolving product marketing priorities.
                 </p>
+                <p className="mt-3">The core challenge was integrating creative storytelling with marketing operations to drive both visibility and qualified demand.</p>
               </div>
 
               {/* Scope of Work */}
 
                <div className="mt-5">
                 <h2 className="text-2xl md:text-3xl mb-3">Scope of Work</h2>
-                <p className="mb-6 text-lg">Loginat Solutions  delivered a comprehensive range of tailored creative and digital marketing services, including:</p>
+                <p className="mb-6 text-lg">Loginat Solutions delivered an integrated suite of creative and digital marketing services:</p>
 
                 <ul className="list-disc ml-5 space-y-2">
-                    <li>Designing <strong>social media posts</strong> for ongoing campaigns</li>
-                    <li>Creating <strong>whitepapers, case studies, and marketing collaterals</strong></li>
-                    <li>Designing professional <strong>PowerPoint presentations</strong> for sales and leadership use</li>
-                    <li>Managing <strong>LinkedIn activity</strong> through dedicated social media experts</li>
-                    <li>Executing email campaigns using <strong>HubSpot</strong>, including click analysis</li>
-                    <li>Generating <strong>Marketing Qualified Lead (MQL) reports</strong> for client review</li>
-                    <li>Managing regular <strong>website updates</strong> to ensure accurate and timely content publishing</li>
+                    <li>Social media campaign design and content production</li>
+                    <li>Whitepapers, case studies, and long-form thought leadership assets</li>
+                    <li>Sales and leadership PowerPoint presentations</li>
+                    <li>Dedicated LinkedIn management and optimization</li>
+                    <li>HubSpot-driven email campaign execution</li>
+                    <li>Click-through and engagement analytics reporting</li>
+                    <li>Marketing Qualified Lead (MQL) tracking and reporting</li>
+                    <li>Ongoing website content updates and publishing</li>
                 </ul>
               </div>
 
               {/* Solution */}
 
               <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-3">Solution</h2>
-                <p className="mb-6 text-lg">Loginat Solutions  assembled a specialized, cross-functional team to support Vitria Technology:</p>
+                <h2 className="text-2xl md:text-3xl mb-3">Solution Approach</h2>
+                <p className="mb-6 text-lg">A cross-functional delivery pod was deployed combining strategy, creative, and marketing operations:</p>
                 <ul className="list-disc ml-5 space-y-2">
-                    <li>Social media strategists to plan, execute, and optimize LinkedIn campaigns</li>
-                    <li>Creative designers and content specialists delivering brand-aligned assets</li>
-                    <li>Marketing operations support leveraging HubSpot for email execution and analytics</li>
-                    <li>Agile workflows ensuring fast turnaround and adaptability to campaign needs</li>
-
+                    <li>Social media strategists driving LinkedIn content calendars and engagement plans</li>
+                    <li>Designers and content specialists producing brand-aligned assets</li>
+                    <li>Marketing automation experts executing and analyzing HubSpot campaigns</li>
+                    <li>Agile sprint workflows enabling rapid campaign launches and iterations</li>
                 </ul>
+
+                <p>This integrated model ensured continuity from content creation to performance measurement.</p>
               </div>
 
 
@@ -102,19 +109,35 @@ function IntegratedCreativeandDigitalMarketingSupport() {
               {/* Results */}
 
               <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-6">Results</h2>
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>Improved brand visibility and engagement across LinkedIn</li>
-                    <li>Consistent delivery of high-quality marketing assets supporting AI thought leadership</li>
-                    <li>Actionable campaign insights through click analysis and MQL reporting</li>
-                    <li>Streamlined digital presence through timely website updates</li>
 
+                <h2 className="text-2xl md:text-3xl mb-6">Impact & Results</h2>
+
+                <p className="text-lg font-bold">Brand Visibility & Thought Leadership</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>Elevated LinkedIn presence through consistent, insight-led content</li>
+                    <li>Strengthened positioning of Vitria’s AI solutions in enterprise conversations</li>
+                </ul>
+                <p className="text-lg font-bold">Demand Generation Insights</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>Actionable click-through analytics from HubSpot campaigns</li>
+                    <li>Structured MQL reporting enabling marketing-to-sales alignment</li>
+                </ul>
+                <p className="text-lg font-bold">Sales Enablement</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>High-impact presentation decks supporting leadership and pre-sales teams</li>
+                    <li>Clearer articulation of complex AI value propositions</li>
+
+                </ul>
+                <p className="text-lg font-bold">Digital Ecosystem Efficiency</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>Streamlined website updates ensuring timely campaign and product messaging</li>
+                    <li>Improved consistency across owned digital touchpoints</li>
                 </ul>
               </div>
 
               <div className="mt-5">
                 <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
-                <p>By providing end-to-end creative and digital marketing support, Loginat Solutions  helped Vitria Technology strengthen its market presence and drive measurable engagement. The engagement highlights Loginat Solutions’ ability to deliver custom, data-driven marketing solutions for advanced technology companies.</p>
+                <p>Through an integrated creative + marketing operations model, Loginat Solutions enabled Vitria Technology to transform complex AI narratives into measurable marketing outcomes. The partnership demonstrates Loginat's capability to drive brand visibility, engagement, and qualified demand for deep-tech enterprises through data-informed creative execution.</p>
               </div>
           
           </div>

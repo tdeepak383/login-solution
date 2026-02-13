@@ -41,7 +41,7 @@ const AddJob = () => {
 
     try {
 
-      await axios.post("${import.meta.env.VITE_VERCEL_URL}/api/jobs", data);
+      await axios.post(`${import.meta.env.VITE_VERCEL_URL}/api/jobs`, data);
 
       alert("Job Added Successfully!");
 

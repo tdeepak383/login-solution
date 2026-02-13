@@ -39,7 +39,7 @@ function TradeIndia() {
                     <h2>B2B Portal</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>04</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>06</span>/08</p>
                 </div>
                 <div className=''>
                    <div>

@@ -3,6 +3,7 @@ import data from '../data/clientstories.json'
 import ClientStoriesCard from '../components/ClientStoriesCard'
 import SubpageHeroSection from '../components/subpageHeroSection'
 import PopUp from '../components/PopUp';
+import ProductsShowcase from '../components/ProductsShowcase';
 
 function ClientStories() {
 
@@ -30,14 +31,19 @@ function ClientStories() {
                 slug={blog.slug}
                 content1={blog.content1}
                 content2={blog.content2}
+                image={`/images/client-stories/${blog.image}`}
               />
             ))
           }
           </div>
+          
         </div>
         </div>
         <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
       </section>
+      <div>
+        <ProductsShowcase />
+      </div>
     </>
   )
 }

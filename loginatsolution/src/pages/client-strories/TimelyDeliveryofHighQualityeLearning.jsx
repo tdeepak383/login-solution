@@ -38,7 +38,7 @@ function TimelyDeliveryofHighQualityeLearning() {
                     <h2>eLearning</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>01</span>/07</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>05</span>/08</p>
                 </div>
                 <div className=''>
                    <div>

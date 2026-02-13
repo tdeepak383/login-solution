@@ -5,22 +5,22 @@ import { useParams } from 'react-router-dom';
 
 function BlogPage() {
 
-       const { slug } = useParams();
-       const [blogData, setBlogsData] = useState([]);
+    const { slug } = useParams();
+    const [blogData, setBlogsData] = useState([]);
 
-      
-      useEffect(() => {
-          const fetchData = async () => {
-            const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`);
-            const result = await response.json();
-            setBlogsData(result);
-          };
-          fetchData();
-      }, [])
+    
+    useEffect(() => {
+        const fetchData = async () => {
+        const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/blogs`);
+        const result = await response.json();
+        setBlogsData(result);
+        };
+        fetchData();
+    }, [])
 
 
-      const blogs = blogData ? blogData.find(b => b.slug === slug) : null;
-      
+    const blogs = blogData ? blogData.find(b => b.slug === slug) : null;
+
 
     return (
         <>
@@ -43,7 +43,8 @@ function BlogPage() {
                             <div className='bg-gray-50 rounded-xl p-5'>
                                 <h4>Recent Blogs</h4>
                                 <div className="mt-5">
-                                {blogData
+                                {
+                                    blogData
                                     .filter((blog) => blog.slug !== slug)
                                     .map((blog) => (
                                     <RecentBlogCard
@@ -53,7 +54,8 @@ function BlogPage() {
                                         link={blog.slug}
                                         image={blog.thumbnail}
                                     />
-                                    ))}
+                                    ))
+                                }
                                 </div>
                             </div>
                         </div>
