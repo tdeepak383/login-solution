@@ -83,7 +83,7 @@ function CaseStudiesLayout() {
                     </div>
                 </div>
                 <div className='mt-5 group flex justify-end'>
-                    <Link to="/client-stories/hcl-technologies" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                    <Link to="#" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
                 </div>
             </div>
         </div>
