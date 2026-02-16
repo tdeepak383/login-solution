@@ -10,6 +10,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import Timeline from "../../components/client-stories-modules/Timeline";
+import BusinessChallenge from '../../assets/client-stories/Business-Challenge.png'
+import Scope1 from '../../assets/client-stories/Scope-Enagaemnt-1.png'
+import Scope2 from '../../assets/client-stories/Scope-Enagemnt-2.png'
+import SolutionAproach from '../../assets/client-stories/Solution-Aproach.png'
 
 
 const impactData = [
@@ -82,95 +86,99 @@ function IndiaMart() {
 
         {/* Banner */}
         <div className="max-w-6xl mx-auto py-10 px-6 ">
-        <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/10 mb-10' 
-        style={{backgroundImage: `url(${bgImage5})`}}
-        >
-            <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
-                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>Technologies</h2>
-                </div>
-                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>08</span>/08</p>
-                </div>
-                <div>
-                   <div>
-                    <img src={HCLTech} alt=""  className='w-40'/>
-                    <p className='text-left mt-5 text-lg font-semibold'>Internal & Client Experience Campaigns, Engagement Platforms, and Experiential Design</p>
-                    <p className='text-left mt-2 text-sm'><strong>Client</strong>: IT Services & Consulting</p>
-                    <p className='text-left mt-2 text-sm'><strong>Services</strong>: Internal Campaigns • Client Experience Design • Presentation Design • Experiential Branding • Employee Engagement Platforms</p>              
-                    <p className='text-left mt-2 text-sm'><strong>Engagement Model</strong>: Extended Creative & Experience Partner (Dedicated)</p>       
-                   </div>
-                </div>
-            </div>
-        </div>
-        <div className="mb-10">
-
-              {/* Business Challenge */}
-                             
-              <div className="my-5 bg-gray-100 p-5 rounded-2xl">
-                <h2 className="text-2xl md:text-3xl mb-6">Client Overview</h2>                
-                <p className="mt-5">
-                  HCL Technologies is a global technology enterprise serving Fortune 500 clients while supporting a vast, multicultural workforce. The organization required a creative partner capable of designing experience-led campaigns and communication platforms for both internal employees and external client stakeholders.
-                </p>
-                <p className="mt-5">Loginat Solutions partnered with HCL to build integrated engagement ecosystems spanning employee programs, client experiences, and leadership communications. </p>
-              </div>
-
-              <div>
-                <Timeline />
-              </div>
-
-              {/* Scope of Work */}
-
-              <div className="py-10">
-                <h2 className="text-2xl md:text-3xl my-3">Business Challenge</h2>
-                <p className="mb-6 text-lg">Required a unified creative approach to drive engagement, communication clarity, and experiential impact across two critical audiences:</p>
-                <div className="grid md:grid-cols-3 gap-5">
-                  <div className="bg-[var(--purple-light)] p-5 rounded-xl">
-                    <h3 className="font-semibold text-lg mb-2">Internal Audience</h3>
-                    <ul className="list-disc ml-5 space-y-2">
-                      <li>Promoting employee Learning & development initiatives</li>
-                      <li>Driving inclusion and women empowerment programs</li>
-                      <li>Enabling hobby club participation</li>
-                      <li>Supporting Learning & Development adoption</li>
-                      <li>Creating structured onboarding experiences</li>
-                    </ul>
+          <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/10' 
+          style={{backgroundImage: `url(${bgImage5})`}}
+          >
+              <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
+                  <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                      <h2>Technologies</h2>
                   </div>
-                  <div className="md:col-span-2 bg-gray-200 p-5 rounded-xl">
-                    <div className="grid md:grid-cols-2 gap-10">
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">External Client Audience</h3>
-                        <ul className="list-disc ml-5 space-y-2">
-                          <li>Designing immersive environments for client visits</li>
-                          <li>Communicating HCL's capabilities through experiential storytelling</li>
-                          <li>Supporting high-value bids and strategic presentations</li>
-                        </ul>                        
-                      </div>
-                      <div>
-                          <img src={""} alt="" className="w-full" />
-                      </div>
+                  <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                      <p className='text-sm'><span className='text-xl font-semibold'>08</span>/08</p>
+                  </div>
+                  <div>
+                    <div>
+                      <img src={HCLTech} alt=""  className='w-40'/>
+                      <p className='text-left mt-5 text-lg font-semibold'>Internal & Client Experience Campaigns, Engagement Platforms, and Experiential Design</p>
+                      <p className='text-left mt-2 text-sm'><strong>Client</strong>: IT Services & Consulting</p>
+                      <p className='text-left mt-2 text-sm'><strong>Services</strong>: Internal Campaigns • Client Experience Design • Presentation Design • Experiential Branding • Employee Engagement Platforms</p>              
+                      <p className='text-left mt-2 text-sm'><strong>Engagement Model</strong>: Extended Creative & Experience Partner (Dedicated)</p>       
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+          {/* Client Overview */}
+          <div className="max-w-6xl mx-auto px-6 ">
+            <div className=" bg-gray-100 p-5 rounded-2xl">
+              <h2 className="text-2xl md:text-3xl mb-6">Client Overview</h2>                
+              <p className="mt-5">
+                HCL Technologies is a global technology enterprise serving Fortune 500 clients while supporting a vast, multicultural workforce. The organization required a creative partner capable of designing experience-led campaigns and communication platforms for both internal employees and external client stakeholders.
+              </p>
+              <p className="mt-5">Loginat Solutions partnered with HCL to build integrated engagement ecosystems spanning employee programs, client experiences, and leadership communications. </p>
+            </div>
+            <div>
+              <Timeline />
+            </div>
+          </div>
+          {/* Business Challenge */}
+          <div className="bg-gray-100">
+            <div className="max-w-6xl mx-auto py-10 px-6 ">
+              <h2 className="text-2xl md:text-3xl my-3">Business Challenge</h2>
+              <p className="mb-6 text-lg">Required a unified creative approach to drive engagement, communication clarity, and experiential impact across two critical audiences:</p>
+              <div className="grid md:grid-cols-3 gap-5">
+                <div className="bg-[var(--purple-light)] p-5 rounded-xl">
+                  <h3 className="font-semibold text-lg mb-2">Internal Audience</h3>
+                  <ul className="list-disc ml-5 space-y-2">
+                    <li>Promoting employee Learning & development initiatives</li>
+                    <li>Driving inclusion and women empowerment programs</li>
+                    <li>Enabling hobby club participation</li>
+                    <li>Supporting Learning & Development adoption</li>
+                    <li>Creating structured onboarding experiences</li>
+                  </ul>
+                </div>
+                <div className="md:col-span-2 bg-[var(--purple-light)] p-5 rounded-xl">
+                  <div className="grid md:grid-cols-2 gap-10">
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">External Client Audience</h3>
+                      <ul className="list-disc ml-5 space-y-2">
+                        <li>Designing immersive environments for client visits</li>
+                        <li>Communicating HCL's capabilities through experiential storytelling</li>
+                        <li>Supporting high-value bids and strategic presentations</li>
+                      </ul>                        
+                    </div>
+                    <div className="content-end">
+                        <img src={BusinessChallenge} alt="" className="w-full" />
                     </div>
                   </div>
                 </div>
-                <p className="font-semibold mt-5">The challenge was ensuring brand consistency and engagement effectiveness across both workforce and customer ecosystems.</p>
               </div>
+              <p className="font-semibold mt-5">The challenge was ensuring brand consistency and engagement effectiveness across both workforce and customer ecosystems.</p>
+            </div>
+          </div>
+          {/* Scope of Engagement */}
+          
+            <div className="max-w-6xl mx-auto py-10 px-6 ">
+              <h2 className="text-2xl md:text-3xl mb-3">Scope of Engagement</h2>
+              <p className="mb-6 text-lg">Loginat Solutions delivered a multi-dimensional experience and communications framework:</p>
 
-              {/* Solution */}
-
-              <div className="py-10">
-                <h2 className="text-2xl md:text-3xl mb-3">Scope of Engagement</h2>
-                <p className="mb-6 text-lg">Loginat Solutions delivered a multi-dimensional experience and communications framework:</p>
-
-                <div className="grid md:grid-cols-3 gap-5">
-                  <div className="bg-[var(--pink-light)] p-5 rounded-xl">
+              <div className="grid md:grid-cols-3 gap-5">
+                <div className="bg-gray-200 flex flex-col justify-between rounded-xl">
+                  <div className="p-5">
                     <p className="font-semibold text-lg mb-2">Internal Campaign Platforms</p>
-                    <ul className="list-disc ml-5 space-y-2">
-                      <li>Program-specific internal websites</li>
-                      <li>Employee upliftment campaign creatives</li>
-                      <li>HR and culture communication ecosystems</li>
-                    </ul>
+                  <ul className="list-disc ml-5 space-y-2">
+                    <li>Program-specific internal websites</li>
+                    <li>Employee upliftment campaign creatives</li>
+                    <li>HR and culture communication ecosystems</li>
+                  </ul>
                   </div>
-                  <div className="md:col-span-2">
-                    <div className="bg-[var(--pink-light)] p-5 rounded-xl">
+                  <div>
+                    <img src={Scope1} alt="" className="w-full"/>
+                  </div>
+                </div>
+                <div className="md:col-span-2">
+                  <div className="bg-gray-200 grid md:grid-cols-3 rounded-xl">
+                    <div className="col-span-2 p-5">
                       <p className="font-semibold text-lg mb-2">Women Empowerment & Inclusion Initiatives</p>
                       <ul className="list-disc ml-5 space-y-2">
                         <li>Program-specific internal websites</li>
@@ -178,110 +186,118 @@ function IndiaMart() {
                         <li>Event communication and awareness creatives</li>
                       </ul>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-5 mt-5">
-                      <div className="bg-gray-200 p-5 rounded-xl">
-                        <p className="font-semibold text-lg mb-2">Hobby Club Programs</p>
-                        <ul className="list-disc ml-5 space-y-2">
-                          <li>Program-specific internal website</li>
-                          <li>Identity design for employee communities</li>
-                          <li>Membership drives and engagement campaigns</li>
-                        </ul>
-                      </div>
-                      <div className="bg-gray-200 p-5 rounded-xl">
-                        <p className="font-semibold text-lg mb-2">Learning & Development Campaigns</p>
-                        <ul className="list-disc ml-5 space-y-2">
-                          <li>Program-specific internal website</li>
-                          <li>Training program promotions</li>
-                          <li>Certification and learning journey creatives</li>
-                        </ul>
-                      </div>                      
+                    <div className="content-end">
+                      <img src={Scope2} alt="" className="w-full" />
                     </div>
                   </div>
-                </div>
-                <div className="grid md:grid-cols-3 gap-5 mt-5">
-                  <div className="bg-[var(--purple-light)] p-5 rounded-xl">
-                      <p className="font-semibold text-lg mb-2">Employee Induction & Onboarding</p>
+                  <div className="grid md:grid-cols-2 gap-5 mt-5">
+                    <div className="bg-gray-200 p-5 rounded-xl">
+                      <p className="font-semibold text-lg mb-2">Hobby Club Programs</p>
                       <ul className="list-disc ml-5 space-y-2">
-                        <li>End-to-end employee induction presentations</li>
-                        <li>Onboarding journey storytelling decks</li>
-                        <li>Culture, values, and policy communication modules</li>
+                        <li>Program-specific internal website</li>
+                        <li>Identity design for employee communities</li>
+                        <li>Membership drives and engagement campaigns</li>
                       </ul>
-                  </div>
-                  <div className="bg-[var(--purple-light)] p-5 rounded-xl">
-                       <p className="font-semibold text-lg mb-2">Client Experience & Experiential Design</p>
+                    </div>
+                    <div className="bg-gray-200 p-5 rounded-xl">
+                      <p className="font-semibold text-lg mb-2">Learning & Development Campaigns</p>
                       <ul className="list-disc ml-5 space-y-2">
-                        <li>Experience centre branding</li>
-                        <li>Environmental graphics and storytelling walls</li>
-                        <li>Capability showcase installations</li>
+                        <li>Program-specific internal website</li>
+                        <li>Training program promotions</li>
+                        <li>Certification and learning journey creatives</li>
                       </ul>
-                  </div>
-                  <div className="bg-[var(--purple-light)] p-5 rounded-xl">
-                      <p className="font-semibold text-lg mb-2">Presentation & Bid Support</p>
-                      <ul className="list-disc ml-5 space-y-2">
-                        <li>Strategic sales presentations</li>
-                        <li>Leadership keynote decks</li>
-                        <li>Bid and proposal storytelling frameworks</li>
-                      </ul> 
+                    </div>                      
                   </div>
                 </div>
               </div>
-
-              
-              {/* Results */}
-              <div className="grid md:grid-cols-2 gap-5 py-10">
-                <div>
-                  <h2 className="text-2xl md:text-3xl mb-6">Solution Approach</h2>
-                  <p className="font-semibold my-5">Loginat Solutions implemented an integrated engagement model bridging internal communications and client experience design:</p>
-                  <ul className="list-disc ml-5 space-y-2">
-                      <li>Stakeholder alignment across HR, L&D, and Marketing</li>
-                      <li>UX-structured internal campaign platforms</li>
-                      <li>Culture-led storytelling for employee programs</li>
-                      <li>Experience design for physical client environments</li>
-                      <li>Executive-ready presentation systems for sales pursuits</li>
-                      <li>Structured onboarding communication frameworks</li>
-                  </ul>
-                  <p className="font-semibold mt-3">This approach ensured seamless narrative continuity from employee experience to client perception.</p>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                </div>
-              </div>
-
-              <div className="py-10">
-                <h2 className="text-2xl md:text-3xl mb-6">Impact & Outcomes</h2>
-                
-                <div className="grid md:grid-cols-4 gap-5">
-                {impactData.map((item, index) => (
-                  <div className="bg-white shadow-md rounded-xl p-5 border" key={index}>
-                    <p className="font-semibold mb-2">{item.title}</p>
+              <div className="grid md:grid-cols-3 gap-5 mt-5">
+                <div className="bg-gray-200 p-5 rounded-xl">
+                    <p className="font-semibold text-lg mb-2">Employee Induction & Onboarding</p>
                     <ul className="list-disc ml-5 space-y-2">
-                      {item.points.map((point, index) => (
-                        <li key={index}>{point}</li>
-                      ))}
+                      <li>End-to-end employee induction presentations</li>
+                      <li>Onboarding journey storytelling decks</li>
+                      <li>Culture, values, and policy communication modules</li>
                     </ul>
-                  </div>
-                ))}              
                 </div>
-
+                <div className="bg-gray-200 p-5 rounded-xl">
+                      <p className="font-semibold text-lg mb-2">Client Experience & Experiential Design</p>
+                    <ul className="list-disc ml-5 space-y-2">
+                      <li>Experience centre branding</li>
+                      <li>Environmental graphics and storytelling walls</li>
+                      <li>Capability showcase installations</li>
+                    </ul>
+                </div>
+                <div className="bg-gray-200 p-5 rounded-xl">
+                    <p className="font-semibold text-lg mb-2">Presentation & Bid Support</p>
+                    <ul className="list-disc ml-5 space-y-2">
+                      <li>Strategic sales presentations</li>
+                      <li>Leadership keynote decks</li>
+                      <li>Bid and proposal storytelling frameworks</li>
+                    </ul> 
+                </div>
               </div>
-
-               <div className="py-10">
-                  <h2 className="text-2xl md:text-3xl mb-6">Client Value Delivered</h2>
-                  <ul className="flex gap-5 text-center">
-                    <li className="bg-gray-50 border shadow-md rounded-xl p-5">Unified engagement across employees and clients</li>
-                    <li className="bg-gray-50 border shadow-md rounded-xl p-5">Stronger employer branding and workplace culture</li>
-                    <li className="bg-gray-50 border shadow-md rounded-xl p-5">Revenue enablement through bid-winning assets</li>
-                    <li className="bg-gray-50 border shadow-md rounded-xl p-5">Scalable presentation and experience design systems</li>
-                  </ul>   
-                </div> 
-
-               <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
-                <p className="my-5">The engagement highlights Loginat Solutions' ability to design holistic experience ecosystems spanning workforce engagement and client storytelling. By integrating internal campaigns, onboarding frameworks, experiential environments, and strategic presentations, Loginat enabled HCL Technologies to strengthen culture, drive participation, and enhance client perception — delivering impact across both people and business outcomes.</p>
+            </div>
+          
+          {/* Solution */}
+          <div className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)]">
+            <div className="grid md:grid-cols-2 text-white gap-5 max-w-6xl mx-auto py-10 px-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Solution Approach</h2>
+                <p className="font-semibold my-5">Loginat Solutions implemented an integrated engagement model bridging internal communications and client experience design:</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>Stakeholder alignment across HR, L&D, and Marketing</li>
+                    <li>UX-structured internal campaign platforms</li>
+                    <li>Culture-led storytelling for employee programs</li>
+                    <li>Experience design for physical client environments</li>
+                    <li>Executive-ready presentation systems for sales pursuits</li>
+                    <li>Structured onboarding communication frameworks</li>
+                </ul>
+                <p className="font-semibold mt-3">This approach ensured seamless narrative continuity from employee experience to client perception.</p>
               </div>
+              <div>
+                <img src={SolutionAproach} alt="" className="bg-white px-5 rounded-2xl" />
+              </div>
+            </div>
           </div>
-          <hr />
-        </div>
+          {/* impact & outcomes */}
+          
+          <div className="max-w-6xl mx-auto py-10 px-6">
+            <h2 className="text-2xl md:text-3xl mb-6">Impact & Outcomes</h2>
+            
+            <div className="grid md:grid-cols-4 gap-5">
+            {impactData.map((item, index) => (
+              <div className="bg-white shadow-md rounded-xl p-5 border" key={index}>
+                <p className="font-semibold mb-2">{item.title}</p>
+                <ul className="list-disc ml-5 space-y-2">
+                  {item.points.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}              
+            </div>
+
+          </div>
+
+          {/* Client Value Delivered */}
+
+            <div className="max-w-6xl mx-auto py-10 px-6">
+              <h2 className="text-2xl md:text-3xl mb-6">Client Value Delivered</h2>
+              <ul className="grid md:grid-cols-4 gap-5 text-center">
+                <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Unified engagement across employees and clients</li>
+                <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Stronger employer branding and workplace culture</li>
+                <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Revenue enablement through bid-winning assets</li>
+                <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Scalable presentation and experience design systems</li>
+              </ul>   
+            </div> 
+
+          {/* Conclusion */}
+          <div className="bg-gray-50">
+            <div className="max-w-6xl mx-auto py-10 px-6">
+              <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
+              <p className="my-5">The engagement highlights <strong>Loginat Solutions'</strong> ability to design holistic experience ecosystems spanning workforce engagement and client storytelling. By integrating internal campaigns, onboarding frameworks, experiential environments, and strategic presentations, Loginat enabled <strong>HCL Technologies</strong> to strengthen culture, drive participation, and enhance client perception — <strong>delivering impact across both people and business outcomes.</strong></p>
+            </div>
+          </div>      
         
         <div className="max-w-6xl mx-auto py-10 px-6">
           <h4 className="text-xl font-bold">Other Stories</h4>
@@ -322,6 +338,7 @@ function IndiaMart() {
           </Swiper>
 
         </div>
+
       </section>
       <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>

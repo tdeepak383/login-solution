@@ -17,7 +17,6 @@ function IntegratedCreativeandDigitalMarketingSupport() {
     
   return (
      <>
-      
 
       <SubpageHeroSection
         onClick={() => setIsPopupOpen(true)}
@@ -29,69 +28,67 @@ function IntegratedCreativeandDigitalMarketingSupport() {
       <section className="margin-top-Subhero">
 
         {/* Banner */}
+
         <div className="max-w-6xl mx-auto py-10 px-6 ">
-
-
-         <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/55 mb-10' 
-        style={{backgroundImage: `url(${bgImage3})`}}
-        >
-            <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
-                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>AI-driven</h2>
-                </div>
-                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/08</p>
-                </div>
-                <div className=''>
-                   <div>
-                     <img src={vitriaLogo} alt=""  className='w-40'/>
-          
-                      <h2 className='font-bold text-3xl my-6 '>Creative Campaigns, Thought Leadership & Digital Marketing Enablement</h2>      
-                     
-                   </div>
-                  
-                </div>
-            </div>
+          <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/55' 
+          style={{backgroundImage: `url(${bgImage3})`}}
+          >
+              <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
+                  <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                      <h2>AI-driven</h2>
+                  </div>
+                  <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                      <p className='text-sm'><span className='text-xl font-semibold'>03</span>/08</p>
+                  </div>
+                  <div className=''>
+                    <div>
+                      <img src={vitriaLogo} alt=""  className='w-40'/>
+            
+                        <p className='text-left mt-5 text-lg font-semibold'>Creative Campaigns, Thought Leadership & Digital Marketing Enablement</p>
+                        <p className='text-left mt-2 text-sm'><strong>Client</strong>: Enterprise AI & Analytics Technology</p>
+                        <p className='text-left mt-2 text-sm'><strong>Services</strong>: Campaign Design • Social Media Creatives • Thought Leadership Assets • Whitepapers & Case Studies • PowerPoint Presentations • Email Campaigns • Marketing Automation • Website Content Management • Performance Reporting</p>              
+                        <p className='text-left mt-2 text-sm'><strong>Engagement Model</strong>: Dedicated Creative & Digital Marketing Partner</p>
+                    </div>
+                    
+                  </div>
+              </div>
+          </div>
         </div>
 
+        {/* Business Challenge */}
+        <div className="bg-gray-100">
+        <div className="max-w-6xl mx-auto py-10 px-6">
+          <h2 className="text-2xl md:text-3xl mb-6">Business Challenge</h2>                
+          <p className="mt-5">
+            Vitria Technology required a creative and digital marketing partner capable of translating complex AI and analytics solutions into compelling, market-ready narratives. Beyond content creation, the mandate extended to managing always-on social media engagement, executing performance-driven email campaigns, and generating measurable pipeline insights — all while aligning to evolving product marketing priorities.
+          </p>
+          <p className="mt-3">The core challenge was integrating creative storytelling with marketing operations to drive both visibility and qualified demand.</p>
+        </div>
+        </div>
 
-        <div className="mb-10">
+        {/* Scope of Work */}
 
-              {/* Business Challenge */}
-              <p className='text-left mt-5 text-sm'><strong>Client</strong>: Enterprise AI & Analytics Technology</p>
-              <p className='text-left mt-5 text-sm'><strong>Services</strong>: Campaign Design • Social Media Creatives • Thought Leadership Assets • Whitepapers & Case Studies • PowerPoint Presentations • Email Campaigns • Marketing Automation • Website Content Management • Performance Reporting</p>              
-              <p className='text-left mt-5 text-sm'><strong>Engagement Model</strong>: Dedicated Creative & Digital Marketing Partner</p> 
-              
-              
-              <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-6">Business Challenge</h2>                
-                <p className="mt-5">
-                  Vitria Technology required a creative and digital marketing partner capable of translating complex AI and analytics solutions into compelling, market-ready narratives. Beyond content creation, the mandate extended to managing always-on social media engagement, executing performance-driven email campaigns, and generating measurable pipeline insights — all while aligning to evolving product marketing priorities.
-                </p>
-                <p className="mt-3">The core challenge was integrating creative storytelling with marketing operations to drive both visibility and qualified demand.</p>
-              </div>
+        <div className="max-w-6xl mx-auto py-10 px-6">
+          <h2 className="text-2xl md:text-3xl mb-3">Scope of Work</h2>
+          <p className="mb-6 text-lg">Loginat Solutions delivered an integrated suite of creative and digital marketing services:</p>
 
-              {/* Scope of Work */}
+          <ul className="grid md:grid-cols-4 grid-cols-2 gap-5">
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Social media campaign design and content production</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Whitepapers, case studies, and long-form thought leadership assets</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Sales and leadership PowerPoint presentations</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Dedicated LinkedIn management and optimization</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">HubSpot-driven email campaign execution</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Click-through and engagement analytics reporting</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Marketing Qualified Lead (MQL) tracking and reporting</li>
+              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Ongoing website content updates and publishing</li>
+          </ul>
+        </div>
 
-               <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-3">Scope of Work</h2>
-                <p className="mb-6 text-lg">Loginat Solutions delivered an integrated suite of creative and digital marketing services:</p>
-
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>Social media campaign design and content production</li>
-                    <li>Whitepapers, case studies, and long-form thought leadership assets</li>
-                    <li>Sales and leadership PowerPoint presentations</li>
-                    <li>Dedicated LinkedIn management and optimization</li>
-                    <li>HubSpot-driven email campaign execution</li>
-                    <li>Click-through and engagement analytics reporting</li>
-                    <li>Marketing Qualified Lead (MQL) tracking and reporting</li>
-                    <li>Ongoing website content updates and publishing</li>
-                </ul>
-              </div>
-
-              {/* Solution */}
-
-              <div className="mt-5">
+        {/* Solution */}
+        <div className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white">
+          <div className="max-w-6xl mx-auto py-10 px-6">
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
                 <h2 className="text-2xl md:text-3xl mb-3">Solution Approach</h2>
                 <p className="mb-6 text-lg">A cross-functional delivery pod was deployed combining strategy, creative, and marketing operations:</p>
                 <ul className="list-disc ml-5 space-y-2">
@@ -103,47 +100,59 @@ function IntegratedCreativeandDigitalMarketingSupport() {
 
                 <p>This integrated model ensured continuity from content creation to performance measurement.</p>
               </div>
-
-
-              
-              {/* Results */}
-
-              <div className="mt-5">
-
-                <h2 className="text-2xl md:text-3xl mb-6">Impact & Results</h2>
-
-                <p className="text-lg font-bold">Brand Visibility & Thought Leadership</p>
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>Elevated LinkedIn presence through consistent, insight-led content</li>
-                    <li>Strengthened positioning of Vitria’s AI solutions in enterprise conversations</li>
-                </ul>
-                <p className="text-lg font-bold">Demand Generation Insights</p>
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>Actionable click-through analytics from HubSpot campaigns</li>
-                    <li>Structured MQL reporting enabling marketing-to-sales alignment</li>
-                </ul>
-                <p className="text-lg font-bold">Sales Enablement</p>
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>High-impact presentation decks supporting leadership and pre-sales teams</li>
-                    <li>Clearer articulation of complex AI value propositions</li>
-
-                </ul>
-                <p className="text-lg font-bold">Digital Ecosystem Efficiency</p>
-                <ul className="list-disc ml-5 space-y-2">
-                    <li>Streamlined website updates ensuring timely campaign and product messaging</li>
-                    <li>Improved consistency across owned digital touchpoints</li>
-                </ul>
+              <div>
+                <img src="" alt="" />
               </div>
-
-              <div className="mt-5">
-                <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
-                <p>Through an integrated creative + marketing operations model, Loginat Solutions enabled Vitria Technology to transform complex AI narratives into measurable marketing outcomes. The partnership demonstrates Loginat's capability to drive brand visibility, engagement, and qualified demand for deep-tech enterprises through data-informed creative execution.</p>
-              </div>
-          
+            </div>
           </div>
-          <hr />
         </div>
-        
+        {/* Results */}
+
+        <div className="max-w-6xl mx-auto py-10 px-6">
+
+          <h2 className="text-2xl md:text-3xl mb-6">Impact & Results</h2>
+          <div className="grid grid-cols-2 gap-5">
+            <div className="bg-gray-200 p-5 rounded-xl">
+              <p className="text-lg font-bold">Brand Visibility & Thought Leadership</p>
+              <ul className="list-disc ml-5 space-y-2">
+                  <li>Elevated LinkedIn presence through consistent, insight-led content</li>
+                  <li>Strengthened positioning of Vitria’s AI solutions in enterprise conversations</li>
+              </ul>
+            </div>
+            <div>
+              <div className="bg-gray-200 p-5 rounded-xl">
+              <p className="text-lg font-bold">Demand Generation Insights</p>
+              <ul className="list-disc ml-5 space-y-2">
+                  <li>Actionable click-through analytics from HubSpot campaigns</li>
+                  <li>Structured MQL reporting enabling marketing-to-sales alignment</li>
+              </ul>
+            </div>
+            <div className="bg-gray-200 p-5 my-5 rounded-xl">
+              <p className="text-lg font-bold">Sales Enablement</p>
+              <ul className="list-disc ml-5 space-y-2">
+                  <li>High-impact presentation decks supporting leadership and pre-sales teams</li>
+                  <li>Clearer articulation of complex AI value propositions</li>
+              </ul>
+            </div>
+            <div className="bg-gray-200 p-5 rounded-xl">
+              <p className="text-lg font-bold">Digital Ecosystem Efficiency</p>
+              <ul className="list-disc ml-5 space-y-2">
+                  <li>Streamlined website updates ensuring timely campaign and product messaging</li>
+                  <li>Improved consistency across owned digital touchpoints</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Conclusion */}
+        <div className="bg-gray-100">
+          <div className="max-w-6xl mx-auto py-10 px-6">
+            <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
+            <p>Through an integrated creative + marketing operations model, Loginat Solutions enabled Vitria Technology to transform complex AI narratives into measurable marketing outcomes. The partnership demonstrates Loginat's capability to drive brand visibility, engagement, and qualified demand for deep-tech enterprises through data-informed creative execution.</p>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto py-10 px-6">
           <h4 className="text-xl font-bold">Other Stories</h4>
 
