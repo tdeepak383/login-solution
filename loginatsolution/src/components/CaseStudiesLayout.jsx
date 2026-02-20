@@ -15,14 +15,15 @@ import bgImage6 from '../assets/client-stories/NIIT.jpg'
 import bgImage7 from '../assets/client-stories/TE_Connectivity.jpg'
 import bgImage8 from '../assets/client-stories/hcl.jpeg'
 import HCLlogo from '../assets/HCLTech.png'
-
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa6";
+
+
 
 function CaseStudiesLayout() {
     return (
         <>
-         <div id='HCL' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/40 mb-10'
+        <div id='HCL' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/40 mb-10'
             style={{ backgroundImage: `url(${bgImage8})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -83,7 +84,7 @@ function CaseStudiesLayout() {
                     </div>
                 </div>
                 <div className='mt-5 group flex justify-end'>
-                    <Link to="#" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                    <Link to="/client-stories/hcl-technologies" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
                 </div>
             </div>
         </div>
@@ -403,10 +404,8 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
-       
-
         </>
     )
 }
 
-export default CaseStudiesLayout 
+export default CaseStudiesLayout

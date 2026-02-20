@@ -11,6 +11,9 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
+import Image1 from '../../assets/client-stories/Brand-Visibility.png'
+import Image2 from '../../assets/client-stories/solution-approch.png'
+
 function IntegratedCreativeandDigitalMarketingSupport() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -72,20 +75,20 @@ function IntegratedCreativeandDigitalMarketingSupport() {
           <h2 className="text-2xl md:text-3xl mb-3">Scope of Work</h2>
           <p className="mb-6 text-lg">Loginat Solutions delivered an integrated suite of creative and digital marketing services:</p>
 
-          <ul className="grid md:grid-cols-4 grid-cols-2 gap-5">
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Social media campaign design and content production</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Whitepapers, case studies, and long-form thought leadership assets</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Sales and leadership PowerPoint presentations</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Dedicated LinkedIn management and optimization</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">HubSpot-driven email campaign execution</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Click-through and engagement analytics reporting</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Marketing Qualified Lead (MQL) tracking and reporting</li>
-              <li className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white font-semibold shadow-md rounded-xl p-5">Ongoing website content updates and publishing</li>
+          <ul className="grid md:grid-cols-4 grid-cols-1 gap-5">
+              <li className="border font-semibold rounded-xl p-5">Social media campaign design and content production</li>
+              <li className="border font-semibold rounded-xl p-5">Whitepapers, case studies, and long-form thought leadership assets</li>
+              <li className="border font-semibold rounded-xl p-5">Sales and leadership PowerPoint presentations</li>
+              <li className="border font-semibold rounded-xl p-5">Dedicated LinkedIn management and optimization</li>
+              <li className="border font-semibold rounded-xl p-5">HubSpot-driven email campaign execution</li>
+              <li className="border font-semibold rounded-xl p-5">Click-through and engagement analytics reporting</li>
+              <li className="border font-semibold rounded-xl p-5">Marketing Qualified Lead (MQL) tracking and reporting</li>
+              <li className="border font-semibold rounded-xl p-5">Ongoing website content updates and publishing</li>
           </ul>
         </div>
 
         {/* Solution */}
-        <div className="bg-gradient-to-br from-[var(--purple)] to-[var(--pink)] text-white">
+        <div className="gradient text-white">
           <div className="max-w-6xl mx-auto py-10 px-6">
             <div className="grid md:grid-cols-2 gap-5">
               <div>
@@ -97,11 +100,10 @@ function IntegratedCreativeandDigitalMarketingSupport() {
                     <li>Marketing automation experts executing and analyzing HubSpot campaigns</li>
                     <li>Agile sprint workflows enabling rapid campaign launches and iterations</li>
                 </ul>
-
                 <p>This integrated model ensured continuity from content creation to performance measurement.</p>
               </div>
               <div>
-                <img src="" alt="" />
+                <img src={Image2} alt="Solution Approach" className="w-9/12 mx-auto" />
               </div>
             </div>
           </div>
@@ -111,31 +113,36 @@ function IntegratedCreativeandDigitalMarketingSupport() {
         <div className="max-w-6xl mx-auto py-10 px-6">
 
           <h2 className="text-2xl md:text-3xl mb-6">Impact & Results</h2>
-          <div className="grid grid-cols-2 gap-5">
-            <div className="bg-gray-200 p-5 rounded-xl">
-              <p className="text-lg font-bold">Brand Visibility & Thought Leadership</p>
-              <ul className="list-disc ml-5 space-y-2">
-                  <li>Elevated LinkedIn presence through consistent, insight-led content</li>
-                  <li>Strengthened positioning of Vitria’s AI solutions in enterprise conversations</li>
-              </ul>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="bg-gray-200 flex flex-col rounded-xl">
+              <div className="p-5">
+                <p className="text-lg font-bold mb-3">Brand Visibility & Thought Leadership</p>
+                <ul className="list-disc ml-5 space-y-2">
+                    <li>Elevated LinkedIn presence through consistent, insight-led content</li>
+                    <li>Strengthened positioning of Vitria’s AI solutions in enterprise conversations</li>
+                </ul>
+              </div>
+              <div className="">
+                <img src={Image1} alt="Vitria Brand Visibility" className="w-[60%] p-2 mx-auto" />
+              </div>
             </div>
             <div>
               <div className="bg-gray-200 p-5 rounded-xl">
-              <p className="text-lg font-bold">Demand Generation Insights</p>
+              <p className="text-lg font-bold mb-2">Demand Generation Insights</p>
               <ul className="list-disc ml-5 space-y-2">
                   <li>Actionable click-through analytics from HubSpot campaigns</li>
                   <li>Structured MQL reporting enabling marketing-to-sales alignment</li>
               </ul>
             </div>
             <div className="bg-gray-200 p-5 my-5 rounded-xl">
-              <p className="text-lg font-bold">Sales Enablement</p>
+              <p className="text-lg font-bold mb-2">Sales Enablement</p>
               <ul className="list-disc ml-5 space-y-2">
                   <li>High-impact presentation decks supporting leadership and pre-sales teams</li>
                   <li>Clearer articulation of complex AI value propositions</li>
               </ul>
             </div>
             <div className="bg-gray-200 p-5 rounded-xl">
-              <p className="text-lg font-bold">Digital Ecosystem Efficiency</p>
+              <p className="text-lg font-bold mb-2">Digital Ecosystem Efficiency</p>
               <ul className="list-disc ml-5 space-y-2">
                   <li>Streamlined website updates ensuring timely campaign and product messaging</li>
                   <li>Improved consistency across owned digital touchpoints</li>
@@ -146,7 +153,7 @@ function IntegratedCreativeandDigitalMarketingSupport() {
         </div>
 
         {/* Conclusion */}
-        <div className="bg-gray-100">
+        <div className="gradient text-white">
           <div className="max-w-6xl mx-auto py-10 px-6">
             <h2 className="text-2xl md:text-3xl mb-6">Conclusion</h2>
             <p>Through an integrated creative + marketing operations model, Loginat Solutions enabled Vitria Technology to transform complex AI narratives into measurable marketing outcomes. The partnership demonstrates Loginat's capability to drive brand visibility, engagement, and qualified demand for deep-tech enterprises through data-informed creative execution.</p>

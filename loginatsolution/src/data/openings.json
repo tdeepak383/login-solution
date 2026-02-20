@@ -1,39 +1,31 @@
 [
-  
   {
-    "title": "Telecalling Executive / Telemarketing Executive",
-    "location": "Noida",
-    "type": "1 - 3 Years",
-    "description": "Experience in Telecalling / Telemarketing with excellent communication skills.",
-    "posted": "Posted 12 days ago"
+    "title": "Client Coordinator",
+    "location": "Sector- 63, Noida",
+    "experience": "2 to 5 Years",
+    "subtitle": "Hiring for a proactive and detail-oriented Client Coordinator to join our team.",
+    "posted": "Posted 18 days ago"
     
   },
   {
-    "title": "Sales Executive",
-    "location": "Noida / Remote",
-    "type": "1 - 4 Years",
-    "description": "Experience in B2B Sales with a proven track record of achieving sales targets.",
-    "posted": "Posted 24 days ago"
+    "title": "Graphic Designer",
+    "location": "Sector- 63, Noida",
+    "experience": "2 to 5 Years",
+    "subtitle": "Hiring for a creative and detail-oriented Graphic Designer",
+    "posted": "Posted 18 days ago"
   },
   {
-    "title": "SEO - CW",
-    "location": "Noida",
-    "type": "2 - 5 Years",
-    "description": "Experience in SEO with knowledge of on-page and off-page optimization techniques.",
-    "posted": "Posted 20 days ago"
+    "title": "Project Delivery Executive (PDE)",
+    "location": "Sector- 63, Noida",
+    "experience": "0-6 months",
+    "subtitle": "Hiring for India's Leading B2B / E-commerce Company Process",
+    "posted": "Posted 18 days ago"
   },
   {
-    "title": "HTML Designer",
-    "location": "Noida",
-    "type": "2 - 3 Years",
-    "description": "Experience in HTML designing with proficiency in HTML5, CSS3, and responsive design.",
+    "title": "Team Lead",
+    "location": "Sector- 63, Noida",
+    "experience": "2 to 5 Years",
+    "subtitle": "Hiring for India's Leading B2B / E-commerce Company Process",
     "posted": "Posted 22 days ago"
-  },
-  {
-    "title": "Php Developer",
-    "location": "Noida",
-    "type": "2 - 5 Years",
-    "description": "Experience in PHP development with knowledge of frameworks like Laravel or CodeIgniter.",
-    "posted": "Posted 25 days ago"
   }
 ]

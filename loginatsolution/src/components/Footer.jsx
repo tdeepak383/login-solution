@@ -112,12 +112,12 @@ function Footer() {
               {/* <a href="https://www.facebook.com/Loginat Solutions " className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
               <FaFacebookF />
               </a> */}
-              <a href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
+              <a href="https://www.linkedin.com/company/loginat-solutions-pvt-ltd-/" className="bg-gray-100 p-3 hover:bg-[#0a66c2] hover:text-white rounded-full">
               <FaLinkedinIn />
               </a>
-              {/* <a href="https://www.youtube.com/@loginatsolution" className="bg-gray-100 p-3 hover:bg-[var(--purple)] hover:text-white rounded">
+              <a href="https://www.youtube.com/@loginatsolutions" className="bg-gray-100 p-3 hover:bg-red-600 hover:text-white rounded-full">
               <FaYoutube />
-              </a> */}
+              </a>
             </div>
           </motion.div>
             {/* Company */}

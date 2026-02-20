@@ -162,7 +162,9 @@ function Service() {
         <h2 className="lg:text-5xl text-center md:text-4xl text-2xl font-bold">
           Portfolio
         </h2>
-        <PortfolioGrid />
+        <div id="portfolio">
+          <PortfolioGrid />
+        </div>
       </div>
     </section>
   );
