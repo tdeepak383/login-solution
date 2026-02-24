@@ -78,7 +78,7 @@ function HCLTechnologies() {
       <SubpageHeroSection
         onClick={() => setIsPopupOpen(true)}
         title={"Client Impact Stories"}
-        subtitle={"A curated collection of the successes we've built with our clients—highlighting their goals, our solutions, and the results achieved."}
+        subtitle={"A curated collection of the successes we've built with our clients-highlighting their goals, our solutions, and the results achieved."}
         buttontext={"Connect with us"}
         children={""}
       />
@@ -91,10 +91,10 @@ function HCLTechnologies() {
           >
               <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
                   <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                      <h2>Technologies</h2>
+                      <h2>IT Services</h2>
                   </div>
                   <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                      <p className='text-sm'><span className='text-xl font-semibold'>08</span>/08</p>
+                      <p className='text-sm'><span className='text-xl font-semibold'>01</span>/09</p>
                   </div>
                   <div>
                     <div>

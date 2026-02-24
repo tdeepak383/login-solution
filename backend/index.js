@@ -30,6 +30,10 @@ app.use("/api/jobs", jobs)
 app.use("/uploads", express.static("uploads"));
 
 
+app.get("/health", (req, res) => {
+  res.status(200).send("Server is running");
+});
+
 // error handler
 app.use((err, _req, res, _next) => {
   console.error(err);

@@ -93,7 +93,13 @@ function BlogDetailsPage({
         <Typography>{dislikesState}</Typography>
       </Stack>
 
-      <img src={image} alt={title} className="rounded-xl" />
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        className="w-full rounded-xl"
+      />
 
       <div
         dangerouslySetInnerHTML={{ __html: content }}

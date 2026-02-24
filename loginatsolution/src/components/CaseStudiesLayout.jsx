@@ -14,7 +14,9 @@ import bgImage5 from '../assets/client-stories/indiamart.jpg'
 import bgImage6 from '../assets/client-stories/NIIT.jpg'
 import bgImage7 from '../assets/client-stories/TE_Connectivity.jpg'
 import bgImage8 from '../assets/client-stories/hcl.jpeg'
+import bgImage9 from '../assets/client-stories/mmtv-banner.jpeg'
 import HCLlogo from '../assets/HCLTech.png'
+import MishumishtiLogo from '../assets/client-stories/MMTV-logo.png'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa6";
 
@@ -28,10 +30,10 @@ function CaseStudiesLayout() {
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
                 <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>Technologies</h2>
+                    <h2>IT Services</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>01</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>01</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -96,7 +98,7 @@ function CaseStudiesLayout() {
                     <h2>Aviation</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>02</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -138,10 +140,10 @@ function CaseStudiesLayout() {
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
                 <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>AI-driven</h2>
+                    <h2>AI Intelligent Automation</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>03</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>03</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -180,6 +182,68 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
+        <div id="mishumishtitv"  className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+            style={{ backgroundImage: `url(${bgImage9})` }}
+        >
+            <div className='relative pt-32 text-white text-left md:px-10 '>
+                <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
+                    <h2>Kids’ Digital Entertainment</h2>
+                </div>
+                <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
+                    <p className='text-sm'><span className='text-xl font-semibold'>04</span>/09</p>
+                </div>
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <img src={MishumishtiLogo} alt="" className='w-40' />
+                        <p className='text-left mt-5 text-xs'>Digital Platform, YouTube Production & Social Media Growth</p>
+                        <div className='my-5'>
+                            <p className='text-xs'><strong>Client</strong>: Mishumishti TV</p>
+                            <p className='text-xs'><strong>Industry</strong>: Kids’ Digital Entertainment</p>
+                            <p className='text-xs'><strong>Engagement Model</strong>: Website Development + Creative Production + Social Media Management</p>
+                            <p className='text-xs'><strong>Website</strong>: https://Mishumishtitv.com/</p>
+                        </div>
+                    </div>
+                    <div className='content-end mb-5'>
+                        <h4 className='text-xl font-bold '>Measurable Impact</h4>
+                        <hr className='w-48 border-b-1 ' />
+                        <p>Website Performance</p>
+                        <ul className='ml-5 list-disc mt-5 leading-tight space-y-2'>
+                            <li><strong>↑ 38%</strong> increase in traffic (90 days)</li>
+                            <li><strong>↑ 27%</strong> session duration growth</li>
+                            <li><strong>↓ 32%</strong> bounce rate reduction</li>
+                            <li><strong>↑ 45%</strong> mobile engagement</li>
+                            <li>Load speed optimized to &lt;3 sec</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div className='grid md:grid-cols-2 gap-10'>
+                    <div>
+                        <h4 className='text-xl font-bold'>Business Context</h4>
+                        <hr className='w-44 border-b-1 ' />
+                        <p className='text-left mt-5 '>Mishumishti TV is a children’s entertainment brand focused on delivering engaging, educational video content for early learners. The brand required a unified digital ecosystem to strengthen online presence, streamline content publishing, and scale audience engagement across platforms.</p>
+                    </div>
+                    <div>
+                        <h4 className='text-xl font-bold'>Value Delivered</h4>
+                        <hr className='w-40 border-b-1 ' />
+                        <ul className="ml-5 list-disc mt-5 leading-tight space-y-2">
+                            <li>Unified digital brand ecosystem</li>
+                            <li>Scalable kids’ content production engine</li>
+                            <li>AI-accelerated creative workflows</li>
+                            <li>Cross-platform audience growth</li>
+                            <li>Consistent visual storytelling</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div className='mt-5 group flex justify-end'>
+                    <Link to="/client-stories/mishumishtitv" className='flex items-center gap-4 px-4 py-2 text-sm rounded-full bg-white text-[var(--purple)]'>Read More <FaArrowRight className='group-hover:ml-5 transition-all delay-200 duration-200' /></Link>
+                </div>
+            </div>
+        </div>
         <div id='niit' className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
             style={{ backgroundImage: `url(${bgImage6})` }}
         >
@@ -188,7 +252,7 @@ function CaseStudiesLayout() {
                     <h2>eLearning</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>04</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>05</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -229,10 +293,10 @@ function CaseStudiesLayout() {
         >
             <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>
                 <div className='absolute top-10 md:-left-20 bg-[var(--purple)] py-3 px-8 rounded-full'>
-                    <h2>Engineering</h2>
+                    <h2>Technology</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>05</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>06</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -276,7 +340,7 @@ function CaseStudiesLayout() {
                     <h2>eLearning</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>06</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>07</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -322,7 +386,7 @@ function CaseStudiesLayout() {
                     <h2>B2B Portal</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>07</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>08</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>
@@ -367,7 +431,7 @@ function CaseStudiesLayout() {
                     <h2>B2B Portal</h2>
                 </div>
                 <div className='absolute top-0 right-0 bg-[var(--purple)] p-2 px-6 rounded-full'>
-                    <p className='text-sm'><span className='text-xl font-semibold'>08</span>/08</p>
+                    <p className='text-sm'><span className='text-xl font-semibold'>09</span>/09</p>
                 </div>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div>

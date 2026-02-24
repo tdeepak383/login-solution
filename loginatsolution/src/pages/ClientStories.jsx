@@ -13,7 +13,7 @@ function ClientStories() {
     <SubpageHeroSection
       onClick={() => setIsPopupOpen(true)}
       title={"Client Impact Stories"}
-      subtitle={"A curated collection of the successes we’ve built with our clients—highlighting their goals, our solutions, and the results achieved."}
+      subtitle={"A curated collection of the successes we’ve built with our clients-highlighting their goals, our solutions, and the results achieved."}
       buttontext={"Connect with us"}
       children={""}
     />

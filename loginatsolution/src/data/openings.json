@@ -1,6 +1,7 @@
 [
   {
     "title": "Client Coordinator",
+    "slug": "client-coordinator",
     "location": "Sector- 63, Noida",
     "experience": "2 to 5 Years",
     "subtitle": "Hiring for a proactive and detail-oriented Client Coordinator to join our team.",
@@ -9,6 +10,7 @@
   },
   {
     "title": "Graphic Designer",
+    "slug" :"graphic-designer",
     "location": "Sector- 63, Noida",
     "experience": "2 to 5 Years",
     "subtitle": "Hiring for a creative and detail-oriented Graphic Designer",
@@ -16,6 +18,7 @@
   },
   {
     "title": "Project Delivery Executive (PDE)",
+    "slug": "project-delivery-executive-pde",
     "location": "Sector- 63, Noida",
     "experience": "0-6 months",
     "subtitle": "Hiring for India's Leading B2B / E-commerce Company Process",
@@ -23,6 +26,7 @@
   },
   {
     "title": "Team Lead",
+    "slug": "team-lead",
     "location": "Sector- 63, Noida",
     "experience": "2 to 5 Years",
     "subtitle": "Hiring for India's Leading B2B / E-commerce Company Process",

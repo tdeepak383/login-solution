@@ -109,7 +109,7 @@ function PDE() {
                                         title={job.title}
                                         location={job.location}
                                         posted={job.posted}
-                                        slug={`/jobs/${job.slug}`}
+                                        slug={`${job.slug}`}
                                     />
                                     ))
                                 }
