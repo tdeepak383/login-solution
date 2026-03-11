@@ -77,18 +77,18 @@ function JobDetailsPage({
                     </div>
                     </div>
                     <div className='bg-gray-50 p-5 rounded-xl'>
-                        <div className="bg-gray-200 p-5 rounded-lg">
+                        { job_highlights && <div className="bg-gray-200 p-5 rounded-lg">
                             <h4 className='font-semibold'>Job highlights</h4>
                             <div dangerouslySetInnerHTML={{ __html: job_highlights }} />
-                        </div>
-                        <div>
+                        </div>}
+                        { job_description && <div>
                             <h4 className='font-semibold mt-5'>Job Description</h4>
                             <div dangerouslySetInnerHTML={{ __html: job_description }} />
-                        </div>
-                        <div>
+                        </div>}
+                        {requirement && <div>
                             <h4 className='font-semibold mt-5'>Requirements:</h4>
                             <div dangerouslySetInnerHTML={{ __html: requirement }} />
-                        </div>
+                        </div>}
                     </div>
                 </div>
                

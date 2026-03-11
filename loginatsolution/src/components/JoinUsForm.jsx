@@ -150,21 +150,13 @@ function JoinUsForm() {
             className="w-full border p-3 rounded-md"
           >
             <option value="">Select Position</option>
+            <option value="Email Marketing Executive"> Email Marketing Executive</option>
             <option value="Graphic Designer"> Graphic Designer</option>
             <option value="Client Coordinator"> Client Coordinator</option>
             <option value="Project Delivery Executive (PDE)">Project Delivery Executive (PDE)</option>
             <option value="Team Lead">Team Lead</option>
-            <option value="Telecalling Executive / Telemarketing Executive">
-              Telecalling Executive / Telemarketing Executive
-            </option>
-            <option value="Sales Executive">Sales Executive</option>
-            <option value="SEO - CW">SEO - CW</option>
-            <option value="HTML Designer">HTML Designer</option>
-            <option value="PHP Developer">PHP Developer</option>
           </select>
         </div>
-
-       
 
          {/* Experience */}
         <div>

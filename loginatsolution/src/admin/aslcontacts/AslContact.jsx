@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import ExportDropdown from '../components/ExportDropdown';
+import Tooltip from '@mui/material/Tooltip';
 
 function AslContact() {
    const [contacts, setContacts] = useState([]);
@@ -98,7 +99,9 @@ function AslContact() {
                       <td className="py-2 align-middle text-center">
                         <div className="flex items-center justify-center gap-3">
                           {/* <Link to={`/admin/contacts/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link> */}
-                          <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                          <Tooltip title="Delete" placement="left">
+                            <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                          </Tooltip>
                         </div>
                       </td>
                     </tr>

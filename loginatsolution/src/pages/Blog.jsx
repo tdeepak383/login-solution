@@ -1,56 +1,57 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import BlogCard from '../components/BlogCard';
-import blogData from '../data/blog.json';
+import BlogSkeleton from './blogs/BlogSkeleton';
 
 
 
 function Blog() {
-  // const [dataBlogs, setDataBlogs] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
 
-  // const fetchBlogs = useCallback(async (signal) => {
-  //   try {
-  //     const response = await fetch(
-  //       `${import.meta.env.VITE_VERCEL_URL}/api/blogs`,
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         signal,
-  //       }
-  //     );
+  
+  const [dataBlogs, setDataBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch blogs");
-  //     }
+  const fetchBlogs = useCallback(async (signal) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_VERCEL_URL}/api/blogs`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          signal,
+        }
+      );
 
-  //     const result = await response.json();
+      if (!response.ok) {
+        throw new Error("Failed to fetch blogs");
+      }
+
+      const result = await response.json();
 
       
-  //     setDataBlogs(prev => 
-  //       JSON.stringify(prev) === JSON.stringify(result) ? prev : result
-  //     );
+      setDataBlogs(prev => 
+        JSON.stringify(prev) === JSON.stringify(result) ? prev : result
+      );
 
-  //   } catch (err) {
-  //     if (err.name !== "AbortError") {
-  //       setError(err.message);
-  //     }
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }, []);
+    } catch (err) {
+      if (err.name !== "AbortError") {
+        setError(err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   const controller = new AbortController();
-  //   fetchBlogs(controller.signal);
+  useEffect(() => {
+    const controller = new AbortController();
+    fetchBlogs(controller.signal);
 
-  //   return () => controller.abort(); 
-  // }, [fetchBlogs]);
+    return () => controller.abort(); 
+  }, [fetchBlogs]);
 
-  // if (loading) return <h2 className="text-center py-20">Loading blogs...</h2>;
-  // if (error) return <h2 className="text-center py-20 text-red-500">{error}</h2>;
+  if (error) return <h2 className="text-center py-20 text-red-500">{error}</h2>;
 
   return (
     <section>
@@ -59,14 +60,14 @@ function Blog() {
           Latest Insights
         </h1>
 
-        {blogData.map((blog) => (
+        {loading ? <BlogSkeleton /> : dataBlogs.map((blog) => (
           <BlogCard
             key={blog.id}
             title={blog.title}
-            date={blog.date}
-            excerpt={blog.content}
-            link={blog.link}
-            image={`/images/${blog.image}`}
+            date={blog.created_at}
+            excerpt={blog.excerpt}
+            link={blog.slug}
+            image={`${blog.thumbnail}`}
           />
         ))}
       </div>

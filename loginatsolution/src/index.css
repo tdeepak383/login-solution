@@ -3,12 +3,18 @@
 @tailwind utilities;
 
 :root {
-    --blue: #469ef6;
+    
     --pink: #c33eaf;
-    --blue-light: #cde6ff;
     --pink-light: #ffd9ee;
+
+    --blue: #469ef6;
+    --blue-light: #cde6ff;
+
     --purple: #7b2ff7;
     --purple-light: #e5d6fc;
+    
+    --green: #16a34a;
+    --green-light: #bbf7d0;
 }
 
 

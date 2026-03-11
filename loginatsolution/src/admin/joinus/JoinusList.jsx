@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import ExportDropdown from '../components/ExportDropdown';
+import Tooltip from '@mui/material/Tooltip';
 
 
 function JoinusList() {
@@ -164,7 +165,8 @@ function JoinusList() {
                             month: "short",
                             year: "numeric",
                           })}
-                        </p></td>
+                        </p>
+                      </td>
                       <td className="py-2 align-middle"><p className="text-sm line-clamp-1">{item.fullName}</p></td>
                       <td><p className="text-sm line-clamp-1">{item.email}</p></td>
                       <td><p className="text-sm line-clamp-1">{item.phone}</p></td>
@@ -172,10 +174,14 @@ function JoinusList() {
                       <td><p className="text-sm line-clamp-1">{item.experience}</p></td>
                       <td><p className="text-sm w-3/4">{item.message}</p></td>
                       <td><p className="text-sm underline text-blue-700"><a href={item.resume} target='_blank'>Download</a></p></td>
-                      <td className=" py-2 align-middle text-left">
+                      <td className=" py-2 align-middle text-left pl-3">
                         <div className="flex items-center justify-left gap-3">
-                          <Link to={`/admin/resume-list/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
-                          <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                          <Tooltip title="Edit" placement="top">
+                            <Link to={`/admin/resume-list/edit/${item.id}`} className='bg-[var(--purple-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
+                          </Tooltip>
+                          <Tooltip title="Delete" placement="top">
+                            <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                          </Tooltip>
                         </div>
                       </td>
                     </tr>
@@ -190,7 +196,7 @@ function JoinusList() {
               >
                 Prev
               </button>
-
+              
               {[...Array(totalPages)].map((_, index) => {
                 const page = index + 1;
                 return (

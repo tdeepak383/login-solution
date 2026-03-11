@@ -9,7 +9,7 @@ const blogs = require('./routes/blogs');
 const app = express();
 const aslcontacts = require('./routes/aslcontacts');
 const jobs = require('./routes/jobposts');
-
+const attherate = require('./routes/attherate');
 
 
 
@@ -25,6 +25,7 @@ app.use('/api/joinuslist', joinUsRouter);
 app.use('/api/blogs', blogs)
 app.use("/api/aslcontacts", aslcontacts)
 app.use("/api/jobs", jobs)
+app.use("/api/attherate", attherate)
 
 
 app.use("/uploads", express.static("uploads"));

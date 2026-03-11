@@ -48,7 +48,7 @@ import GraphicDesigner from './pages/jobs/GraphicDesigner.jsx'
 import ClientCoordinator from './pages/jobs/ClientCoordinator.jsx'
 import HCLTechnologies from './pages/client-strories/HCLTechnologies.jsx'
 import MishumishtiTv from './pages/client-strories/MishumishtiTv.jsx'
-
+import Attherate from './admin/attherate/attherateContacts.jsx'
 
 
 export function ProtectedRoute({ children }) {
@@ -84,11 +84,11 @@ const router = createBrowserRouter(
 
 
           // Jobs paths
-          { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },
-          { path: 'jobs/team-lead', element: <TeamLead /> },
-          { path: 'jobs/graphic-designer', element: <GraphicDesigner /> },
-          { path: 'jobs/client-coordinator', element: <ClientCoordinator /> },
-          // { path: 'jobs/:slug', element: <JobPage /> },
+          // { path: 'jobs/project-delivery-executive-pde', element: <PDE /> },
+          // { path: 'jobs/team-lead', element: <TeamLead /> },
+          // { path: 'jobs/graphic-designer', element: <GraphicDesigner /> },
+          // { path: 'jobs/client-coordinator', element: <ClientCoordinator /> },
+          { path: 'jobs/:slug', element: <JobPage /> },
 
           // Client Strories paths
           { path: 'client-stories', element: <ClientStories /> },
@@ -118,6 +118,7 @@ const router = createBrowserRouter(
           { path: 'resume-list', element: <JoinusList /> },
           { path: 'resume-list/edit/:id', element: <EditJoinusList /> },
           { path: 'asl-contacts', element: <AslContact/> },
+          { path: 'attherate-contacts', element: <Attherate /> },
           { path: 'job-posts', element: <JobList/> },
           { path: 'post-job', element: <AddJob/> },
           { path: 'jobs/edit/:id', element: <EditJob /> },

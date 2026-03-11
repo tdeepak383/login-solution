@@ -182,7 +182,7 @@ function CaseStudiesLayout() {
                 </div>
             </div>
         </div>
-        <div id="mishumishtitv"  className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/60 mb-10'
+        <div id="mishumishtitv"  className='relative md:p-5 p-2 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/40 mb-10'
             style={{ backgroundImage: `url(${bgImage9})` }}
         >
             <div className='relative pt-32 text-white text-left md:px-10 '>
@@ -213,7 +213,6 @@ function CaseStudiesLayout() {
                             <li><strong>↓ 32%</strong> bounce rate reduction</li>
                             <li><strong>↑ 45%</strong> mobile engagement</li>
                             <li>Load speed optimized to &lt;3 sec</li>
-
                         </ul>
                     </div>
                 </div>
@@ -234,7 +233,6 @@ function CaseStudiesLayout() {
                             <li>AI-accelerated creative workflows</li>
                             <li>Cross-platform audience growth</li>
                             <li>Consistent visual storytelling</li>
-
                         </ul>
                     </div>
 

@@ -59,7 +59,7 @@ function MishumishtiTv() {
 
         {/* Banner */}
         <div className="max-w-6xl mx-auto py-10 px-6 ">
-          <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/55' 
+          <div className='relative p-5 bg-blend-overlay bg-center bg-cover rounded-3xl bg-no-repeat bg-black/40' 
           style={{backgroundImage: `url(${bgImage7})`}}
           >
               <div className='relative pt-40 pb-5 text-white text-left md:px-10 '>

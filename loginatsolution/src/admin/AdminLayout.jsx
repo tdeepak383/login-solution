@@ -31,25 +31,25 @@ function AdminLayout() {
           <div>
           <h2 className='lg:text-xl font-bold flex items-center my-4 gap-3'>Loginat Solution</h2>
           {/* <h2 className='lg:text-xl font-bold flex items-center mb-4 gap-3'><FaPenSquare />Admin Panel</h2> */}
-          <nav className='space-y-6 text-sm'>
-              
+          <nav className='space-y-6 text-sm'>              
               <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
               <Link to="/admin/blogs" className="flex items-center gap-3"><FiBookOpen className="text-lg"/>Blogs</Link>
               <Link to="/admin/contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Contacts</Link>
               <Link to="/admin/job-posts" className="flex items-center gap-3"><LuBriefcaseBusiness className='text-lg' />Job Posts</Link>
               <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserTie />Applicants</Link>
               <Link to="/admin/asl-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>ASL Contacts</Link>
+              <Link to="/admin/attherate-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Attherate Contacts</Link>
           </nav>
         </div>
         <div className='mt-10'>
             <button onClick={handleLogout} className="bg-white text-[var(--purple)] hover:text-white rounded hover:bg-black transition py-2 w-full justify-center flex text-sm items-center gap-1"><MdLogout />LogOut</button>
         </div>
-        </div>
+        </div>      
       </aside>
       <main className='w-full overflow-scroll'>
-              <button onClick={toggleSidebar} className="text-white md:hidden absolute top-4 left-4">
-                  {isSidebarOpen ? <RxCross2  className='text-white'/> : <FaBars className='text-black'/>} 
-              </button>
+          <button onClick={toggleSidebar} className="text-white md:hidden absolute top-4 left-4">
+              {isSidebarOpen ? <RxCross2  className='text-white'/> : <FaBars className='text-black'/>} 
+          </button>
           <Outlet />
       </main>
     </div>

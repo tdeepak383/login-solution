@@ -4,35 +4,34 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
-import openings from "../data/openings.json"
 
 const CurrentOpenings = ({onClick}) => {
 
-// const [data, setData] = useState([]);
+const [data, setData] = useState([]);
 
-// useEffect(() => {
-//   const controller = new AbortController();
+useEffect(() => {
+  const controller = new AbortController();
 
-//   const fetchData = async () => {
-//     try {
-//       const response = await fetch(
-//         `${import.meta.env.VITE_VERCEL_URL}/api/jobs`,
-//         { signal: controller.signal }
-//       );
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_VERCEL_URL}/api/jobs`,
+        { signal: controller.signal }
+      );
 
-//       if (!response.ok) throw new Error("Failed to fetch");
+      if (!response.ok) throw new Error("Failed to fetch");
 
-//       const result = await response.json();
-//       setData(result.data || []);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+      const result = await response.json();
+      setData(result.data || []);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-//   fetchData();
+  fetchData();
 
-//   return () => controller.abort();
-// }, []);
+  return () => controller.abort();
+}, []);
 
 
   return (
@@ -52,7 +51,7 @@ const CurrentOpenings = ({onClick}) => {
       </div>
 
       <div className="grid lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
-        {openings.map((job, index) => (
+        {data.map((job, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 40 }}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Tooltip from '@mui/material/Tooltip';
 
 function BlogList() {
 
@@ -91,8 +92,12 @@ useEffect(() => {
                       <td className=''>{item.excerpt}</td>
                       <td>
                         <div className="flex items-center justify-center gap-3">
-                        <Link to={`/admin/blogs/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
-                        <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                        <Tooltip title="Edit" placement="top">
+                          <Link to={`/admin/blogs/edit/${item.id}`} className='bg-[var(--purple-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
+                        </Tooltip>
+                        <Tooltip title="Delete" placement="top">
+                          <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                        </Tooltip>
                         </div>
                         </td>
                     </tr>

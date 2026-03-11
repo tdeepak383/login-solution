@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Tooltip from '@mui/material/Tooltip';
 
 function JobList() {
 
@@ -69,7 +70,7 @@ const handleDelete = async (id) => {
           <div className='flex justify-between items-center pb-5 border-b'>
             <div>
               <h3 className='font-bold text-lg'>Total Posts</h3>
-              <p className='text-2xl'>{""}</p>
+              <p className='text-2xl'>{jobs.length}</p>
             </div>
             <div>
               <Link to="/admin/post-job" className="bg-[var(--purple)] text-white p-2 rounded">Post a job</Link>
@@ -106,8 +107,12 @@ const handleDelete = async (id) => {
                       <td>{item.skills}</td>
                       <td>
                         <div className="flex items-center justify-center gap-3">
-                        <Link to={`/admin/jobs/edit/${item.id}`} className='bg-[var(--pink-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
+                        <Tooltip title="Edit" placement="top">
+                        <Link to={`/admin/jobs/edit/${item.id}`} className='bg-[var(--purple-light)] p-2 rounded'><FaPen className='text-[var(--purple)]' /></Link>
+                        </Tooltip>
+                        <Tooltip title="Delete" placement="top">
                         <Link onClick={() => handleDelete(item.id)} className='bg-[var(--pink-light)] p-2 rounded'><FaTrashAlt className='text-red-600' /></Link>
+                        </Tooltip>
                         </div>
                         </td>
                     </tr>
