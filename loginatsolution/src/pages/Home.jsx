@@ -10,6 +10,7 @@ import ClientsLogo from '../components/ClientsLogo'
 import PopUp from '../components/PopUp'
 import ClientStoriesSection from '../components/ClientStoriesSection'
 import ProductsShowcase from '../components/ProductsShowcase'
+import Awards from '../components/Awards'
 
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
       <CallToAction />
       <LogoCarousel bgColor={"gray-100"} cardColor={"white"} />
       <ProductsShowcase/>
+      <Awards/>
       <ClientStoriesSection />
       <TestimonialSlider />
       <ClientsLogo />

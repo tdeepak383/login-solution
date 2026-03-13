@@ -6,6 +6,7 @@ import { FaEnvelopeOpen } from "react-icons/fa";
 import contactus from '../assets/contact-us.jpg';
 import sector63 from '../assets/sector-63.png';
 import RequirementForm from '../components/Form'
+import { FaLocationDot } from "react-icons/fa6";
 
 function Contact() {
 
@@ -24,14 +25,22 @@ function Contact() {
             <p className='mt-10 font-semibold text-xl'>Hire exceptional global talent—fast and hassle-free.</p>
             <p className='text-xl'>Our expert-matched professionals integrate seamlessly into your team. With managed recruiting, onboarding, and compliance, you get quality talent in your timezone ready to deliver from day one.</p>
             <div className='mt-10 flex gap-4 items-start'>
-              <FaEnvelopeOpen className='text-2xl text-[var(--blue)]'/>
+              <FaEnvelopeOpen className='text-2xl text-[var(--purple)]'/>
               <div >                
                 <h4 className='text-2xl font-bold'>Write to us:</h4>
                 <p className='md:text-xl'>sales@loginatsolution.com</p>
                 <p className='md:text-xl'>hr@loginatsolution.com</p>
               </div>
             </div>
-           
+            <div className='flex gap-4 items-start mt-10'>
+                <FaLocationDot className='text-2xl text-[var(--purple)]'/>
+                <div>
+                  <h4 className='text-2xl font-bold'>Address:</h4>
+                <p className='md:text-xl'>4th Floor, Silverstream House <br />
+                  45 Fitzroy Street, Fitzrovia London <br /> W1T 6EB GB</p>
+                </div>
+                
+            </div>
         </div>
         <div className='p-5 md:p-20 bg-white'>
           <RequirementForm title={"Share your requirement"} color={""}/>
