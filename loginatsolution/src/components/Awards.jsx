@@ -20,6 +20,7 @@ function Awards() {
   return (
     <section className="py-20 w-full bg-gray-200 relative">
       <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-2xl md:text-5xl text-black text-center mb-10 font-bold">Awards and Recognitions</h2>
         <div className="grid md:grid-cols-2 gap-16 items-center">
 
           {/* ── Left: Image column ── */}
@@ -37,9 +38,8 @@ function Awards() {
             </div>
 
             {/* Floating winner badge */}
-           
-          </div>
 
+          </div>
           {/* ── Right: Content column ── */}
           <div className="pt-6 md:pt-0">
 
@@ -65,13 +65,11 @@ function Awards() {
 
             {/* Description — unchanged from original */}
             <p className="text-gray-600 leading-relaxed mb-8">
-              We are honored to receive the Best Multimedia &amp; Creative Services Agency award & Certificate of Appreciation
-              for delivering innovative strategies and measurable growth for
-              our clients. This recognition reflects our commitment to quality,
+              We are honored to receive the Best Multimedia &amp; Creative Services Agency award & Certificate of Appreciation.
+              for delivering innovative strategies and measurable growth for.
+              our clients. This recognition reflects our commitment to quality.
               creativity, and results-driven marketing solutions.
             </p>
-
-           
           </div>
         </div>
       </div>

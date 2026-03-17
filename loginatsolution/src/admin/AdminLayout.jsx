@@ -39,6 +39,7 @@ function AdminLayout() {
               <Link to="/admin/resume-list" className="flex items-center gap-3"><FaUserTie />Applicants</Link>
               <Link to="/admin/asl-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>ASL Contacts</Link>
               <Link to="/admin/attherate-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Attherate Contacts</Link>
+              <Link to="/admin/consent-form-contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Consent Form</Link>
           </nav>
         </div>
         <div className='mt-10'>

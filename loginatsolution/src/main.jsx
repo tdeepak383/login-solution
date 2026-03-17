@@ -49,7 +49,9 @@ import ClientCoordinator from './pages/jobs/ClientCoordinator.jsx'
 import HCLTechnologies from './pages/client-strories/HCLTechnologies.jsx'
 import MishumishtiTv from './pages/client-strories/MishumishtiTv.jsx'
 import Attherate from './admin/attherate/attherateContacts.jsx'
+import ConsentForm from './pages/ConsentForm.jsx'
 
+import Consent from './admin/consent/consent.jsx'
 
 export function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -80,6 +82,7 @@ const router = createBrowserRouter(
           { path: 'register', element: <Register />},
           { path: 'login', element: <Login />},
           { path: 'forgot-password', element: <ForgotPassword />},
+          { path: 'consent-form', element: <ConsentForm />},
 
 
 
@@ -122,6 +125,7 @@ const router = createBrowserRouter(
           { path: 'job-posts', element: <JobList/> },
           { path: 'post-job', element: <AddJob/> },
           { path: 'jobs/edit/:id', element: <EditJob /> },
+          { path: 'consent-form-contacts', element: <Consent /> },
         ]
       },
       { path: '*', element: <NotFound /> },

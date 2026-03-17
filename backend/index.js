@@ -1,45 +1,64 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');   
-const AuthRouter = require('./routes/auth');
-const contactRouter = require('./routes/contacts');
-const joinUsRouter = require('./routes/joinus');
-const blogs = require('./routes/blogs');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+
+const AuthRouter = require("./routes/auth");
+const contactRouter = require("./routes/contacts");
+const joinUsRouter = require("./routes/joinus");
+const blogs = require("./routes/blogs");
+const aslcontacts = require("./routes/aslcontacts");
+const jobs = require("./routes/jobposts");
+const attherate = require("./routes/attherate");
+
+const consentRoutes = require("./routes/FormRoutes");
+
 const app = express();
-const aslcontacts = require('./routes/aslcontacts');
-const jobs = require('./routes/jobposts');
-const attherate = require('./routes/attherate');
 
+// Middleware
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
 
-
-app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+// DEBUG ROUTE (check if server works)
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
+console.log("Consent route loaded");
 
-app.use('/api/auth', AuthRouter);
-app.use('/api/contacts', contactRouter);
-app.use('/api/joinuslist', joinUsRouter);
-app.use('/api/blogs', blogs)
-app.use("/api/aslcontacts", aslcontacts)
-app.use("/api/jobs", jobs)
-app.use("/api/attherate", attherate)
+// Routes
+app.use("/api/auth", AuthRouter);
+app.use("/api/contacts", contactRouter);
+app.use("/api/joinuslist", joinUsRouter);
+app.use("/api/blogs", blogs);
+app.use("/api/aslcontacts", aslcontacts);
+app.use("/api/jobs", jobs);
+app.use("/api/attherate", attherate);
 
+// ✅ IMPORTANT
+app.use("/api/consentform", consentRoutes);
 
+// Static
 app.use("/uploads", express.static("uploads"));
 
-
+// Health
 app.get("/health", (req, res) => {
   res.status(200).send("Server is running");
 });
 
-// error handler
-app.use((err, _req, res, _next) => {
-  console.error(err);
-  res.status(500).json({ error: 'Server error' });
+// Error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Server error" });
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});

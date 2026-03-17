@@ -32,15 +32,7 @@ function Contact() {
                 <p className='md:text-xl'>hr@loginatsolution.com</p>
               </div>
             </div>
-            <div className='flex gap-4 items-start mt-10'>
-                <FaLocationDot className='text-2xl text-[var(--purple)]'/>
-                <div>
-                  <h4 className='text-2xl font-bold'>Address:</h4>
-                <p className='md:text-xl'>4th Floor, Silverstream House <br />
-                  45 Fitzroy Street, Fitzrovia London <br /> W1T 6EB GB</p>
-                </div>
-                
-            </div>
+            
         </div>
         <div className='p-5 md:p-20 bg-white'>
           <RequirementForm title={"Share your requirement"} color={""}/>
@@ -60,8 +52,7 @@ function Contact() {
                         ? "bg-black text-white"
                         : "bg-gray-300 text-black"
                     }`}
-                    >Sector 63, Noida</button>             
-                
+                    >Sector 63, Noida</button>
                   <button 
                   onClick={() => handleButton("ghaziabad")}
                   className={`py-4 px-4 md:px-8 rounded-lg font-bold text-xs md:text-xl transition-all ${
@@ -69,9 +60,31 @@ function Contact() {
                       ? "bg-black text-white"
                       : "bg-gray-300 text-black"
                   }`}
-                  >Kaushambi, Ghaziabad</button>             
+                  >Kaushambi, Ghaziabad</button>
+                  <button 
+                  onClick={() => handleButton("london")}
+                  className={`py-4 px-4 md:px-8 rounded-lg font-bold text-xs md:text-xl transition-all ${
+                    activeMap === "london"
+                      ? "bg-black text-white"
+                      : "bg-gray-300 text-black"
+                  }`}
+                  >Fitzrovia London</button>
             </div>
-            {/*  --- Ghaziabad Map --- */}
+          {/*  --- London Map --- */}
+          {activeMap === "london" && (
+            <div className="mt-10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2482.41515851806!2d-0.141685!3d51.5239448!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3f97a9be25%3A0xcd032d171c5d97be!2sLondon%20Virtual%20Offices%20-%20Virtually%20There%20%C2%AE!5e0!3m2!1sen!2sin!4v1773661030265!5m2!1sen!2sin"
+                width="100%"
+                height="500"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Fitzrovia London"
+              ></iframe>
+            </div>
+          )}
+          
+          {/*  --- Ghaziabad Map --- */}
           {activeMap === "ghaziabad" && (
             <div className="mt-10">
               <iframe
@@ -100,7 +113,7 @@ function Contact() {
           )}
         </div>
         <div className='p-5 md:p-20 bg-gray-50'>
-              {activeMap === "noida" ? <img src={sector63} alt="Sector 63 Office" className='w-full lg:w-3/4 rounded-xl'/> : <img src={contactus} alt="Kaushambi Office" className='w-full lg:w-3/4 rounded-xl'/>}
+              {activeMap === "noida" ? <img src={sector63} alt="Sector 63 Office" className='w-full lg:w-3/4 rounded-xl'/> : activeMap === "ghaziabad" ? <img src={contactus} alt="Kaushambi Office" className='w-full lg:w-3/4 rounded-xl'/> : activeMap === "london" ? "" : ""}
         </div>
     </div>
     </>
