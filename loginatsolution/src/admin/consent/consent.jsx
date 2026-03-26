@@ -6,7 +6,7 @@ function ConsentFormList() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/consentform");
+      const res = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/consentform`);
       const result = await res.json();
       setData(result);
     } catch (err) {
@@ -26,7 +26,7 @@ function ConsentFormList() {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/consentform/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/consentform/${id}`, {
         method: "DELETE",
       });
 

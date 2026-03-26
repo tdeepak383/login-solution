@@ -55,7 +55,7 @@ const ConsentForm = () => {
     setApiError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/consentform", {
+      const response = await fetch(`${import.meta.env.VITE_VERCEL_URL}/api/consentform`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
