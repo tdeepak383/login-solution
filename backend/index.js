@@ -10,8 +10,10 @@ const blogs = require("./routes/blogs");
 const aslcontacts = require("./routes/aslcontacts");
 const jobs = require("./routes/jobposts");
 const attherate = require("./routes/attherate");
-const analyticsRoutes = require('./routes/analytics')
+const analyticsRoutes = require('./routes/analytics');
 const consentRoutes = require("./routes/FormRoutes");
+
+const path = require('path')
 
 const app = express();
 
@@ -43,10 +45,12 @@ app.use("/api/blogs", blogs);
 app.use("/api/aslcontacts", aslcontacts);
 app.use("/api/jobs", jobs);
 app.use("/api/attherate", attherate);
-app.use('/api/analytics', analyticsRoutes)
+app.use('/api/analytics', analyticsRoutes);
 
 // ✅ IMPORTANT
 app.use("/api/consentform", consentRoutes);
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Static
 app.use("/uploads", express.static("uploads"));
