@@ -47,8 +47,7 @@ router.post('/track', async (req, res) => {
     // FIX: added city column to INSERT
     await pool.query(
       `INSERT INTO analytics_visits
-        (visitor_id, session_id, page, referrer, device, browser, os, country, country_code, city, ip, user_agent)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      (visitor_id, session_id, page, referrer, device, browser, os, country, country_code, city, ip, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         visitor_id, session_id,
         page.slice(0, 500),
@@ -215,8 +214,6 @@ router.get('/stats', async (req, res) => {
     return res.status(500).json({ success: false, message: 'Server error.' })
   }
 })
-
-module.exports = router
 
 // ─────────────────────────────────────────────────────────────────────────────
 // GET /api/analytics/export?range=today|7|30|90&format=csv|json
