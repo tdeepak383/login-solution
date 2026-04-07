@@ -6,6 +6,7 @@ import { FiBookOpen } from "react-icons/fi";
 import { BiSolidContact } from "react-icons/bi";
 import { LuBriefcaseBusiness } from "react-icons/lu";
 import { FaUserTie } from "react-icons/fa";
+import { TbDeviceAnalytics } from "react-icons/tb";
 
 import { RxCross2 } from "react-icons/rx";
 import AutoSEO from '../components/SEO';
@@ -33,6 +34,7 @@ function AdminLayout() {
           {/* <h2 className='lg:text-xl font-bold flex items-center mb-4 gap-3'><FaPenSquare />Admin Panel</h2> */}
           <nav className='space-y-6 text-sm'>              
               <Link to="/admin" className="flex items-center gap-3"><MdDashboard className='text-lg'/>Dashboard</Link>
+              <Link to="/admin/site-analytics" className="flex items-center gap-3"><TbDeviceAnalytics className='text-lg'/>Site Analytics</Link>
               <Link to="/admin/blogs" className="flex items-center gap-3"><FiBookOpen className="text-lg"/>Blogs</Link>
               <Link to="/admin/contacts" className="flex items-center gap-3"><BiSolidContact className='text-lg'/>Contacts</Link>
               <Link to="/admin/job-posts" className="flex items-center gap-3"><LuBriefcaseBusiness className='text-lg' />Job Posts</Link>

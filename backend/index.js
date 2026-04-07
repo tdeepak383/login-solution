@@ -10,14 +10,18 @@ const blogs = require("./routes/blogs");
 const aslcontacts = require("./routes/aslcontacts");
 const jobs = require("./routes/jobposts");
 const attherate = require("./routes/attherate");
-
+const analyticsRoutes = require('./routes/analytics')
 const consentRoutes = require("./routes/FormRoutes");
 
 const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "*",
+  origin: [
+    'https://loginatsolution.com', // for production
+    'http://localhost:5173',   // for local dev
+    'http://localhost:3000',   // for local dev
+  ],
   credentials: true
 }));
 
@@ -39,6 +43,7 @@ app.use("/api/blogs", blogs);
 app.use("/api/aslcontacts", aslcontacts);
 app.use("/api/jobs", jobs);
 app.use("/api/attherate", attherate);
+app.use('/api/analytics', analyticsRoutes)
 
 // ✅ IMPORTANT
 app.use("/api/consentform", consentRoutes);

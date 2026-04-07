@@ -50,7 +50,7 @@ import HCLTechnologies from './pages/client-strories/HCLTechnologies.jsx'
 import MishumishtiTv from './pages/client-strories/MishumishtiTv.jsx'
 import Attherate from './admin/attherate/attherateContacts.jsx'
 import ConsentForm from './pages/ConsentForm.jsx'
-
+import AnalyticsDashboard from './admin/analytics/AnalyticsDashboard.jsx'
 import Consent from './admin/consent/consent.jsx'
 
 export function ProtectedRoute({ children }) {
@@ -126,6 +126,7 @@ const router = createBrowserRouter(
           { path: 'post-job', element: <AddJob/> },
           { path: 'jobs/edit/:id', element: <EditJob /> },
           { path: 'consent-form-contacts', element: <Consent /> },
+          { path: 'site-analytics', element: <AnalyticsDashboard /> },
         ]
       },
       { path: '*', element: <NotFound /> },
